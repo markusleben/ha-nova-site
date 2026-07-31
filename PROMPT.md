@@ -1,6 +1,17 @@
 # Bau-Prompt: HA NOVA Landingpage
 
-Baue in diesem Repository (`ha-nova-site`) eine statische Landingpage für **HA NOVA** und veröffentliche sie über GitHub Pages. Arbeite ausschließlich in diesem Repo — das Produkt-Repository `markusleben/ha-nova` wird weder benötigt noch verändert.
+Baue in diesem Repository (`ha-nova-site`) eine statische Landingpage für **HA NOVA**; Ziel-Hosting ist GitHub Pages. Arbeite ausschließlich in diesem Repo — das Produkt-Repository `markusleben/ha-nova` wird weder benötigt noch verändert.
+
+## Arbeitsmodus: gemeinsam, nicht autonom (WICHTIG)
+
+Die Seite entsteht **im Zusammenspiel mit Markus** — nicht in einem Rutsch bis zum Deploy:
+
+1. **Erster Entwurf**: eine vollständige, lokal lauffähige Version bauen (alle Sektionen, echte Assets), aber **nichts pushen und Pages nicht aktivieren**.
+2. **Zeigen**: den Entwurf Markus präsentieren — Screenshots in Desktop- **und** Mobilbreite (bzw. die Seite im Browser öffnen) plus 3–5 Sätze zu getroffenen Gestaltungsentscheidungen und offenen Fragen (z. B. Bildauswahl, Sektionslänge, CTA-Wortlaut).
+3. **Feedback-Runden**: seine Änderungswünsche umsetzen, erneut zeigen — so oft wie nötig. Bei Geschmacksfragen (Layout-Varianten, Farbgewichtung) lieber 2 Varianten zeigen als raten.
+4. **Erst nach seiner ausdrücklichen Freigabe**: committen, pushen, GitHub Pages aktivieren, Live-URL verifizieren.
+
+Ohne explizites „Go" von Markus wird weder gepusht noch deployed.
 
 ## Was HA NOVA ist (dein vollständiger Faktenstand)
 
@@ -67,10 +78,15 @@ HA NOVA verbindet AI-Coding-Clients (Claude Code, Claude Desktop, Codex CLI, Ope
 - Ein bewusst dunkles Theme (passend zu den Assets); Kontrast nach WCAG AA.
 - Deployment: GitHub Pages „Deploy from branch" (`main`, `/root`) — per `gh api` aktivieren oder die zwei nötigen Klicks exakt beschreiben. Erwartete URL: `https://markusleben.github.io/ha-nova-site/`.
 
-## Abnahme (vor „fertig" selbst verifizieren)
+## Qualitäts-Selbstcheck (vor JEDEM Zeigen an Markus)
 
 1. Seite lokal öffnen und als Screenshot in Desktop- **und** Mobilbreite prüfen (Layout, Kontraste, Bildschärfe).
 2. Jeden Link klicken (GitHub, Issues, Demo, Anker); beide Copy-Buttons testen.
 3. Claims-Check gegen die Regeln oben: keine Versionsnummer, kein „Add-on", nichts Erfundenes, Cloud überall als Beta.
 4. OG-Meta vorhanden und Pfade korrekt; `<title>` + Meta-Description gesetzt.
-5. Nach Pages-Aktivierung die Live-URL abrufen und final gegenprüfen.
+
+## Abschluss (erst nach Markus' ausdrücklicher Freigabe)
+
+1. Committen und pushen.
+2. GitHub Pages aktivieren („Deploy from branch", `main`, `/root`).
+3. Live-URL (`https://markusleben.github.io/ha-nova-site/`) abrufen und final gegenprüfen — inkl. Social-Preview-Test (z. B. OG-Debugger oder Link-Vorschau).
