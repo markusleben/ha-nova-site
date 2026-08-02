@@ -22,7 +22,7 @@ The product itself: HA NOVA connects AI coding clients to Home Assistant. A lean
 
 ## Positioning
 
-Safety is the core promise, not magic: every change is previewed, confirmed, and verified; deletes need a specific confirmation code; `revert` undoes the latest verified update where supported. Every rule the AI follows is a readable markdown file. No HA NOVA-operated cloud relay, no usage analytics. Origin story (optional, footer-adjacent): an 88,000-line MCP server became a lean relay + readable markdown skills; early demo `https://youtu.be/ylak867RkzM`.
+Safety is the core promise, not magic: every change is previewed, confirmed, and verified; deletes need a specific confirmation code; `revert` undoes the latest verified update where supported. Every rule the AI follows is a readable markdown file. No HA NOVA-operated cloud relay, no usage analytics. Origin story (an 88,000-line MCP server became a lean relay + readable markdown skills; early demo `https://youtu.be/ylak867RkzM`): removed from the page by Markus's decision (2026-08-02) — no visitor value, ages badly as a number comparison. Do not re-add without asking.
 
 ## Operating Context
 

@@ -637,15 +637,10 @@ a:focus-visible {
   padding: clamp(5rem, 13vh, 8rem) 1.5rem 3rem;
 }
 
-.footer-story {
-  max-width: var(--measure);
+.footer-links {
   margin: 0;
   border-top: 1px solid var(--hairline);
   padding-top: 2rem;
-}
-
-.footer-links {
-  margin: 1.5rem 0 0;
   display: flex;
   gap: 1.75rem;
   flex-wrap: wrap;
