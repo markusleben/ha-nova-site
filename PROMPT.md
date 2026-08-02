@@ -33,6 +33,7 @@ HA NOVA verbindet AI-Coding-Clients (Claude Code, Claude Desktop, Codex CLI, Ope
   - macOS/Linux: `curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash`
   - Windows (PowerShell): `irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex`
 - Keine privaten URLs, keine echten Entity-/Instanzdaten, keine Screenshots fremder UIs.
+- Das Produkt nie über die Abwesenheit von Tokens/Alt-Flows definieren (kein „no tokens to paste/copy"): Pairing positiv beschreiben — Einmal-Code, eigene Verbindung pro Gerät, jederzeit widerrufbar. Technische Token-Fakten (Standalone-Container) sind davon ausgenommen.
 - Sprache der Seite: **Englisch**.
 
 ## Verbindliche Copy-Bausteine (wörtlich oder eng paraphrasiert)

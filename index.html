@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HA NOVA — One code to connect. Every change checked.</title>
+  <meta name="description" content="HA NOVA connects your AI coding assistant to Home Assistant — with a safety workflow that previews, confirms, and verifies every change.">
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://hanova.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HA NOVA — One code to connect. Every change checked.">
+  <meta property="og:description" content="HA NOVA connects your AI coding assistant to Home Assistant — with a safety workflow that previews, confirms, and verifies every change.">
+  <meta property="og:url" content="https://hanova.app/">
+  <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:site_name" content="HA NOVA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HA NOVA — One code to connect. Every change checked.">
+  <meta name="twitter:description" content="HA NOVA connects your AI coding assistant to Home Assistant — with a safety workflow that previews, confirms, and verifies every change.">
+  <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!--
+REVISION 2 (bolder pass, user-approved: bold rework, authored SVG scenes, narrative scroll moments)
+THESIS: A safety protocol you can read. The page persuades by walking the visitor through the
+check-everything workflow itself, refusing the feature-grid launch page.
+OWN-WORLD: Cosmos night gradient #0A0E1A→#0D1525→#0A1628, sparse fixed star dots, cyan #18BCF2
+= local/client, amber #FFB347 = server/safe, system sans, 1px hairlines, and authored inline-SVG
+neon-line scenes (2px strokes, round caps, subtle glow) as the only imagery. The star ships only
+as its original SVG. Diagrams may glow; UI chrome never does.
+STORY: Visitor reads the tagline under the star, hears what they could say, watches the safety
+chain and the fallback arc draw themselves in, trusts, copies one install command.
+FIRST VIEWPORT: Centered stack on the open night — star SVG, tracked wordmark, two-line display
+tagline, one subline, cyan Get started + outline GitHub. No panel, no banner seam.
+FORM: Brief-pinned world (PROMPT.md design system), bolder rendition user-approved; seed: none.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review,
+the verdict, and DESIGN.md
+-->
+
+<header class="hero">
+  <img class="hero-star" src="assets/icon.svg" alt="" width="132" height="132">
+  <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
+  <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>One code to connect.<br>Every change checked.</h1>
+  <p class="hero-sub">HA NOVA connects your AI coding assistant to Home&nbsp;Assistant — with a safety workflow that previews, confirms, and verifies every change.</p>
+  <p class="hero-ctas">
+    <a class="btn btn-primary" href="#get-started">Get started</a>
+    <a class="btn btn-ghost" href="https://github.com/markusleben/ha-nova">View on GitHub</a>
+  </p>
+</header>
+
+<main>
+  <section class="section" id="pairing">
+    <h2>Three steps, one code</h2>
+    <p class="section-lead">No terminal expertise needed. The installer and the wizard do the wiring; a one-time code does the trust.</p>
+    <ol class="steps">
+      <li data-reveal>
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A terminal window running the installer">
+          <rect class="d n" x="20" y="20" width="200" height="120" rx="10"/>
+          <circle cx="38" cy="36" r="3" fill="rgba(184, 204, 224, 0.5)" stroke="none"/>
+          <circle cx="52" cy="36" r="3" fill="rgba(184, 204, 224, 0.5)" stroke="none"/>
+          <circle cx="66" cy="36" r="3" fill="rgba(184, 204, 224, 0.5)" stroke="none"/>
+          <path class="d c" d="M40 78 h64" pathLength="1"/>
+          <path class="d c" d="M114 78 h36" pathLength="1"/>
+          <path class="d c" d="M40 102 h44" pathLength="1"/>
+          <rect class="cursor" x="92" y="95" width="9" height="14" fill="#18BCF2" stroke="none"/>
+        </svg>
+        <strong>Run the installer.</strong> One command for macOS, Linux, or Windows.
+      </li>
+      <li data-reveal>
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The wizard screen with a Connect a device button and the one-time code 428 316">
+          <rect class="d n" x="40" y="8" width="160" height="144" rx="12"/>
+          <image href="assets/icon.svg" x="104" y="22" width="32" height="32"/>
+          <rect class="d c" x="60" y="72" width="120" height="28" rx="14"/>
+          <text x="120" y="90" text-anchor="middle" class="t-btn">Connect a device</text>
+          <text x="120" y="136" text-anchor="middle" class="t-code">428 316</text>
+        </svg>
+        <strong>Connect a device.</strong> The wizard shows a six-digit one-time code.
+      </li>
+      <li data-reveal>
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A paired laptop confirmed with a check mark">
+          <rect class="d c" x="36" y="34" width="120" height="78" rx="8"/>
+          <path class="d c" d="M24 124 h144" pathLength="1"/>
+          <path class="d a" d="M164 76 l16 18 l34 -42" stroke-width="3" pathLength="1"/>
+        </svg>
+        <strong>Enter the code.</strong> Your assistant is paired individually, revocable anytime.
+      </li>
+    </ol>
+  </section>
+
+  <section class="section" id="what-you-can-do">
+    <h2>What you can do</h2>
+    <p class="section-lead">You talk to the assistant you already use. HA NOVA does the careful part.</p>
+    <div class="says" role="list">
+      <div class="says-head" aria-hidden="true">
+        <span class="says-you">You say</span>
+        <span class="says-nova">What happens</span>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“Check my automations for problems”</p>
+        <p class="says-result">Audits against 40+ rules — catches conflicts, dead triggers, and mistakes you’d never spot manually.</p>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“Why didn’t my motion light trigger last night?”</p>
+        <p class="says-result">Replays the actual trace and shows exactly where it failed and why.</p>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“Turn on the porch light at sunset and off at 11&nbsp;PM”</p>
+        <p class="says-result">Builds, previews, and reviews the automation before it touches your config.</p>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“What happened to my living room temperature overnight?”</p>
+        <p class="says-result">Pulls history and summarizes the timeline in plain language.</p>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“Add a weather card to my main dashboard”</p>
+        <p class="says-result">Reads the dashboard, shows the change, writes only after you confirm.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-safety" id="safe-by-design">
+    <h2>Safe by design</h2>
+    <p class="section-lead">Safety is the product, not a setting. Every change runs the same workflow.</p>
+    <ol class="workflow" data-reveal>
+      <li data-reveal>
+        <h3>Researches first</h3>
+        <p>Reads your real entities, automations, and traces before proposing anything. No guessing.</p>
+      </li>
+      <li data-reveal>
+        <h3>Shows the exact change</h3>
+        <p>You see the precise diff before a single byte is written.</p>
+      </li>
+      <li data-reveal>
+        <h3>You approve</h3>
+        <p>Nothing is written without your yes, and deletes need a specific confirmation code.</p>
+      </li>
+      <li data-reveal>
+        <h3>Writes and verifies</h3>
+        <p>Applies the change, then checks that what landed is what you approved.</p>
+      </li>
+      <li data-reveal>
+        <h3>Audits itself</h3>
+        <p>Reviews its own work afterwards. And <code>revert</code> undoes the latest verified update where supported.</p>
+      </li>
+    </ol>
+    <h3 class="rules-title">Ground rules</h3>
+    <ul class="rules">
+      <li data-reveal>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9" rx="1.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><circle cx="12" cy="15" r="1.2"/></svg>
+        <p>Relay credentials stay out of the AI.</p>
+      </li>
+      <li data-reveal>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
+        <p>Every device is paired on its own — a one-time six-digit code, revocable anytime.</p>
+      </li>
+      <li data-reveal>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
+        <p>Every rule the AI follows is a markdown file you can read.</p>
+      </li>
+      <li data-reveal>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 17a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 18.7 9.6 3.75 3.75 0 0 1 18 17"/><path d="M4.5 20.5 19.5 4.5"/></svg>
+        <p>No HA NOVA-operated cloud relay or usage analytics.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="cloud">
+    <h2>At home and away <span class="beta">Beta</span></h2>
+    <p class="section-lead">Local access stays first; your own Home&nbsp;Assistant Cloud subscription becomes the automatic fallback — no manual URL switching, and credentials stay in your OS’s native credential store.</p>
+    <figure class="figure" data-reveal>
+      <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="Your machine connects to Home Assistant directly over a locked local link; your Home Assistant Cloud account arches above as the automatic Beta fallback">
+        <!-- direct local link, first light -->
+        <path class="d c" d="M212 226 H588" pathLength="1"/>
+        <g transform="translate(388, 212)">
+          <rect class="d c" x="0" y="10" width="24" height="19" rx="4"/>
+          <path class="d c" d="M5 10 V7 a7 7 0 0 1 14 0 v3" pathLength="1"/>
+        </g>
+        <!-- cloud fallback arc, second light -->
+        <path class="d a slow" d="M190 180 C 300 40, 500 40, 610 170" pathLength="1"/>
+        <g transform="translate(352, 18)">
+          <path class="d a" d="M24 44 a14 14 0 0 1 4 -27.4 A18 18 0 0 1 63 13 a13 13 0 0 1 5 31 Z" pathLength="1"/>
+        </g>
+        <text x="400" y="134" text-anchor="middle" class="t-label t-amber">Home Assistant Cloud</text>
+        <!-- your machine -->
+        <g transform="translate(60, 150)">
+          <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
+          <path class="d c" d="M0 92 h152" pathLength="1"/>
+        </g>
+        <text x="136" y="290" text-anchor="middle" class="t-label">Your machine</text>
+        <!-- home assistant -->
+        <g transform="translate(596, 128)">
+          <path class="d c" d="M0 52 L52 8 L104 52" pathLength="1"/>
+          <path class="d c" d="M12 52 v60 h80 v-60" pathLength="1"/>
+          <rect class="d c" x="30" y="68" width="22" height="20"/>
+          <path class="d a" d="M66 112 v-30 h18 v30" pathLength="1"/>
+        </g>
+        <text x="648" y="290" text-anchor="middle" class="t-label">Home Assistant</text>
+      </svg>
+      <figcaption class="visually-hidden">Local stays first; cloud is the automatic fallback (Beta).</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <h2>How it works</h2>
+    <p class="section-lead">A lean NOVA Relay runs as an App on your Home&nbsp;Assistant server and is the only component that talks to Home&nbsp;Assistant. Everything the AI knows lives in readable markdown skills on your machine. The relay stays dumb; the skills stay smart.</p>
+    <figure class="figure" data-reveal>
+      <svg class="scene scene-wide" viewBox="0 0 900 360" role="img" aria-label="Architecture: your machine with markdown skills talks over an encrypted link to the NOVA Relay, which alone connects to Home Assistant">
+        <!-- links -->
+        <path class="d c" d="M196 216 H262" pathLength="1"/>
+        <path class="d c" d="M352 216 H428" pathLength="1"/>
+        <path class="d a" d="M548 216 H726" pathLength="1"/>
+        <g transform="translate(378, 200)">
+          <rect class="d c" x="0" y="9" width="22" height="17" rx="4"/>
+          <path class="d c" d="M4.5 9 V6.5 a6.5 6.5 0 0 1 13 0 V9" pathLength="1"/>
+        </g>
+        <!-- your machine -->
+        <g transform="translate(40, 152)">
+          <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
+          <path class="d c" d="M0 92 h152" pathLength="1"/>
+        </g>
+        <text x="116" y="296" text-anchor="middle" class="t-label">Your machine</text>
+        <!-- skills -->
+        <g transform="translate(268, 158)">
+          <rect class="d n" x="16" y="10" width="52" height="66" rx="4"/>
+          <rect class="d c" x="8" y="18" width="52" height="66" rx="4"/>
+          <path class="d c" d="M18 36 h14 M18 48 h32 M18 60 h32 M18 72 h22" pathLength="1"/>
+        </g>
+        <text x="310" y="296" text-anchor="middle" class="t-label t-cyan">Skills</text>
+        <!-- relay -->
+        <g transform="translate(432, 150)">
+          <rect class="d a" x="0" y="0" width="112" height="112" rx="24" stroke-width="2.5"/>
+          <image href="assets/icon.svg" x="20" y="20" width="72" height="72"/>
+        </g>
+        <text x="488" y="296" text-anchor="middle" class="t-label">NOVA Relay</text>
+        <g transform="translate(436, 306)">
+          <rect class="d a" x="0" y="0" width="104" height="26" rx="7"/>
+          <text x="52" y="18" text-anchor="middle" class="t-code t-code-sm">428 316</text>
+        </g>
+        <!-- home assistant -->
+        <g transform="translate(730, 128)">
+          <path class="d c" d="M0 52 L52 8 L104 52" pathLength="1"/>
+          <path class="d c" d="M12 52 v60 h80 v-60" pathLength="1"/>
+          <rect class="d c" x="30" y="68" width="22" height="20"/>
+          <path class="d a" d="M66 112 v-30 h18 v30" pathLength="1"/>
+        </g>
+        <text x="782" y="296" text-anchor="middle" class="t-label">Home Assistant</text>
+      </svg>
+      <figcaption class="visually-hidden">The relay stays dumb; the skills stay smart.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="skills-not-tools">
+    <h2>Skills, not a tool server</h2>
+    <p class="section-lead">A typical tool server pushes its whole catalog into your assistant by default. HA NOVA hands it one skill, on demand: a markdown file you can open and read.</p>
+    <div class="versus">
+      <figure class="figure" data-reveal>
+        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop buried under a toppling stack of tools">
+          <g class="dim">
+            <rect class="d n" x="40" y="30" width="56" height="16" rx="4"/>
+            <rect class="d n" x="36" y="52" width="56" height="16" rx="4"/>
+            <rect class="d n" x="44" y="74" width="56" height="16" rx="4"/>
+            <rect class="d n" x="38" y="96" width="56" height="16" rx="4"/>
+            <rect class="d n" x="46" y="118" width="56" height="16" rx="4"/>
+            <rect class="d n" x="104" y="44" width="52" height="15" rx="4" transform="rotate(14 130 51)"/>
+            <rect class="d n" x="128" y="70" width="52" height="15" rx="4" transform="rotate(24 154 77)"/>
+            <rect class="d n" x="150" y="100" width="52" height="15" rx="4" transform="rotate(33 176 107)"/>
+          </g>
+          <g transform="translate(150, 96)">
+            <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
+            <path class="d c" d="M0 92 h152" pathLength="1"/>
+          </g>
+        </svg>
+        <figcaption>The whole catalog, by default.</figcaption>
+      </figure>
+      <figure class="figure" data-reveal>
+        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop receiving a single markdown skill from a locked server">
+          <g transform="translate(60, 96)">
+            <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
+            <path class="d c" d="M0 92 h152" pathLength="1"/>
+          </g>
+          <path class="d c" d="M228 76 C 214 90, 208 100, 202 112" pathLength="1"/>
+          <g transform="translate(228, 40)">
+            <path class="d c" d="M0 8 h30 l14 14 v44 h-44 Z" pathLength="1"/>
+            <path class="d c" d="M30 8 v14 h14" pathLength="1"/>
+            <path class="d c" d="M8 34 h12 M8 46 h26" pathLength="1"/>
+          </g>
+          <g transform="translate(292, 128)">
+            <rect class="d a" x="0" y="0" width="64" height="24" rx="6"/>
+            <rect class="d a" x="0" y="30" width="64" height="24" rx="6"/>
+            <circle cx="52" cy="12" r="2.5" fill="#18BCF2" stroke="none"/>
+            <circle cx="52" cy="42" r="2.5" fill="#18BCF2" stroke="none"/>
+            <g transform="translate(44, 44)">
+              <rect class="d a" x="0" y="8" width="18" height="14" rx="3"/>
+              <path class="d a" d="M3.5 8 V6 a5.5 5.5 0 0 1 11 0 v2" pathLength="1"/>
+            </g>
+          </g>
+        </svg>
+        <figcaption>One skill, on demand.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="get-started">
+    <h2>Get started</h2>
+    <p class="section-lead">You need Home&nbsp;Assistant — any install type. HA&nbsp;OS and Supervised get the NOVA Relay App via the wizard; Container and Core run the same relay as a standalone container.</p>
+    <div class="install">
+      <div class="install-block" data-reveal>
+        <p class="install-label">macOS / Linux</p>
+        <div class="codebar">
+          <pre><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code></pre>
+          <button class="copy" type="button">Copy</button>
+        </div>
+      </div>
+      <div class="install-block" data-reveal>
+        <p class="install-label">Windows (PowerShell)</p>
+        <div class="codebar">
+          <pre><code>irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex</code></pre>
+          <button class="copy" type="button">Copy</button>
+        </div>
+      </div>
+    </div>
+    <p class="clients-label">Works with</p>
+    <ul class="clients">
+      <li>Claude Code</li>
+      <li>Claude Desktop</li>
+      <li>Codex CLI</li>
+      <li>OpenCode</li>
+      <li>Google Antigravity</li>
+      <li>Hermes <span class="preview">preview</span></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer-story">HA NOVA began as an 88,000-line MCP server. It shipped as a lean relay and readable markdown skills. <a href="https://youtu.be/ylak867RkzM">Watch the early demo</a>.</p>
+  <p class="footer-links">
+    <a href="https://github.com/markusleben/ha-nova">GitHub</a>
+    <a href="https://github.com/markusleben/ha-nova/issues">Issues</a>
+    <a href="https://github.com/markusleben/ha-nova/blob/main/LICENSE">MIT License</a>
+  </p>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = btn.parentNode.querySelector('code').textContent;
+    function done() {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function () {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+    function legacy() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, legacy);
+    } else {
+      legacy();
+    }
+  });
+});
+
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('inview');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+} else {
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('inview'); });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-31T00:00:00Z",
+  "title": "Design System: HA NOVA Landing",
+  "extensions": {
+    "colorMeta": {
+      "night-top": { "role": "neutral", "displayName": "Night Top", "canonical": "#0A0E1A", "tonalRamp": ["oklch(15% 0.03 265)", "oklch(26% 0.03 265)", "oklch(38% 0.03 265)", "oklch(49% 0.03 265)", "oklch(60% 0.03 265)", "oklch(72% 0.03 265)", "oklch(83% 0.03 265)", "oklch(95% 0.03 265)"] },
+      "night-mid": { "role": "neutral", "displayName": "Night Mid", "canonical": "#0D1525", "tonalRamp": ["oklch(15% 0.035 262)", "oklch(26% 0.035 262)", "oklch(38% 0.035 262)", "oklch(49% 0.035 262)", "oklch(60% 0.035 262)", "oklch(72% 0.035 262)", "oklch(83% 0.035 262)", "oklch(95% 0.035 262)"] },
+      "night-deep": { "role": "neutral", "displayName": "Night Deep", "canonical": "#0A1628", "tonalRamp": ["oklch(15% 0.04 258)", "oklch(26% 0.04 258)", "oklch(38% 0.04 258)", "oklch(49% 0.04 258)", "oklch(60% 0.04 258)", "oklch(72% 0.04 258)", "oklch(83% 0.04 258)", "oklch(95% 0.04 258)"] },
+      "starlight-ink": { "role": "neutral", "displayName": "Starlight Ink", "canonical": "#E8EDF2", "tonalRamp": ["oklch(15% 0.005 240)", "oklch(26% 0.005 240)", "oklch(38% 0.005 240)", "oklch(49% 0.005 240)", "oklch(60% 0.005 240)", "oklch(72% 0.005 240)", "oklch(83% 0.005 240)", "oklch(95% 0.005 240)"] },
+      "moonlit-slate": { "role": "neutral", "displayName": "Moonlit Slate", "canonical": "#B8CCE0", "tonalRamp": ["oklch(15% 0.03 245)", "oklch(26% 0.03 245)", "oklch(38% 0.03 245)", "oklch(49% 0.03 245)", "oklch(60% 0.03 245)", "oklch(72% 0.03 245)", "oklch(83% 0.03 245)", "oklch(95% 0.03 245)"] },
+      "nova-cyan": { "role": "primary", "displayName": "Nova Cyan (local / client)", "canonical": "#18BCF2", "tonalRamp": ["oklch(15% 0.15 227)", "oklch(26% 0.15 227)", "oklch(38% 0.15 227)", "oklch(49% 0.15 227)", "oklch(60% 0.15 227)", "oklch(72% 0.15 227)", "oklch(83% 0.15 227)", "oklch(95% 0.08 227)"] },
+      "nova-cyan-bright": { "role": "primary", "displayName": "Bright Cyan (hover)", "canonical": "#4FCDF6" },
+      "nova-amber": { "role": "secondary", "displayName": "Nova Amber (server / safe)", "canonical": "#FFB347", "tonalRamp": ["oklch(15% 0.13 70)", "oklch(26% 0.13 70)", "oklch(38% 0.13 70)", "oklch(49% 0.13 70)", "oklch(60% 0.13 70)", "oklch(72% 0.13 70)", "oklch(83% 0.13 70)", "oklch(95% 0.07 70)"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(184, 204, 224, 0.16)" },
+      "scene-neutral": { "role": "neutral", "displayName": "Scene Neutral (non-glowing scene strokes)", "canonical": "rgba(184, 204, 224, 0.5)" },
+      "panel-night": { "role": "neutral", "displayName": "Panel Night", "canonical": "rgba(13, 21, 37, 0.6)" },
+      "abyss-ink": { "role": "neutral", "displayName": "Abyss Ink (text on cyan)", "canonical": "#05121D" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero tagline only — two authored HTML lines under the star, same at every width." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "Tracked uppercase 'HA NOVA' in Moonlit Slate between star and tagline; optically recentered by matching left padding." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings (h2); balanced wrapping, Starlight Ink." },
+      "title": { "displayName": "Title", "purpose": "Workflow step headings and sub-headings (h3)." },
+      "body": { "displayName": "Body", "purpose": "Default copy in Moonlit Slate; 62ch measure." },
+      "label": { "displayName": "Label", "purpose": "Uppercase column headers and badges, always in an accent color that states whose side the column is." },
+      "code": { "displayName": "Code", "purpose": "Install commands and inline code chips; system mono only." },
+      "scene-label": { "displayName": "Scene Label", "purpose": "SVG scene labels, 17px/600 ink (28px in .scene-wide below 720px)." },
+      "scene-code": { "displayName": "Scene Code", "purpose": "SVG scene code text, 22px/600 amber mono at 0.1em tracking; .t-code-sm variant 14px (22px in .scene-wide below 720px)." },
+      "scene-button": { "displayName": "Scene Button", "purpose": "In-scene button labels, 12px/600 cyan." }
+    },
+    "shadows": [
+      { "name": "scene-glow-cyan", "value": "filter: drop-shadow(0 0 5px rgba(24, 188, 242, 0.4))", "purpose": "Neon glow on cyan scene strokes only. UI chrome never glows or casts shadows." },
+      { "name": "scene-glow-amber", "value": "filter: drop-shadow(0 0 5px rgba(255, 179, 71, 0.4))", "purpose": "Neon glow on amber scene strokes only. UI chrome never glows or casts shadows." }
+    ],
+    "motion": [
+      { "name": "ease-rise", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The single easing voice (--ease-rise): hero rise, scroll reveals, workflow thread draw." },
+      { "name": "hero-rise", "value": "rise 1s var(--ease-rise), delays 0 / 0.08s / 0.16s / 0.26s / 0.36s", "purpose": "Hero entrance stagger: star, wordmark, tagline, subline, CTAs (translateY(16px) + fade)." },
+      { "name": "scroll-reveal", "value": "opacity + translateY(18px), 0.7s var(--ease-rise); nth-child staggers in 0.08s steps", "purpose": "[data-reveal] elements fade up when the IntersectionObserver (threshold 0.2, rootMargin -8% bottom) adds .inview; gated behind html.js — no-JS visitors see everything at rest." },
+      { "name": "line-draw", "value": "stroke-dashoffset 1 to 0 via pathLength=\"1\", 1s ease-out 0.25s; .slow variant 1.4s / 0.75s", "purpose": "Scene strokes draw themselves on reveal. .slow is the amber cloud-fallback arc: the cyan local link always draws first — the sequencing is semantic." },
+      { "name": "workflow-thread", "value": "transform scaleY(0) to scaleY(1), 1.6s var(--ease-rise) 0.2s", "purpose": "The amber safety-timeline thread draws down as the chain reveals; steps stagger at 0.12s each." },
+      { "name": "starfield-breathe", "value": "opacity 0.75 to 1, 7s ease-in-out infinite alternate", "purpose": "Ambient breathing of the fixed star dots." },
+      { "name": "cursor-blink", "value": "blink 1.1s steps(1) infinite", "purpose": "Terminal cursor in the installer scene." },
+      { "name": "press", "value": "transform scale(0.97), 0.16s ease-out on :active", "purpose": "Buttons and the copy button press down." },
+      { "name": "ease-state", "value": "0.2s ease", "purpose": "All hover/state transitions (background-color, color, border-color). Everything above is disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "condense", "value": "860px", "purpose": "Below: ground rules drop to one column; the versus comparison stacks to one centered column (max 26rem). The hero is unified — no swap at any width." },
+      { "name": "stack", "value": "720px", "purpose": "Below: says-table and steps stack to one column (step scenes cap at 17rem), buttons go full-width, workflow indents tighter, wide-scene SVG text bumps (labels 17→28px, small code 14→22px)." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Cyan pill CTA — the visitor's own next action; dark ink text for AA contrast; presses down on :active.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Get started</a>",
+      "css": ".ds-btn-primary { display: inline-block; padding: 0.85rem 1.9rem; border-radius: 999px; background: #18BCF2; color: #05121D; font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; font-weight: 600; font-size: 1.0625rem; text-decoration: none; transition: background-color 0.2s ease, transform 0.16s ease-out; } .ds-btn-primary:hover { background: #4FCDF6; } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #18BCF2; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline-outlined pill for secondary actions; border brightens on hover, presses down on :active.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">View on GitHub</a>",
+      "css": ".ds-btn-ghost { display: inline-block; padding: 0.85rem 1.9rem; border-radius: 999px; border: 1px solid rgba(184, 204, 224, 0.16); color: #E8EDF2; font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; font-weight: 600; font-size: 1.0625rem; text-decoration: none; transition: border-color 0.2s ease, transform 0.16s ease-out; } .ds-btn-ghost:hover { border-color: #B8CCE0; } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid #18BCF2; outline-offset: 3px; }"
+    },
+    {
+      "name": "Client Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Hairline pill naming a supported client; no fill, no state.",
+      "html": "<span class=\"ds-chip\">Claude Code</span>",
+      "css": ".ds-chip { display: inline-block; border: 1px solid rgba(184, 204, 224, 0.16); border-radius: 999px; padding: 0.35rem 1rem; color: #B8CCE0; font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; font-size: 0.9375rem; }"
+    },
+    {
+      "name": "Beta Badge",
+      "kind": "chip",
+      "refersTo": "beta-badge",
+      "description": "Amber outline pill labeling cloud features; amber = server/safe side.",
+      "html": "<span class=\"ds-beta\">Beta</span>",
+      "css": ".ds-beta { display: inline-block; padding: 0.15rem 0.65rem; border: 1px solid rgba(255, 179, 71, 0.55); border-radius: 999px; color: #FFB347; font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Code Bar",
+      "kind": "input",
+      "refersTo": "codebar",
+      "description": "The page's only panel: translucent night surface holding an install command and a cyan Copy button.",
+      "html": "<div class=\"ds-codebar\"><pre class=\"ds-codebar-pre\"><code class=\"ds-codebar-code\">curl -fsSL https://example.com/install.sh | bash</code></pre><button class=\"ds-codebar-copy\" type=\"button\">Copy</button></div>",
+      "css": ".ds-codebar { display: flex; align-items: stretch; border: 1px solid rgba(184, 204, 224, 0.16); border-radius: 10px; background: rgba(13, 21, 37, 0.6); overflow: hidden; max-width: 100%; } .ds-codebar-pre { margin: 0; padding: 0.9rem 1.1rem; overflow-x: auto; flex: 1 1 auto; min-width: 0; } .ds-codebar-code { color: #E8EDF2; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.9375rem; white-space: pre; } .ds-codebar-copy { flex: 0 0 auto; border: 0; border-left: 1px solid rgba(184, 204, 224, 0.16); background: transparent; color: #18BCF2; font: 600 0.9375rem/1 -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; padding: 0 1.25rem; cursor: pointer; min-width: 6em; transition: background-color 0.2s ease, color 0.2s ease, transform 0.16s ease-out; } .ds-codebar-copy:hover { background: rgba(24, 188, 242, 0.12); } .ds-codebar-copy:active { transform: scale(0.97); } .ds-codebar-copy:focus-visible { outline: 2px solid #18BCF2; outline-offset: 3px; }"
+    },
+    {
+      "name": "Says Row",
+      "kind": "custom",
+      "description": "Hairline-bottomed list row instead of a card: ink semibold quote (cyan = you) beside slate result (amber column = what the relay does).",
+      "html": "<div class=\"ds-says-row\"><p class=\"ds-says-quote\">“Check my automations for problems”</p><p class=\"ds-says-result\">Audits against 40+ rules — catches conflicts, dead triggers, and mistakes you’d never spot manually.</p></div>",
+      "css": ".ds-says-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2.5rem; padding: 1.4rem 0; border-top: 1px solid rgba(184, 204, 224, 0.16); border-bottom: 1px solid rgba(184, 204, 224, 0.16); font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; } .ds-says-quote { margin: 0; color: #E8EDF2; font-size: 1.1875rem; font-weight: 600; letter-spacing: -0.01em; } .ds-says-result { margin: 0; color: #B8CCE0; font-size: 1.0625rem; line-height: 1.65; }"
+    },
+    {
+      "name": "Safety Timeline Step",
+      "kind": "custom",
+      "description": "Signature component: amber-threaded workflow step with numbered circle node and amber code chip.",
+      "html": "<ol class=\"ds-workflow\"><li class=\"ds-workflow-step\"><h3 class=\"ds-workflow-h\">Audits itself</h3><p class=\"ds-workflow-p\">Reviews its own work afterwards. And <code class=\"ds-workflow-code\">revert</code> undoes the latest verified update where supported.</p></li></ol>",
+      "css": ".ds-workflow { list-style: none; counter-reset: wf; margin: 0; padding: 0; position: relative; font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; } .ds-workflow::before { content: ''; position: absolute; left: 17px; top: 10px; bottom: 10px; width: 1px; background: linear-gradient(180deg, rgba(255, 179, 71, 0.7), rgba(255, 179, 71, 0.15)); } .ds-workflow-step { counter-increment: wf; position: relative; padding: 0 0 0 4rem; } .ds-workflow-step::before { content: counter(wf); position: absolute; left: 0; top: -2px; width: 35px; height: 35px; border-radius: 50%; border: 1px solid rgba(255, 179, 71, 0.55); background: #0D1525; color: #FFB347; font-weight: 700; font-size: 0.9375rem; display: grid; place-items: center; } .ds-workflow-h { margin: 0; color: #E8EDF2; font-size: 1.25rem; font-weight: 600; line-height: 1.2; } .ds-workflow-p { margin: 0.35rem 0 0; max-width: 52ch; color: #B8CCE0; font-size: 1.0625rem; line-height: 1.65; } .ds-workflow-code { color: #FFB347; background: rgba(255, 179, 71, 0.1); border: 1px solid rgba(255, 179, 71, 0.3); border-radius: 5px; padding: 0.05em 0.35em; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.9em; }"
+    },
+    {
+      "name": "Ground Rule Item",
+      "kind": "custom",
+      "description": "Hairline-topped row pairing a 1.5px single-stroke amber line icon with body copy.",
+      "html": "<div class=\"ds-rule\"><svg class=\"ds-rule-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"10.5\" width=\"14\" height=\"9\" rx=\"1.5\"/><path d=\"M8 10.5V8a4 4 0 0 1 8 0v2.5\"/><circle cx=\"12\" cy=\"15\" r=\"1.2\"/></svg><p class=\"ds-rule-p\">Relay credentials stay out of the AI.</p></div>",
+      "css": ".ds-rule { display: flex; gap: 0.9rem; align-items: flex-start; border-top: 1px solid rgba(184, 204, 224, 0.16); padding-top: 1.1rem; font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; } .ds-rule-icon { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 0.15rem; fill: none; stroke: #FFB347; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; } .ds-rule-p { margin: 0; color: #B8CCE0; font-size: 1.0625rem; line-height: 1.65; }"
+    },
+    {
+      "name": "Neon Scene",
+      "kind": "custom",
+      "description": "Signature imagery: authored inline-SVG neon linework — glowing cyan (local) and amber (safe) 2px strokes, non-glowing neutral props, scene text ramp.",
+      "html": "<svg class=\"ds-scene\" viewBox=\"0 0 240 160\" role=\"img\" aria-label=\"A terminal window with an amber one-time code\"><rect class=\"ds-scene-n\" x=\"20\" y=\"24\" width=\"200\" height=\"112\" rx=\"10\"/><path class=\"ds-scene-c\" d=\"M36 52h60\"/><path class=\"ds-scene-c\" d=\"M36 68h40\"/><text class=\"ds-scene-code\" x=\"36\" y=\"110\">428 316</text></svg>",
+      "css": ".ds-scene { display: block; width: 100%; height: auto; overflow: visible; } .ds-scene rect, .ds-scene path { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; } .ds-scene-c { stroke: #18BCF2; filter: drop-shadow(0 0 5px rgba(24, 188, 242, 0.4)); } .ds-scene-a { stroke: #FFB347; filter: drop-shadow(0 0 5px rgba(255, 179, 71, 0.4)); } .ds-scene-n { stroke: rgba(184, 204, 224, 0.5); } .ds-scene text { stroke: none; } .ds-scene-code { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 22px; font-weight: 600; fill: #FFB347; letter-spacing: 0.1em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Legible Cosmos",
+    "overview": "A quiet night sky that you read, not admire. The page is a single dark gradient — near-black blue deepening as you scroll — dotted with a handful of faint, gently breathing stars, and everything on it is set directly on that night: no cards, no panels, no shadows on UI chrome. Content is organized by 1px hairlines, the way a printed protocol is ruled, because the product's promise is a safety protocol you can literally read. The atmosphere is honest, precise, anti-hype; the layout is generous whitespace and typography, never decoration.\n\nTwo lights carry all meaning. Cyan (#18BCF2) is your side — local, the client, the action you take. Amber (#FFB347) is the server side — the relay, the safety workflow, the things that guard you. These semantics are fixed and never swapped; a visitor who has scrolled the page once can read every diagram by color alone. All imagery is authored inline-SVG neon scenes: thin round-capped strokes in cyan, amber, and a muted neutral, allowed a subtle glow, drawing themselves in as they scroll into view. The only brand mark is the NOVA star SVG, shipped untouched.\n\nThe build is deliberately self-contained — system font stack, no webfonts, no CDNs, no trackers — mirroring the product's own no-tunnel, no-analytics stance. Motion is a narrative grammar, not garnish: a staggered hero rise, scroll-triggered reveals, and semantic line drawing (the local link draws before the cloud fallback because that is the product's priority order). All motion is gated behind a `js` class (no-JS visitors see everything) and fully disabled under reduced motion.",
+    "keyCharacteristics": [
+      "Flat night-gradient world; content sits on the sky, not on cards",
+      "Hairline-ruled rows (1px, rgba(184,204,224,0.16)) as the primary structural device",
+      "Binding two-accent semantics: cyan = local/client, amber = server/safe",
+      "System sans only; hierarchy from weight and color, not typefaces",
+      "Authored inline-SVG neon scenes (2px strokes, round caps, subtle glow) as the only imagery",
+      "Sparse fixed star dots at ~0.2–0.3 white opacity, breathing on a 7s cycle",
+      "Pill-shaped interactive elements; soft radii on surfaces (10px) and scene tiles (24px)",
+      "Motion as narrative: staggered hero rise, scroll reveals, semantic line drawing — all reduced-motion safe and no-JS safe"
+    ],
+    "rules": [
+      { "name": "The Two Lights Rule", "body": "Cyan means local/client; amber means server/safe. The assignments are never swapped, and neither accent is ever used as mere decoration — if a colored element doesn't carry that meaning, it stays neutral.", "section": "colors" },
+      { "name": "The One Hairline Rule", "body": "All borders and dividers in UI chrome use the single value rgba(184,204,224,0.16) at 1px. No second border color, no heavier weights.", "section": "colors" },
+      { "name": "The No-Webfont Rule", "body": "The system stack is the brand voice. No font files, no CDN fonts, ever — self-containment is part of the product promise.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "UI chrome never casts a shadow and never glows — including (especially) the star logo. Only authored scene linework may glow, and only via the fixed 5px drop-shadow at 0.4 alpha of its own stroke color. If a chrome element needs separation, it gets a hairline, not elevation.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do ship the star only as its original SVGs (assets/logo.svg, assets/icon.svg) — placed, sized, and nothing else.",
+      "Do keep cyan (#18BCF2) for local/client meaning and amber (#FFB347) for server/safe meaning in every new surface, scene, and column label.",
+      "Do structure new content as hairline-topped rows and grids on the bare gradient, reusing rgba(184,204,224,0.16) at 1px.",
+      "Do keep WCAG AA contrast on the dark theme: body text in #B8CCE0, lead text in #E8EDF2, and #05121D text on cyan fills.",
+      "Do author new imagery as inline-SVG neon scenes: 2px single strokes, round caps, no fills, cyan/amber glow at the fixed 5px/0.4-alpha drop-shadow, Scene Neutral for props, role=\"img\" with a real aria-label.",
+      "Do gate any new motion behind html.js and [data-reveal], use --ease-rise as the easing voice, keep line-draw sequencing semantic (local before fallback), and disable it all under prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't redraw, distort, glow, shadow, or CSS-rebuild the star — the mark is sacred and ships only as the vendored SVG.",
+      "Don't swap or dilute the accent semantics — no cyan safety elements, no amber CTAs, no third accent color.",
+      "Don't load webfonts, CDN assets, or any external resource; the page stays fully self-contained (all imagery is inline SVG).",
+      "Don't introduce cards, box-shadows, or UI-chrome glows; glow belongs to scene linework only, and separation comes from hairlines and whitespace.",
+      "Don't let the page scroll horizontally at any width — wide content (code, tables) scrolls inside its own container.",
+      "Don't make content depend on JavaScript or motion: no-JS and reduced-motion visitors must see the complete page at rest."
+    ]
+  }
+}
