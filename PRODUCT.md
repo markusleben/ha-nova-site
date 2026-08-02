@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML/CSS per brief (PROMPT.md): one `index.html` + one `styles.css` in the repo root, no framework, no build step, no CDNs/webfonts/trackers. Only JavaScript: a few lines of vanilla JS for copy buttons. Deploy target: GitHub Pages ("Deploy from branch", `main`, `/root`) with custom domain `https://hanova.app/` (registered 2026-08; CNAME file in repo root, canonical/OG URLs point there; `markusleben.github.io/ha-nova-site` remains the fallback).
+Static HTML/CSS (per the original build brief, now deleted — see git history for PROMPT.md): one `index.html` + one `styles.css` in the repo root, no framework, no build step, no CDNs/webfonts/trackers. Only JavaScript: a few lines of vanilla JS for copy buttons. Deploy target: GitHub Pages ("Deploy from branch", `main`, `/root`) with custom domain `https://hanova.app/` (registered 2026-08; CNAME file in repo root, canonical/OG URLs point there; `markusleben.github.io/ha-nova-site` remains the fallback).
 
 ## Users
 
@@ -27,12 +27,14 @@ Safety is the core promise, not magic: every change is previewed, confirmed, and
 ## Operating Context
 
 - The site is and stays a **one-pager** — documentation remains in the product repo on GitHub.
-- Collaboration mode is binding (PROMPT.md): build a full local draft, show desktop **and** mobile screenshots plus design decisions, iterate on feedback; **no push, no Pages activation without Markus's explicit go.**
+- Collaboration mode is binding (recorded in CLAUDE.md): build a full local draft, show desktop **and** mobile screenshots plus design decisions, iterate on feedback; **no push, no Pages activation without Markus's explicit go.**
 - Quality self-check before every showing: screenshots both widths, every link clicked, both copy buttons tested, claims check, OG meta verified.
 
 ## Capabilities and Constraints
 
-Hard content rules (non-negotiable, from PROMPT.md):
+**Source of truth (standing rule, from Markus 2026-08-02): the product repo `markusleben/ha-nova` — its README and docs — is always the truth. Every time this page is filled or updated with content, the repo must be checked first; PROMPT.md's copy blocks are a snapshot and can lag behind.** Verified repo facts as of 2026-08-02: the six-digit code comes from the NOVA page in the Home Assistant sidebar (not the wizard), is one-time and expires in minutes; tokenless pairing applies to App installs only — Container/Core use a token-based standalone-container setup; the safety workflow has 7 steps (adds "Offers a safe test" and "Offers a way back", with the honesty clause that HA NOVA announces when no automatic revert exists); revoke is one click from NOVA on App installs; an optional installation census exists, off by default, strictly opt-in; Cloud (Beta) requires HA OS/Supervised, a Nabu Casa subscription with Remote UI, and a desktop session; the client is named "Hermes Agent" (preview); the README carries an "actively developed — back up your configs" notice.
+
+Hard content rules (non-negotiable, from the original brief, still binding):
 
 - Only the claims/copy blocks listed in PROMPT.md — nothing invented: no testimonials, user counts, benchmarks, or feature promises.
 - No version numbers anywhere. Cloud access always labeled **Beta**.
@@ -43,11 +45,11 @@ Hard content rules (non-negotiable, from PROMPT.md):
 - No private URLs, no real entity/instance data, no screenshots of third-party UIs.
 - Page language: **English**.
 - Responsive, never horizontal page scroll; code blocks scroll internally.
-- Binding copy blocks (tagline, hero subline, you-say examples, safety workflow, ground rules, cloud paragraph, prerequisites sentence, links) live in PROMPT.md §"Verbindliche Copy-Bausteine".
+- Copy (tagline, you-say examples, safety workflow, ground rules, cloud paragraph, prerequisites, links) follows the product repo's README verbatim or closely paraphrased; the repo is the source of truth (see rule above).
 
 ## Brand Commitments
 
-Binding visual constraints volunteered in the brief (recorded, not expanded — see PROMPT.md §"Design-System"):
+Binding visual constraints from the original brief (recorded, not expanded; the built system is documented in DESIGN.md):
 
 - Dark cosmos theme: background gradient `#0A0E1A → #0D1525 → #0A1628`; headline `#E8EDF2`; secondary `#B8CCE0`; accents **cyan `#18BCF2`** (= local/client) and **amber `#FFB347`** (= server/safe) — semantics must not be swapped. Sparse small white star dots (opacity ~0.3) allowed.
 - Typography: system sans, generous whitespace, no webfonts.
@@ -56,7 +58,7 @@ Binding visual constraints volunteered in the brief (recorded, not expanded — 
 
 ## Evidence on Hand
 
-Vendored brand assets in `assets/` (from released product state): `logo.svg`, `logo-dark-text.svg`, `icon.svg` (favicon source), `hero-banner.png` (hero), `pairing-flow.png` (3 steps), `cloud-fallback.png` (cloud section), `how-it-works-v3.png` (architecture), `skills-vs-tools.png` (optional differentiation), `social-preview.png` (OG image, absolute URL). No testimonials, user counts, or benchmarks exist — future work must not fabricate them.
+Vendored brand assets in `assets/` (from released product state): `logo.svg`, `logo-dark-text.svg`, `icon.svg` (favicon source + hero star + in-scene star), `social-preview.png` (OG image, absolute URL), plus rendered bitmaps of the original icon (`apple-touch-icon.png`, `favicon-64.png`). The PNG diagrams (`hero-banner.png`, `pairing-flow.png`, `cloud-fallback.png`, `how-it-works-v3.png`, `skills-vs-tools.png`) are no longer used on the page (replaced by authored inline-SVG scenes since revision 2) but stay vendored as brand reference. No testimonials, user counts, or benchmarks exist — future work must not fabricate them.
 
 ## Product Principles
 

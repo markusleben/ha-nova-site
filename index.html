@@ -69,17 +69,17 @@ the verdict, and DESIGN.md
           <path class="d c" d="M40 102 h44" pathLength="1"/>
           <rect class="cursor" x="92" y="95" width="9" height="14" fill="#18BCF2" stroke="none"/>
         </svg>
-        <strong>Run the installer.</strong> One command for macOS, Linux, or Windows.
+        <strong>Run the installer.</strong> One command for macOS, Linux, or Windows. The wizard finds your Home&nbsp;Assistant and sets up the NOVA Relay App.
       </li>
       <li data-reveal>
-        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The wizard screen with a Connect a device button and the one-time code 428 316">
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The NOVA page in Home Assistant with a Connect a device button and the one-time code 428 316">
           <rect class="d n" x="40" y="8" width="160" height="144" rx="12"/>
           <image href="assets/icon.svg" x="104" y="22" width="32" height="32"/>
           <rect class="d c" x="60" y="72" width="120" height="28" rx="14"/>
           <text x="120" y="90" text-anchor="middle" class="t-btn">Connect a device</text>
           <text x="120" y="136" text-anchor="middle" class="t-code">428 316</text>
         </svg>
-        <strong>Connect a device.</strong> The wizard shows a six-digit one-time code.
+        <strong>Connect a device.</strong> On the NOVA page in your Home&nbsp;Assistant sidebar; the wizard opens it at the right spot for you.
       </li>
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A paired laptop confirmed with a check mark">
@@ -87,7 +87,7 @@ the verdict, and DESIGN.md
           <path class="d c" d="M24 124 h144" pathLength="1"/>
           <path class="d a" d="M164 76 l16 18 l34 -42" stroke-width="3" pathLength="1"/>
         </svg>
-        <strong>Enter the code.</strong> Your assistant is paired individually, revocable anytime.
+        <strong>Enter the code.</strong> One-time, expires in minutes. Your assistant is paired individually, revocable anytime from NOVA.
       </li>
     </ol>
   </section>
@@ -145,7 +145,15 @@ the verdict, and DESIGN.md
       </li>
       <li data-reveal>
         <h3>Audits itself</h3>
-        <p>Reviews its own work afterwards. And <code>revert</code> undoes the latest verified update where supported.</p>
+        <p>Reviews its own work afterwards: mistakes, conflicts, reliability issues.</p>
+      </li>
+      <li data-reveal>
+        <h3>Offers a safe test</h3>
+        <p>After saving an automation or script, you get a test plan matched to the risk — from a zero-impact logic check to a real run that names which devices will switch before you say go.</p>
+      </li>
+      <li data-reveal>
+        <h3>Offers a way back</h3>
+        <p>Reply <code>revert</code> to undo the latest verified update. Where no automatic revert exists, HA NOVA says so before writing.</p>
       </li>
     </ol>
     <h3 class="rules-title">Ground rules</h3>
@@ -156,7 +164,7 @@ the verdict, and DESIGN.md
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
-        <p>Every device is paired on its own — a one-time six-digit code, revocable anytime.</p>
+        <p>Every device is paired on its own — a one-time, short-lived six-digit code, revocable with one click from NOVA.</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
@@ -167,11 +175,12 @@ the verdict, and DESIGN.md
         <p>No HA NOVA-operated cloud relay or usage analytics.</p>
       </li>
     </ul>
+    <p class="note">An optional installation census exists: off by default, strictly opt-in, and it can be switched off again anytime.</p>
   </section>
 
   <section class="section" id="cloud">
     <h2>At home and away <span class="beta">Beta</span></h2>
-    <p class="section-lead">Local access stays first; your own Home&nbsp;Assistant Cloud subscription becomes the automatic fallback — no manual URL switching, and credentials stay in your OS’s native credential store.</p>
+    <p class="section-lead">Local access stays first; your own Home&nbsp;Assistant Cloud subscription becomes the automatic fallback — no manual URL switching, and credentials stay in your OS’s native credential store. Requires HA&nbsp;OS or Supervised with Remote UI enabled and a desktop session; Container, Core, and headless setups stay local-only.</p>
     <figure class="figure" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="Your machine connects to Home Assistant directly over a locked local link; your Home Assistant Cloud account arches above as the automatic Beta fallback">
         <!-- direct local link, first light -->
@@ -307,19 +316,19 @@ the verdict, and DESIGN.md
 
   <section class="section" id="get-started">
     <h2>Get started</h2>
-    <p class="section-lead">You need Home&nbsp;Assistant — any install type. HA&nbsp;OS and Supervised get the NOVA Relay App via the wizard; Container and Core run the same relay as a standalone container.</p>
+    <p class="section-lead">You need Home&nbsp;Assistant — any install type. HA&nbsp;OS and Supervised get the NOVA Relay App via the wizard; Container and Core run the same relay as a standalone container with a token-based setup.</p>
     <div class="install">
       <div class="install-block" data-reveal>
         <p class="install-label">macOS / Linux</p>
         <div class="codebar">
-          <pre><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code></pre>
+          <pre tabindex="0" aria-label="Install command for macOS and Linux"><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code></pre>
           <button class="copy" type="button">Copy</button>
         </div>
       </div>
       <div class="install-block" data-reveal>
         <p class="install-label">Windows (PowerShell)</p>
         <div class="codebar">
-          <pre><code>irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex</code></pre>
+          <pre tabindex="0" aria-label="Install command for Windows PowerShell"><code>irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex</code></pre>
           <button class="copy" type="button">Copy</button>
         </div>
       </div>
@@ -331,8 +340,9 @@ the verdict, and DESIGN.md
       <li>Codex CLI</li>
       <li>OpenCode</li>
       <li>Google Antigravity</li>
-      <li>Hermes <span class="preview">preview</span></li>
+      <li>Hermes Agent <span class="preview">preview</span></li>
     </ul>
+    <p class="note">Actively developed — back up your configs before letting AI touch anything.</p>
   </section>
 </main>
 
