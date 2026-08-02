@@ -39,7 +39,8 @@
       { "name": "scroll-reveal", "value": "opacity + translateY(18px), 0.7s var(--ease-rise); nth-child staggers in 0.08s steps", "purpose": "[data-reveal] elements fade up when the IntersectionObserver (threshold 0.2, rootMargin -8% bottom) adds .inview; gated behind html.js — no-JS visitors see everything at rest." },
       { "name": "line-draw", "value": "stroke-dashoffset 1 to 0 via pathLength=\"1\", 1s ease-out 0.25s; .slow variant 1.4s / 0.75s", "purpose": "Scene strokes draw themselves on reveal. .slow is the amber cloud-fallback arc: the cyan local link always draws first — the sequencing is semantic." },
       { "name": "workflow-thread", "value": "transform scaleY(0) to scaleY(1), 1.6s var(--ease-rise) 0.2s", "purpose": "The amber safety-timeline thread draws down as the chain reveals; steps stagger at 0.12s each." },
-      { "name": "starfield-breathe", "value": "opacity 0.75 to 1, 7s ease-in-out infinite alternate", "purpose": "Ambient breathing of the fixed star dots." },
+      { "name": "starfield-twinkle", "value": "opacity 0.68 to 1; fine grain 21s (-9s), shimmer layers 9s and 11s (-6s), ease-in-out infinite alternate", "purpose": "Three of four star layers (html::before/::after, body::before) shimmer at different periods so the sky breathes asynchronously and reads organic, never synchronized." },
+      { "name": "starfield-flare", "value": "opacity 0.45 base, soft bloom to 1 at 76-84%; layer 1 (body::after, 3 stars) 16s, layer 2 (main::before, 2 stars) 19s with -7s delay", "purpose": "Five halo stars on two desynced flare cycles stay quiet most of the time, then softly bloom one group at a time — the perceptible starlight moment; white only, accents never decorate the sky." },
       { "name": "cursor-blink", "value": "blink 1.1s steps(1) infinite", "purpose": "Terminal cursor in the installer scene." },
       { "name": "press", "value": "transform scale(0.97), 0.16s ease-out on :active", "purpose": "Buttons and the copy button press down." },
       { "name": "ease-state", "value": "0.2s ease", "purpose": "All hover/state transitions (background-color, color, border-color). Everything above is disabled under prefers-reduced-motion." }
@@ -128,7 +129,7 @@
       "Binding two-accent semantics: cyan = local/client, amber = server/safe",
       "System sans only; hierarchy from weight and color, not typefaces",
       "Authored inline-SVG neon scenes (2px strokes, round caps, subtle glow) as the only imagery",
-      "Sparse fixed star dots at ~0.2–0.3 white opacity, breathing on a 7s cycle",
+      "Sparse fixed star dots at ~0.2–0.3 white opacity on four layers with three behaviors: near-static grain, asynchronous shimmer, and softly flaring halo stars (0.1-alpha white halos)",
       "Pill-shaped interactive elements; soft radii on surfaces (10px) and scene tiles (24px)",
       "Motion as narrative: staggered hero rise, scroll reveals, semantic line drawing — all reduced-motion safe and no-JS safe"
     ],

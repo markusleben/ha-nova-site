@@ -17,6 +17,7 @@ colors:
   star-dot: "rgba(255, 255, 255, 0.3)"
   star-dot-mid: "rgba(255, 255, 255, 0.25)"
   star-dot-faint: "rgba(255, 255, 255, 0.2)"
+  star-halo: "rgba(255, 255, 255, 0.1)"
 typography:
   display:
     fontFamily: "-apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif"
@@ -141,7 +142,7 @@ The build is deliberately self-contained — system font stack, no webfonts, no 
 - Binding two-accent semantics: cyan = local/client, amber = server/safe
 - System sans only; hierarchy from weight and color, not typefaces
 - Authored inline-SVG neon scenes (2px strokes, round caps, subtle glow) as the only imagery
-- Sparse fixed star dots at ~0.2–0.3 white opacity, breathing on a 7s cycle
+- Sparse fixed star dots at ~0.2–0.3 white opacity on two asynchronously twinkling layers; a few brighter stars carry a soft white halo (0.1 alpha)
 - Pill-shaped interactive elements; soft radii on surfaces (10px) and scene tiles (24px)
 - Motion as narrative: staggered hero rise, scroll reveals, semantic line drawing — all reduced-motion safe and no-JS safe
 
@@ -162,7 +163,7 @@ A near-monochrome night-blue field with exactly two accent lights whose meanings
 - **Hairline** (rgba(184,204,224,0.16)): Every rule, border, and divider in UI chrome. One value, everywhere.
 - **Scene Neutral** (rgba(184,204,224,0.5)): The muted stroke for non-semantic scene linework (chassis, frames, props); it never glows.
 - **Panel Night** (rgba(13,21,37,0.6)): The only translucent surface, reserved for install code bars.
-- **Star dots**: pure white radial-gradient points, 1–1.5px, opacity 0.2–0.3, `position: fixed` behind the page, breathing 0.75→1 opacity over 7s.
+- **Star dots**: pure white radial-gradient points, 0.8–2px, opacity 0.2–0.3, split across four `position: fixed` layers (`html::before/::after`, `body::before/::after`): near-static fine grain (21s), two shimmer layers (9s / 11s, phase-shifted, 0.68→1), and five brighter stars with a 6–7px halo at **Star Halo** (rgba(255,255,255,0.1)) split over two flare layers (16s and 19s with −7s phase, `main::before`) so their soft flares wander instead of syncing. Halos stay white — accents never decorate the sky.
 
 ### Named Rules
 **The Two Lights Rule.** Cyan means local/client; amber means server/safe. The assignments are never swapped, and neither accent is ever used as mere decoration — if a colored element doesn't carry that meaning, it stays neutral.
@@ -204,7 +205,7 @@ Responsive behavior (content never scrolls the page horizontally; code bars scro
 - **Hero entrance**: staggered rise (translateY(16px) + fade, 1s) at delays 0 / 0.08s / 0.16s / 0.26s / 0.36s for star, wordmark, tagline, subline, CTAs.
 - **Scroll reveals**: `[data-reveal]` elements fade up 18px over 0.7s when an IntersectionObserver (threshold 0.2, rootMargin −8% bottom) marks them `.inview`; siblings inside groups stagger in gentle 0.08s steps (workflow steps 0.12s steps).
 - **Line drawing**: scene strokes carry `pathLength="1"` and draw via a dash transition (1s ease-out, 0.25s delay); the `.slow` variant (1.4s, 0.75s delay) is reserved for the cloud fallback arc so the cyan local link always draws first and the amber fallback second — the sequencing is semantic, not decorative.
-- **Ambient**: the amber workflow thread scaleY-draws over 1.6s as the chain reveals; the starfield breathes (7s alternate); the terminal cursor blinks (`steps(1)`, 1.1s); buttons and the copy button press down with `scale(0.97)` over 0.16s on :active.
+- **Ambient**: the amber workflow thread scaleY-draws over 1.6s as the chain reveals; four star layers move in three behaviors (near-static grain 21s, shimmer 9s/11s phase-shifted, halo stars flaring softly on a 16s cycle); the terminal cursor blinks (`steps(1)`, 1.1s); buttons and the copy button press down with `scale(0.97)` over 0.16s on :active.
 - **Safety nets**: everything above is gated behind `html.js` (set by a one-line head script) — without JS the page is fully visible and static — and `prefers-reduced-motion: reduce` disables every animation and transition listed here.
 
 ## Elevation & Depth

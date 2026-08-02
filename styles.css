@@ -31,13 +31,39 @@ body {
   overflow-x: hidden;
 }
 
-/* Sparse star dots, fixed so they hold still while the page scrolls */
-body::before {
+/* Sparse star dots, fixed so they hold still while the page scrolls.
+   Four layers, three behaviors, like a real night sky: near-static fine grain,
+   two shimmer layers offset in phase, and halo stars that softly flare. */
+html::before,
+html::after,
+body::before,
+body::after,
+main::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
+}
+
+/* finest grain: barely moves */
+html::before {
+  background-image:
+    radial-gradient(0.8px 0.8px at 48% 12%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 5% 58%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 36% 26%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 64% 5%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 27% 41%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 88% 72%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 52% 55%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 14% 96%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 76% 91%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(0.8px 0.8px at 41% 72%, rgba(255, 255, 255, 0.2) 50%, transparent 51%);
+  animation: twinkle 21s ease-in-out -9s infinite alternate;
+}
+
+/* shimmer layer A */
+body::before {
   background-image:
     radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
     radial-gradient(1.5px 1.5px at 78% 9%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
@@ -46,15 +72,54 @@ body::before {
     radial-gradient(1.5px 1.5px at 90% 47%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
     radial-gradient(1px 1px at 8% 84%, rgba(255, 255, 255, 0.25) 50%, transparent 51%),
     radial-gradient(1px 1px at 67% 76%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
-    radial-gradient(1.5px 1.5px at 42% 93%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
-    radial-gradient(1px 1px at 23% 5%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
-    radial-gradient(1px 1px at 96% 88%, rgba(255, 255, 255, 0.25) 50%, transparent 51%);
-  animation: breathe 7s ease-in-out infinite alternate;
+    radial-gradient(1px 1px at 95% 15%, rgba(255, 255, 255, 0.25) 50%, transparent 51%);
+  animation: twinkle 9s ease-in-out infinite alternate;
 }
 
-@keyframes breathe {
-  from { opacity: 0.75; }
+/* shimmer layer B, phase-shifted */
+html::after {
+  background-image:
+    radial-gradient(1.5px 1.5px at 42% 93%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(1px 1px at 23% 5%, rgba(255, 255, 255, 0.2) 50%, transparent 51%),
+    radial-gradient(1px 1px at 96% 88%, rgba(255, 255, 255, 0.25) 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 38%, rgba(255, 255, 255, 0.25) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 7% 31%, rgba(255, 255, 255, 0.25) 50%, transparent 51%),
+    radial-gradient(1px 1px at 58% 82%, rgba(255, 255, 255, 0.25) 50%, transparent 51%),
+    radial-gradient(2px 2px at 33% 47%, rgba(255, 255, 255, 0.25) 50%, transparent 51%),
+    radial-gradient(1px 1px at 82% 58%, rgba(255, 255, 255, 0.2) 50%, transparent 51%);
+  animation: twinkle 11s ease-in-out -6s infinite alternate;
+}
+
+/* halo stars: quiet most of the cycle, then a soft flare */
+body::after {
+  background-image:
+    radial-gradient(7px 7px at 84% 28%, rgba(255, 255, 255, 0.1) 30%, transparent 70%),
+    radial-gradient(2px 2px at 84% 28%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
+    radial-gradient(7px 7px at 18% 44%, rgba(255, 255, 255, 0.1) 30%, transparent 70%),
+    radial-gradient(1.5px 1.5px at 18% 44%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
+    radial-gradient(6px 6px at 61% 68%, rgba(255, 255, 255, 0.1) 30%, transparent 70%),
+    radial-gradient(1.5px 1.5px at 61% 68%, rgba(255, 255, 255, 0.3) 50%, transparent 51%);
+  animation: flare 16s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.68; }
   to   { opacity: 1; }
+}
+
+/* two more halo stars on their own rhythm, so flares wander instead of syncing */
+main::before {
+  background-image:
+    radial-gradient(6px 6px at 8% 11%, rgba(255, 255, 255, 0.1) 30%, transparent 70%),
+    radial-gradient(1.5px 1.5px at 8% 11%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
+    radial-gradient(7px 7px at 47% 80%, rgba(255, 255, 255, 0.1) 30%, transparent 70%),
+    radial-gradient(2px 2px at 47% 80%, rgba(255, 255, 255, 0.3) 50%, transparent 51%);
+  animation: flare 19s ease-in-out -7s infinite;
+}
+
+@keyframes flare {
+  0%, 62%, 100% { opacity: 0.45; }
+  76%, 84% { opacity: 1; }
 }
 
 img {
@@ -709,7 +774,7 @@ a:focus-visible {
 
   .hero-star, .hero-brand, .hero-tagline, .hero-sub, .hero-ctas { animation: none; }
 
-  body::before { animation: none; }
+  html::before, html::after, body::before, body::after, main::before { animation: none; }
 
   .cursor { animation: none; }
 
