@@ -39,3 +39,4 @@ Das Repo gewinnt jeden Konflikt. Verifizierte Fakten mit Datum in PRODUCT.md nac
 2. Feedback-Runden, bei Geschmacksfragen lieber 2 Varianten zeigen.
 3. **Kein Commit, Push oder Deploy ohne ausdrückliches Go.**
 4. Inhalts-Sync auf Zuruf („sync mit dem README") → Seite gegen aktuelles Produkt-README diffen, Änderungen vor Einbau zeigen.
+5. Seite und Produkt sind immer im Sync: `.github/workflows/readme-sync.yml` prüft täglich (`scripts/check-sync.sh`) gegen das Live-README und öffnet bei Drift ein Issue. Nach jedem Sync `.readme-sync` auf den sha256 des abgeglichenen READMEs setzen. Release-Copy liegt als Draft-PR bereit und wird erst nach dem finalen stable-Tag gemergt.
