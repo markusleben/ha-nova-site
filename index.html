@@ -134,7 +134,7 @@ the verdict, and DESIGN.md
 
   <section class="section section-safety" id="safe-by-design">
     <h2>Safe by design</h2>
-    <p class="section-lead">Safety is the product, not a setting. Every change runs the same workflow.</p>
+    <p class="section-lead">Safety is the product, not a setting. Automations and scripts run the full workflow below; helpers, dashboards, and device control are previewed and verified.</p>
     <ol class="workflow" data-reveal>
       <li data-reveal>
         <h3>Researches first</h3>
@@ -147,6 +147,10 @@ the verdict, and DESIGN.md
       <li data-reveal>
         <h3>You approve</h3>
         <p>Nothing is written without your yes, and deletes need a specific confirmation code.</p>
+      </li>
+      <li data-reveal>
+        <h3>Captures a recovery point</h3>
+        <p>Before a covered delete or full replacement, HA NOVA snapshots the item it is about to change, so “gone” has a way back.</p>
       </li>
       <li data-reveal>
         <h3>Writes and verifies</h3>
@@ -162,7 +166,7 @@ the verdict, and DESIGN.md
       </li>
       <li data-reveal>
         <h3>Offers a way back</h3>
-        <p>Reply <code>revert</code> to undo the latest verified update. Where no automatic revert exists, HA NOVA says so before writing.</p>
+        <p>Reply <code>revert</code> to undo the latest verified update. Deleted automations, scripts, scenes, dashboards, and storage helpers can be restored from their config snapshot; beyond that, a Home&nbsp;Assistant Backup. Covers changes made through HA NOVA.</p>
       </li>
     </ol>
     <h3 class="rules-title">Ground rules</h3>
@@ -173,7 +177,7 @@ the verdict, and DESIGN.md
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
-        <p>Every device is paired on its own: a one-time, short-lived six-digit code, revocable with one click from NOVA.</p>
+        <p>Every device is paired on its own: a one-time, short-lived six-digit code, revocable with one click from NOVA on App installs.</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
@@ -189,7 +193,7 @@ the verdict, and DESIGN.md
 
   <section class="section" id="cloud">
     <h2>At home and away <span class="beta">Beta</span></h2>
-    <p class="section-lead">Local access stays first; your own Home&nbsp;Assistant Cloud subscription becomes the automatic fallback — no manual URL switching, and credentials stay in your OS’s native credential store. Requires HA&nbsp;OS or Supervised with Remote UI enabled and a desktop session; Container, Core, and headless setups stay local-only.</p>
+    <p class="section-lead">Local access stays first; your own Home&nbsp;Assistant Cloud subscription becomes the automatic fallback — no manual URL switching, and credentials stay in your OS’s native credential store. Requires HA&nbsp;OS or Supervised with Remote UI enabled and a desktop session for the one-time authorization; Container, Core, WSL, and headless setups stay local-only.</p>
     <figure class="figure" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="Your machine connects to Home Assistant directly over a locked local link; your Home Assistant Cloud account arches above as the automatic Beta fallback">
         <!-- direct local link, first light -->
@@ -225,7 +229,7 @@ the verdict, and DESIGN.md
 
   <section class="section" id="how-it-works">
     <h2>How it works</h2>
-    <p class="section-lead">A lean NOVA Relay runs as an App on your Home&nbsp;Assistant server and is the only component that talks to Home&nbsp;Assistant. Everything the AI knows lives in readable markdown skills on your machine. The relay stays dumb; the skills stay smart.</p>
+    <p class="section-lead">A lean NOVA Relay runs as an App on your Home&nbsp;Assistant server and, on the local path, is the only component that talks to Home&nbsp;Assistant. Everything the AI knows lives in readable markdown skills on your machine. The relay stays dumb; the skills stay smart.</p>
     <figure class="figure" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 900 360" role="img" aria-label="Architecture: your machine with markdown skills talks over an encrypted link to the NOVA Relay, which alone connects to Home Assistant">
         <!-- links -->

@@ -32,11 +32,11 @@ Safety is the core promise, not magic: every change is previewed, confirmed, and
 
 ## Capabilities and Constraints
 
-**Source of truth (standing rule, from Markus 2026-08-02): the product repo `markusleben/ha-nova` — its README and docs — is always the truth. Every time this page is filled or updated with content, the repo must be checked first; PROMPT.md's copy blocks are a snapshot and can lag behind.** Verified repo facts as of 2026-08-02: the six-digit code comes from the NOVA page in the Home Assistant sidebar (not the wizard), is one-time and expires in minutes; tokenless pairing applies to App installs only — Container/Core use a token-based standalone-container setup; the safety workflow has 7 steps (adds "Offers a safe test" and "Offers a way back", with the honesty clause that HA NOVA announces when no automatic revert exists); revoke is one click from NOVA on App installs; an optional installation census exists, off by default, strictly opt-in; Cloud (Beta) requires HA OS/Supervised, a Nabu Casa subscription with Remote UI, and a desktop session; the client is named "Hermes Agent" (preview); the README carries an "actively developed — back up your configs" notice.
+**Source of truth (standing rule, from Markus 2026-08-02): the product repo `markusleben/ha-nova` — its README and docs — is always the truth. Every time this page is filled or updated with content, the repo must be checked first; PROMPT.md's copy blocks are a snapshot and can lag behind.** Verified repo facts as of 2026-08-06 (release v0.23.0); re-verified 2026-10-15 against the README of release v0.25.1 (v0.25.0/v0.25.1 changed the Cloud setup wording: a desktop session for the one-time authorization, SSH resume for an interrupted verified setup; Container, Core, WSL, and headless stay local-only). Facts: the six-digit code comes from the NOVA page in the Home Assistant sidebar (not the wizard), is one-time and expires in minutes; tokenless pairing applies to App installs only — Container/Core use a token-based standalone-container setup; the safety workflow has 8 steps (v0.23.0 added "Captures a recovery point first" and expanded "Offers a way back" to three layers: revert, config-snapshot restore of deleted items, HA Backup — covering only changes made through HA NOVA); revoke is one click from NOVA on App installs (v0.23.0: revoke shows the exact device first); an optional installation census exists, off by default, strictly opt-in; Cloud (Beta) requires HA OS/Supervised, a Nabu Casa subscription with Remote UI, and a desktop session for the one-time authorization; the client is named "Hermes Agent" (preview); multi-server profiles exist (`--server <name>`); the README's "Why not an MCP server?" section now carries a comparison table and an honest "the MCP side is ahead on breadth today" note (page keeps the compact version); install commands in the README Get Started remain the unpinned main-branch ones the page uses.
 
 Hard content rules (non-negotiable, from the original brief, still binding):
 
-- Only the claims/copy blocks listed in PROMPT.md — nothing invented: no testimonials, user counts, benchmarks, or feature promises.
+- Only claims backed by the product repo README/docs — nothing invented: no testimonials, user counts, benchmarks, or feature promises.
 - No version numbers anywhere. Cloud access always labeled **Beta**.
 - Terminology: **"App"**, never "Add-on". Product name **HA NOVA**, server part **NOVA Relay**.
 - Install commands verbatim:
@@ -63,7 +63,7 @@ Vendored brand assets in `assets/` (from released product state): `logo.svg`, `l
 ## Product Principles
 
 1. **Trust before conversion** — the safety workflow is the page's centerpiece; honesty (Beta labels, prerequisites) outranks polish.
-2. **Truth is enumerated** — every claim on the page traces to a copy block in PROMPT.md; absence of evidence is stated, never filled.
+2. **Truth is enumerated** — every claim on the page traces to the product repo README/docs; absence of evidence is stated, never filled.
 3. **Self-contained and lean** — no external dependencies mirrors the product's own no-tunnel/no-analytics stance.
 4. **Accessible to non-terminal users** — copy and structure must work for HA users who have never opened a shell.
 
