@@ -572,6 +572,7 @@ a:focus-visible {
 .js .workflow li:nth-child(5) { transition-delay: 0.48s; }
 .js .workflow li:nth-child(6) { transition-delay: 0.6s; }
 .js .workflow li:nth-child(7) { transition-delay: 0.72s; }
+.js .workflow li:nth-child(8) { transition-delay: 0.84s; }
 
 .workflow h3 {
   font-size: 1.25rem;
