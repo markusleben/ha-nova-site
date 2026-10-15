@@ -427,6 +427,8 @@ a:focus-visible {
 .js .says-row:nth-child(5),
 .js .rules li:nth-child(4) { transition-delay: 0.24s; }
 .js .says-row:nth-child(6) { transition-delay: 0.32s; }
+.js .says-row:nth-child(7) { transition-delay: 0.4s; }
+.js .says-row:nth-child(8) { transition-delay: 0.48s; }
 
 /* Pairing steps */
 

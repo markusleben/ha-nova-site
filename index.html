@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HA NOVA — One code to connect. Every change checked.</title>
-  <meta name="description" content="HA NOVA connects your AI coding assistant to Home Assistant — with a safety workflow that previews, confirms, and verifies every change.">
+  <meta name="description" content="HA NOVA connects your AI assistant to Home Assistant — every change checked, risky ones previewed first, locks and alarms behind a code.">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="HA NOVA — One code to connect. Every change checked.">
-  <meta property="og:description" content="HA NOVA connects your AI coding assistant to Home Assistant — with a safety workflow that previews, confirms, and verifies every change.">
+  <meta property="og:description" content="HA NOVA connects your AI assistant to Home Assistant — every change checked, risky ones previewed first, locks and alarms behind a code.">
   <meta property="og:url" content="https://hanova.app/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
   <meta property="og:image:width" content="1280">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="HA NOVA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HA NOVA — One code to connect. Every change checked.">
-  <meta name="twitter:description" content="HA NOVA connects your AI coding assistant to Home Assistant — with a safety workflow that previews, confirms, and verifies every change.">
+  <meta name="twitter:description" content="HA NOVA connects your AI assistant to Home Assistant — every change checked, risky ones previewed first, locks and alarms behind a code.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -55,7 +55,7 @@ the verdict, and DESIGN.md
   <img class="hero-star" src="assets/icon.svg" alt="" width="132" height="132">
   <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
   <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>One code to connect.<br>Every change checked.</h1>
-  <p class="hero-sub">HA NOVA connects your AI coding assistant to Home&nbsp;Assistant — with a safety workflow that previews, confirms, and verifies every change.</p>
+  <p class="hero-sub">HA NOVA connects your AI assistant to Home&nbsp;Assistant — everyday actions are verified the moment they run, everything else is previewed first, and locks, gates, and the alarm need a code.</p>
   <p class="hero-ctas">
     <a class="btn btn-primary" href="#get-started">Get started</a>
     <a class="btn btn-ghost" href="https://github.com/markusleben/ha-nova">View on GitHub</a>
@@ -126,6 +126,14 @@ the verdict, and DESIGN.md
         <p class="says-result">Pulls history and summarizes the timeline in plain language.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“Turn off the kitchen light”</p>
+        <p class="says-result">Turns it off right away and checks that it really is off.</p>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“Unlock the front door”</p>
+        <p class="says-result">Shows exactly what will happen and waits for a one-time confirmation code.</p>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Add a weather card to my main dashboard”</p>
         <p class="says-result">Reads the dashboard, shows the change, writes only after you confirm.</p>
       </div>
@@ -142,11 +150,11 @@ the verdict, and DESIGN.md
       </li>
       <li data-reveal>
         <h3>Shows the exact change</h3>
-        <p>You see the precise diff before a single byte is written.</p>
+        <p>For anything beyond an everyday action, you see the precise diff before a single byte is written.</p>
       </li>
       <li data-reveal>
         <h3>You approve</h3>
-        <p>Nothing is written without your yes, and deletes need a specific confirmation code.</p>
+        <p>Everyday actions run right away and are checked afterwards; everything else waits for your yes. Unlocking a door, opening a gate or garage, disarming the alarm, and deletes need a confirmation code — HA&nbsp;NOVA decides which is which, never the AI. If anything changed since the preview, nothing is sent.</p>
       </li>
       <li data-reveal>
         <h3>Captures a recovery point</h3>
@@ -185,10 +193,9 @@ the verdict, and DESIGN.md
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 17a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 18.7 9.6 3.75 3.75 0 0 1 18 17"/><path d="M4.5 20.5 19.5 4.5"/></svg>
-        <p>No HA NOVA-operated cloud relay or usage analytics.</p>
+        <p>No HA NOVA-operated cloud relay, no usage analytics, no installation counting.</p>
       </li>
     </ul>
-    <p class="note">An optional installation census exists: off by default, strictly opt-in, and it can be switched off again anytime.</p>
   </section>
 
   <section class="section" id="cloud">
@@ -229,7 +236,7 @@ the verdict, and DESIGN.md
 
   <section class="section" id="how-it-works">
     <h2>How it works</h2>
-    <p class="section-lead">A lean NOVA Relay runs as an App on your Home&nbsp;Assistant server and, on the local path, is the only component that talks to Home&nbsp;Assistant. Everything the AI knows lives in readable markdown skills on your machine. The relay stays dumb; the skills stay smart.</p>
+    <p class="section-lead">A lean NOVA Relay runs as an App on your Home&nbsp;Assistant server and, on the local path, is the only component that talks to Home&nbsp;Assistant. Everything the AI knows lives in readable markdown skills on your machine. The relay stays dumb; the skills stay smart. The checks that must never depend on the AI — which actions need a preview or a code, whether anything changed since the preview — run in the HA&nbsp;NOVA command on your machine.</p>
     <figure class="figure" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 900 360" role="img" aria-label="Architecture: your machine with markdown skills talks over an encrypted link to the NOVA Relay, which alone connects to Home Assistant">
         <!-- links -->
@@ -277,8 +284,8 @@ the verdict, and DESIGN.md
   </section>
 
   <section class="section" id="skills-not-tools">
-    <h2>Skills, not a tool server</h2>
-    <p class="section-lead">A typical tool server pushes its whole catalog into your assistant by default. HA NOVA hands it one skill, on demand: a markdown file you can open and read.</p>
+    <h2>Skills first, not a tool catalog</h2>
+    <p class="section-lead">A typical tool server pushes its whole catalog into your assistant by default. HA NOVA hands it one skill, on demand: a markdown file you can open and read. Clients without a shell get the same checks through a small local MCP server that reuses your pairing.</p>
     <div class="versus">
       <figure class="figure" data-reveal>
         <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop buried under a toppling stack of tools">
@@ -354,7 +361,9 @@ the verdict, and DESIGN.md
       <li>OpenCode</li>
       <li>Google Antigravity</li>
       <li>Hermes Agent <span class="preview">preview</span></li>
+      <li>Local MCP clients</li>
     </ul>
+    <p class="note">A confirmation code proves it was you only when your client asks before applying a change — keep that approval prompt on.</p>
     <p class="note">Actively developed. Back up your configs before letting AI touch anything.</p>
   </section>
 </main>
