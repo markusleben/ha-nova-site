@@ -584,7 +584,8 @@ a:focus-visible {
   max-width: 52ch;
 }
 
-.workflow code {
+.workflow code,
+.rules code {
   color: var(--amber);
   background: rgba(255, 179, 71, 0.1);
   border: 1px solid rgba(255, 179, 71, 0.3);
@@ -614,7 +615,8 @@ a:focus-visible {
   padding-top: 1.1rem;
 }
 
-.rules svg {
+.rules svg,
+.callout svg {
   flex: 0 0 auto;
   width: 22px;
   height: 22px;
@@ -749,6 +751,37 @@ a:focus-visible {
   margin-left: 0.3rem;
 }
 
+/* ---------- Demo page (demo/index.html) ---------- */
+
+/* the shared-account warning: amber, because it guards the visitor */
+.callout {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  max-width: 40rem;
+  margin: 2.25rem auto 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(255, 179, 71, 0.55);
+  border-radius: 10px;
+  background: rgba(255, 179, 71, 0.06);
+  color: var(--ink);
+  text-align: left;
+}
+
+.js .callout { animation: rise 1s var(--ease-rise) 0.31s both; }
+
+.callout p { margin: 0; }
+
+/* login + next reset, right under the demo buttons */
+.js .hero .note {
+  animation: rise 1s var(--ease-rise) 0.42s both;
+}
+
+.callout strong {
+  display: block;
+  color: var(--amber);
+}
+
 /* ---------- Footer ---------- */
 
 .footer {
@@ -830,7 +863,7 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
-  .hero-star, .hero-brand, .hero-tagline, .hero-sub, .hero-ctas { animation: none; }
+  .hero-star, .hero-brand, .hero-tagline, .hero-sub, .hero-ctas, .callout, .hero .note { animation: none; }
 
   html::before, html::after, body::before, body::after, main::before { animation: none; }
 

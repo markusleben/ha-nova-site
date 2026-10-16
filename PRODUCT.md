@@ -27,6 +27,7 @@ Safety is the core promise, not magic: every change is previewed, confirmed, and
 ## Operating Context
 
 - The site is and stays a **one-pager** — documentation remains in the product repo on GitHub.
+- One exception: `demo/` is the start page of the hosted demo (`demo.hanova.app` redirects `/` and `/start` here). It shares `styles.css` and `assets/`, stays unlinked from `index.html` and carries `noindex` until the demo ships in a release. It shows the demo's live Home Assistant version, fetched at runtime from `https://demo.hanova.app/connect.json` (hidden when that fails) — not an HA NOVA version number. Its shared-account warning stays on the page.
 - Collaboration mode is binding (recorded in CLAUDE.md): build a full local draft, show desktop **and** mobile screenshots plus design decisions, iterate on feedback; **no push, no Pages activation without Markus's explicit go.**
 - Quality self-check before every showing: screenshots both widths, every link clicked, both copy buttons tested, claims check, OG meta verified.
 
