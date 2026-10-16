@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HA NOVA demo house</title>
+  <meta name="description" content="A simulated Home Assistant house with no real devices, for trying Home Assistant and HA NOVA before you connect your own.">
+  <!-- unlinked and not indexed until the demo ships in a release -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://hanova.app/demo/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HA NOVA demo house">
+  <meta property="og:description" content="A simulated Home Assistant house with no real devices, for trying Home Assistant and HA NOVA before you connect your own.">
+  <meta property="og:url" content="https://hanova.app/demo/">
+  <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
+  <meta property="og:site_name" content="HA NOVA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<main>
+<div class="hero">
+  <img class="hero-star" src="../assets/icon.svg" alt="" width="132" height="132">
+  <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
+  <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>The demo house</h1>
+  <p class="hero-sub">A simulated Home&nbsp;Assistant house with no real devices, for trying Home&nbsp;Assistant and HA NOVA before you connect your own.</p>
+  <div class="callout" role="note" aria-labelledby="warning-title">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+    <div>
+      <h2 class="visually-hidden" id="warning-title">Before you open the demo</h2>
+      <p><strong>Public demo — everyone shares one account.</strong> Anything you enter is visible to other visitors until the next reset. Never enter real names, addresses, passwords, API keys or tokens, and don’t connect real accounts or devices.</p>
+    </div>
+  </div>
+  <p class="hero-ctas">
+    <a class="btn btn-primary" href="https://demo.hanova.app/demo-house/house">Open the demo</a>
+    <a class="btn btn-ghost" href="../">What is HA NOVA?</a>
+  </p>
+  <p class="note">Log in with <code>demo</code> / <code>demo</code> · next reset <span id="next-short">at the top of every hour (UTC)</span></p>
+</div>
+
+  <section class="section" id="how-the-demo-works">
+    <h2>How the demo works</h2>
+    <p class="section-lead">One shared house, one shared login, a fresh start every hour.</p>
+    <ul class="rules">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15.5" r="3.5"/><path d="M10.5 13 19.5 4"/><path d="M16 7.5l2.5 2.5M13.5 10l2 2"/></svg>
+        <p>Log in with <code>demo</code> / <code>demo</code>.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+        <p>You are an admin: change anything, write automations, break things.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+        <p>Everything is wiped at the top of every hour (UTC).<span id="countdown" hidden> Next reset in <strong><time id="next"></time></strong>.</span></p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4.5c-2 0-2.5 1-2.5 3V9c0 1.5-.75 2.5-2 3 1.25.5 2 1.5 2 3v1.5c0 2 .5 3 2.5 3M16 4.5c2 0 2.5 1 2.5 3V9c0 1.5.75 2.5 2 3-1.25.5-2 1.5-2 3v1.5c0 2-.5 3-2.5 3"/></svg>
+        <p>Connection details for tools, as JSON: <a href="https://demo.hanova.app/connect.json">connect.json</a>. It holds the relay URL and a shared demo token, safe to use only here.</p>
+      </li>
+    </ul>
+    <p class="note" id="ha-version" hidden></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer-links">
+    <a href="../">HA NOVA</a>
+    <a href="https://github.com/markusleben/ha-nova">GitHub</a>
+    <a href="https://demo.hanova.app/abuse">Report abuse</a>
+  </p>
+</footer>
+
+<script>
+// Resets run every hour at :00 UTC, so the countdown needs no server.
+var next = document.getElementById('next');
+var nextShort = document.getElementById('next-short');
+function tick() {
+  var now = new Date();
+  // seconds to the next :00 UTC; wraps to 0 at :00:00
+  var left = (3600 - now.getUTCMinutes() * 60 - now.getUTCSeconds()) % 3600;
+  var m = Math.floor(left / 60), sec = left % 60;
+  next.dateTime = 'PT' + m + 'M' + sec + 'S';
+  next.textContent = (m ? m + ' min ' : '') + sec + ' s';
+  nextShort.textContent = left < 60 ? 'in less than a minute' : 'in about ' + Math.ceil(left / 60) + ' min';
+}
+tick();
+setInterval(tick, 1000);
+document.getElementById('countdown').hidden = false;
+
+// The running Home Assistant version; stays hidden when the demo is down.
+fetch('https://demo.hanova.app/connect.json').then(function (r) {
+  return r.ok ? r.json() : null;
+}).then(function (c) {
+  if (c && /^\d{4}\.\d{1,2}\.\d{1,3}[\w.]*$/.test(c.ha_version)) {
+    var el = document.getElementById('ha-version');
+    el.textContent = 'Running Home Assistant ' + c.ha_version + '.';
+    el.hidden = false;
+  }
+}).catch(function () {});
+</script>
+</body>
+</html>
