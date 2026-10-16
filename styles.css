@@ -766,13 +766,14 @@ a:focus-visible {
   background: rgba(255, 179, 71, 0.06);
   color: var(--ink);
   text-align: left;
-  animation: rise 1s var(--ease-rise) 0.31s both;
 }
+
+.js .callout { animation: rise 1s var(--ease-rise) 0.31s both; }
 
 .callout p { margin: 0; }
 
 /* login + next reset, right under the demo buttons */
-.hero .note {
+.js .hero .note {
   animation: rise 1s var(--ease-rise) 0.42s both;
 }
 
