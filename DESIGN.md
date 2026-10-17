@@ -242,6 +242,9 @@ The system's replacement for cards: content blocks open with a 1px hairline top 
 ### Code Bars
 The only "panel" on the page: a flex bar with 1px hairline border, 10px radius, Panel Night translucent fill. Inside, a `pre` (0.9rem 1.1rem padding, internal horizontal scroll) and a Copy button separated by a hairline left border — cyan text, transparent fill, hover tint rgba(24,188,242,0.12), :active scale(0.97), and a 2s "Copied!" state that flips the label to amber (the change is now on the safe side).
 
+### Callout (demo page only)
+The shared-account warning on `demo/`: a flex row with a 22px amber line icon, 1px amber border at 0.55 alpha, 10px radius, a 6%-alpha amber tint, ink text, and an amber bold lead line; max 40rem, centered in the hero between subline and CTAs, rising with the hero (0.31s). Amber because it guards the visitor. Deliberate exception, asked for by Markus so the personal-data warning stands out: safety warnings may break the One Hairline Rule (amber border, tinted fill). Not for the main page.
+
 ### Navigation
 None. The page is a one-pager with two hero CTAs (anchor + GitHub) and a hairline-topped footer link row (slate links that brighten to ink on hover). Body links elsewhere are cyan with 1px underlines offset 3px.
 
