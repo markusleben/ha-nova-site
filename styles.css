@@ -586,6 +586,8 @@ a:focus-visible {
   max-width: 52ch;
 }
 
+.workflow p + p { margin-top: 0.75rem; }
+
 .workflow code,
 .rules code {
   color: var(--amber);
@@ -637,6 +639,8 @@ a:focus-visible {
   font-size: 0.9375rem;
   color: var(--ink-soft);
 }
+
+.section > .note { max-width: var(--measure); }
 
 /* Cloud / Beta */
 
@@ -865,7 +869,7 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
-  .hero-star, .hero-brand, .hero-tagline, .hero-sub, .hero-ctas, .callout, .hero .note { animation: none; }
+  .hero-star, .hero-brand, .hero-tagline, .hero-sub, .hero-ctas, .js .callout, .js .hero .note { animation: none; }
 
   html::before, html::after, body::before, body::after, main::before { animation: none; }
 
