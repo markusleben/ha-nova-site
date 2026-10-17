@@ -100,7 +100,7 @@ the verdict, and DESIGN.md
         <strong>Get a first look.</strong> Setup ends with your home in one line, up to two things worth a look — a low battery, an automation that can’t run — and example prompts with your own room and device names.
       </li>
     </ol>
-    <p class="note">No browser here, over SSH, or signed in as another Home&nbsp;Assistant user? Pair with a one-time code instead: click “Connect a device” on the NOVA page in your Home&nbsp;Assistant sidebar and type the six-digit code. Sign-in and the code are one-time and expire in minutes; each device gets its own connection you can revoke anytime from NOVA.</p>
+    <p class="note">No browser here, over SSH, or signed in as another Home&nbsp;Assistant user? Pair with a one-time code instead: the Home&nbsp;Assistant owner clicks “Connect a device” on the NOVA page in the sidebar, and you type the six&#8209;digit code. Sign-in and the code are one-time and expire in minutes; each device gets its own connection you can revoke anytime from NOVA.</p>
   </section>
 
   <section class="section" id="what-you-can-do">
@@ -141,7 +141,7 @@ the verdict, and DESIGN.md
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“What do I have, and where is this sensor used?”</p>
-        <p class="says-result">Counts rooms, devices, automations, and integrations itself and lists every place a sensor is used — exact numbers, never a guess.</p>
+        <p class="says-result">Counts rooms, devices, automations, and integrations itself and lists the automations, scripts, scenes, and groups that use a sensor — exact numbers, never a guess.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“My door sensor died, I paired a new one”</p>
@@ -173,7 +173,7 @@ the verdict, and DESIGN.md
       <li data-reveal>
         <h3>You approve</h3>
         <p>Everyday actions run right away and are checked afterwards; everything else waits for your yes. Unlocking a door, opening a gate or garage, disarming the alarm, restarting Home&nbsp;Assistant, and deletes need your explicit confirmation — HA&nbsp;NOVA decides which is which, never the AI. If anything changed since the preview, nothing is sent.</p>
-        <p>Where your computer can show one, a confirmation window opens: click Confirm (OK on Windows) or Cancel, and your AI never sees a code. Over SSH or without a desktop, the one phone you linked asks (Home&nbsp;Assistant Companion app). Without either, you get a four-digit one-time code in chat; the AI can see it too, so it only counts when you type it yourself. Automation, script, and dashboard deletes use the same window or phone; other deletes (helpers, scenes, areas, and the like) take a four-digit code in chat.</p>
+        <p>Where your computer can show one, a confirmation window opens: click Confirm (OK on Windows) or Cancel, and your AI never sees a code. Over SSH or without a desktop, the one phone you linked asks (Home&nbsp;Assistant Companion app); once a phone is linked, an action it can’t reach is refused, never moved to chat. With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one; the AI can see it too, so it only counts when you type it yourself. Automation, script, and dashboard deletes use the same window or phone; other deletes (helpers, scenes, areas, and the like) take a four-digit code in chat.</p>
         <p>Anything you allow to control your screen — computer use, or apps you granted Accessibility; on Windows and some Linux desktops, other programs — can click that window too. Turn it off with <code>ha-nova setup confirm-window off</code>.</p>
       </li>
       <li data-reveal>
