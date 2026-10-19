@@ -371,6 +371,145 @@ a:focus-visible {
   50% { opacity: 0; }
 }
 
+/* ---------- Scenes added in revision 3 ---------- */
+
+.t-chat { font-size: 19px; font-weight: 600; fill: var(--ink); }
+.t-sub { font-size: 14px; font-weight: 500; fill: var(--ink-soft); }
+
+/* a lit window: the one sanctioned fill, a faint amber glow behind the stroke */
+.scene .lamp { fill: rgba(255, 179, 71, 0.2); }
+
+/* in-flight dots and typing dots exist only while moving */
+.pulse, .typing { opacity: 0; }
+.typing { fill: var(--amber); }
+
+.chat { max-width: 34rem; margin: 0 0 2.5rem; }
+.chat figcaption { text-align: left; font-weight: 400; color: var(--ink-soft); font-size: 0.9375rem; }
+
+.safety-head {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.safety-head .section-lead { margin-bottom: 0; }
+.safety-emblem { flex: 0 0 auto; width: 120px; }
+
+.confirm {
+  list-style: none;
+  margin: 1.25rem 0 0.25rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 32rem;
+}
+.confirm li { text-align: center; }
+.confirm .scene { max-width: 10rem; margin: 0 auto 0.5rem; }
+.confirm span { display: block; color: var(--ink); font-size: 0.9375rem; font-weight: 600; line-height: 1.35; }
+
+.demo-scene { max-width: 15rem; margin: 0 0 2rem; }
+
+/* ---------- Scene motion: each scene plays its point once on scroll-in ----------
+   Rest state = final frame. Only with JS and without a reduced-motion wish is
+   the start frame hidden; .inview (IntersectionObserver, once) plays it. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .press, .bubble-nova, .shield-body, .topple, .handoff, .typing circle {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  /* chat: the reply types, then lands with a check */
+  .js .chat .bubble-nova, .js .chat .reply { opacity: 0; }
+  .js .chat.inview .bubble-nova { animation: bubble-in 0.6s var(--ease-rise) 0.55s both; }
+  .js .chat.inview .typing { animation: typing-show 1.25s linear 0.75s both; }
+  .js .chat.inview .typing circle { animation: dot-bob 0.42s ease-in-out 0.8s 4 alternate both; }
+  .js .chat.inview .typing circle:nth-child(2) { animation-delay: 0.94s; }
+  .js .chat.inview .typing circle:nth-child(3) { animation-delay: 1.08s; }
+  .js .chat.inview .reply { animation: fade-in 0.35s ease-out 2s both; }
+  .js [data-reveal].chat .reply .d[pathLength] { transition-delay: 2.05s; transition-duration: 0.45s; }
+
+  /* shield: the outline draws, settles into place, then the check draws */
+  .js .safety-emblem.inview .shield-body { animation: settle 0.9s var(--ease-rise) 0.15s both; }
+  .js [data-reveal].safety-emblem .check[pathLength] { transition-delay: 1s; transition-duration: 0.5s; }
+
+  /* buttons that get pressed: Sign in, then Confirm and the phone tap */
+  .js .steps .inview .press,
+  .js .confirm.inview .press { animation: press 0.42s var(--ease-rise) 1.15s both; }
+  .js .confirm.inview li:nth-child(2) .press { animation-delay: 1.85s; }
+  .js [data-reveal].confirm .press .d[pathLength] { transition-delay: 1.45s; transition-duration: 0.4s; }
+  .js [data-reveal].confirm li:nth-child(2) .press .d[pathLength] { transition-delay: 2.15s; }
+
+  /* the code is typed digit by digit */
+  .js .confirm .digit { opacity: 0; }
+  .js .confirm.inview .digit { animation: fade-in 0.12s linear 2.6s both; }
+  .js .confirm.inview .digit:nth-of-type(2) { animation-delay: 2.8s; }
+  .js .confirm.inview .digit:nth-of-type(3) { animation-delay: 3s; }
+  .js .confirm.inview .digit:nth-of-type(4) { animation-delay: 3.2s; }
+
+  /* a window lights up once the connection is made */
+  .js .lamp { opacity: 0; }
+  .js .steps .inview .lamp,
+  .js .demo-scene.inview .lamp { animation: fade-in 0.7s ease-out 1.25s both; }
+
+  /* a request travels: your computer, the relay, then Home Assistant lights up */
+  .js .flow.inview .pulse-c { animation: pulse-c 1s ease-in-out 1.3s both; }
+  .js .flow.inview .pulse-a { animation: pulse-a 0.8s ease-in-out 2.3s both; }
+  .js .flow.inview .lamp { animation: fade-in 0.7s ease-out 3s both; }
+
+  /* demo: the reset arrow comes around, its head lands last */
+  .js .demo-scene .arrowhead { opacity: 0; }
+  .js .demo-scene.inview .arrowhead { animation: fade-in 0.3s ease-out 2.1s both; }
+
+  /* skills vs tools: the pile tumbles on; the one skill is handed over */
+  .js .versus .inview .topple { animation: topple 0.9s var(--ease-rise) 0.5s both; }
+  .js .versus .inview .handoff { animation: handoff 0.9s var(--ease-rise) 0.5s both; }
+}
+
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes typing-show {
+  0% { opacity: 0; }
+  8%, 88% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes dot-bob {
+  to { transform: translateY(-4px); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes settle {
+  from { transform: translateY(-8px) scale(1.06); }
+  to   { transform: none; }
+}
+@keyframes press {
+  0%, 100% { transform: none; }
+  45% { transform: scale(0.9); }
+}
+@keyframes pulse-c {
+  0%   { opacity: 0; transform: none; }
+  12%, 88% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(232px); }
+}
+@keyframes pulse-a {
+  0%   { opacity: 0; transform: none; }
+  12%, 88% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(178px); }
+}
+@keyframes topple {
+  from { opacity: 0; transform: translate(-14px, -22px) rotate(-8deg); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes handoff {
+  from { opacity: 0; transform: translate(40px, 50px) scale(0.85); }
+  to   { opacity: 1; transform: none; }
+}
+
 .figure {
   margin: 2.5rem 0 0;
   padding: 0;
@@ -902,6 +1041,13 @@ a:focus-visible {
 
   .scene-wide .t-label { font-size: 28px; }
   .scene-wide .t-code-sm { font-size: 18px; }
+  .scene-wide .t-sub { font-size: 24px; }
+
+  .safety-head { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
+  .safety-emblem { width: 76px; }
+
+  .confirm { gap: 0.6rem; }
+  .confirm span { font-size: 0.875rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

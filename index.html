@@ -3,43 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HA NOVA — One code to connect. Every change checked.</title>
-  <meta name="description" content="HA NOVA connects your AI coding assistant to Home Assistant — everything previewed first except unambiguous everyday actions; locks, gates, the alarm, and deletes wait for your confirmation.">
+  <title>HA NOVA — Talk to your home. Every change checked.</title>
+  <meta name="description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your OK.">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="HA NOVA — One code to connect. Every change checked.">
-  <meta property="og:description" content="HA NOVA connects your AI coding assistant to Home Assistant — everything previewed first except unambiguous everyday actions; locks, gates, the alarm, and deletes wait for your confirmation.">
+  <meta property="og:title" content="HA NOVA — Talk to your home. Every change checked.">
+  <meta property="og:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your OK.">
   <meta property="og:url" content="https://hanova.app/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="The HA NOVA star and the line: Talk to your home. Every change checked.">
   <meta property="og:site_name" content="HA NOVA">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HA NOVA — One code to connect. Every change checked.">
-  <meta name="twitter:description" content="HA NOVA connects your AI coding assistant to Home Assistant — everything previewed first except unambiguous everyday actions; locks, gates, the alarm, and deletes wait for your confirmation.">
+  <meta name="twitter:title" content="HA NOVA — Talk to your home. Every change checked.">
+  <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your OK.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <!--
-REVISION 2 (bolder pass, user-approved: bold rework, authored SVG scenes, narrative scroll moments)
+REVISION 3 (plain-English pass + redrawn scenes, maintainer-requested)
 THESIS: A safety protocol you can read. The page persuades by walking the visitor through the
 check-everything workflow itself, refusing the feature-grid launch page.
 OWN-WORLD: Cosmos night gradient #0A0E1A→#0D1525→#0A1628, sparse fixed star dots, cyan #18BCF2
 = local/client, amber #FFB347 = server/safe, system sans, 1px hairlines, and authored inline-SVG
 neon-line scenes (2px strokes, round caps, subtle glow) as the only imagery. The star ships only
 as its original SVG. Diagrams may glow; UI chrome never does.
-STORY: Visitor reads the tagline under the star, hears what they could say, watches the safety
-chain and the fallback arc draw themselves in, trusts, copies one install command.
-FIRST VIEWPORT: Centered stack on the open night — star SVG, tracked wordmark, two-line display
-tagline, one subline, cyan Get started + outline GitHub. No panel, no banner seam.
-FORM: Brief-pinned world (PROMPT.md design system), bolder rendition user-approved; seed: none.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review,
-the verdict, and DESIGN.md
+COPY: plain English, short sentences, common words. Detail lives lower on the page.
+MOTION: each scene plays its point once on scroll-in (reply typing, shield settling, Confirm
+press, request pulse, window lighting up); final frame for no-JS and reduced motion.
 -->
 
 <header class="hero">
@@ -54,58 +51,88 @@ the verdict, and DESIGN.md
   </svg>
   <img class="hero-star" src="assets/icon.svg" alt="" width="132" height="132">
   <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
-  <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>One code to connect.<br>Every change checked.</h1>
-  <p class="hero-sub">HA NOVA connects your AI coding assistant to Home&nbsp;Assistant — unambiguous everyday actions run right away and are verified afterwards, everything else is previewed first, and locks, gates, the alarm, and deletes wait for you to confirm — in a window on your computer, on your linked phone, or with a one-time code.</p>
+  <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>Talk to your home.<br>Every change checked.</h1>
+  <p class="hero-sub">Connect your AI to Home&nbsp;Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your&nbsp;OK.</p>
   <p class="hero-ctas">
     <a class="btn btn-primary" href="#get-started">Get started</a>
     <a class="btn btn-ghost" href="https://github.com/markusleben/ha-nova">View on GitHub</a>
   </p>
-  <p class="note">Or look around the <a href="demo/">demo house</a> before you connect your&nbsp;own.</p>
+  <p class="note">Or look around the <a href="demo/">demo house</a>&nbsp;first.</p>
 </header>
 
 <main>
   <section class="section" id="pairing">
     <h2>Three steps to connect</h2>
-    <p class="section-lead">No terminal expertise needed. On HA&nbsp;OS or Supervised, the installer and the wizard do the wiring; a one-time sign-in with Home&nbsp;Assistant does the trust.</p>
+    <p class="section-lead">No terminal skills needed. You paste one command, and a wizard guides you. Then you sign in with Home&nbsp;Assistant once.</p>
     <ol class="steps">
       <li data-reveal>
-        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A terminal window running the installer">
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A terminal window with one command typed in">
           <rect class="d n" x="20" y="20" width="200" height="120" rx="10"/>
           <circle cx="38" cy="36" r="3" fill="rgba(184, 204, 224, 0.5)" stroke="none"/>
           <circle cx="52" cy="36" r="3" fill="rgba(184, 204, 224, 0.5)" stroke="none"/>
           <circle cx="66" cy="36" r="3" fill="rgba(184, 204, 224, 0.5)" stroke="none"/>
-          <path class="d c" d="M40 78 h64" pathLength="1"/>
-          <path class="d c" d="M114 78 h36" pathLength="1"/>
-          <path class="d c" d="M40 102 h44" pathLength="1"/>
-          <rect class="cursor" x="92" y="95" width="9" height="14" fill="#18BCF2" stroke="none"/>
+          <path class="d c" d="M40 70 l10 8 l-10 8" pathLength="1"/>
+          <path class="d c" d="M60 78 h62" pathLength="1"/>
+          <path class="d c" d="M132 78 h40" pathLength="1"/>
+          <rect class="cursor" x="40" y="96" width="9" height="14" fill="#18BCF2" stroke="none"/>
         </svg>
-        <strong>Run the installer.</strong> One command for macOS, Linux, or Windows. The wizard finds your Home&nbsp;Assistant.
+        <strong>Run the installer.</strong> Paste one command on macOS, Linux, or Windows. The wizard finds your Home&nbsp;Assistant.
       </li>
       <li data-reveal>
-        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The Home Assistant login in your browser with a Sign in button">
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The Home Assistant login in your browser, with a Sign in button">
           <rect class="d n" x="40" y="8" width="160" height="144" rx="12"/>
-          <rect class="d n" x="64" y="32" width="112" height="22" rx="5"/>
-          <rect class="d n" x="64" y="64" width="112" height="22" rx="5"/>
-          <rect class="d c" x="60" y="104" width="120" height="28" rx="14"/>
-          <text x="120" y="122" text-anchor="middle" class="t-btn">Sign in</text>
+          <path class="d c" d="M104 46 L120 32 L136 46" pathLength="1"/>
+          <path class="d c" d="M108 43 V56 H132 V43" pathLength="1"/>
+          <rect class="d n" x="64" y="68" width="112" height="22" rx="5"/>
+          <g class="press">
+            <rect class="d c" x="60" y="106" width="120" height="28" rx="14"/>
+            <text x="120" y="124" text-anchor="middle" class="t-btn">Sign in</text>
+          </g>
         </svg>
-        <strong>Sign in with Home&nbsp;Assistant.</strong> The wizard opens your Home&nbsp;Assistant login in the browser. Sign in as the owner: the wizard installs and starts the NOVA Relay App for you if needed, and this computer connects by itself.
+        <strong>Sign in with Home&nbsp;Assistant.</strong> Your browser opens the Home&nbsp;Assistant login. Sign in as the owner. The wizard sets up the NOVA Relay App if needed. Then this computer connects by&nbsp;itself.
       </li>
       <li data-reveal>
-        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A connected laptop confirmed with a check mark">
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A laptop showing your home, with a check mark">
           <rect class="d c" x="36" y="34" width="120" height="78" rx="8"/>
           <path class="d c" d="M24 124 h144" pathLength="1"/>
+          <path class="d c" d="M76 80 L96 62 L116 80" pathLength="1"/>
+          <path class="d c" d="M81 76 V98 H111 V76" pathLength="1"/>
+          <rect class="d n" x="89" y="82" width="12" height="10" rx="1"/>
+          <rect class="d a lamp" x="89" y="82" width="12" height="10" rx="1"/>
           <path class="d a" d="M164 76 l16 18 l34 -42" stroke-width="3" pathLength="1"/>
         </svg>
-        <strong>Get a first look.</strong> Setup ends with your home in one line, up to two things worth a look — a low battery, an automation that can’t run — and example prompts with your own room and device names.
+        <strong>Get a first look.</strong> Setup sums up your home in one line. It points out up to two things to check, like a low battery. It also gives you example requests with your own room and device&nbsp;names.
       </li>
     </ol>
-    <p class="note">No browser here, or signed in as another Home&nbsp;Assistant user? The wizard shows the NOVA Relay App page instead (click “Add”, then Install and Start; skipped when the App already runs), and you pair with a one-time code: the Home&nbsp;Assistant owner clicks “Connect a device” on the NOVA page in the sidebar, and you type the six&#8209;digit code. Over SSH this works reliably on Linux only: on Windows and macOS, run setup in a terminal on that computer’s own desktop, because over SSH HA&nbsp;NOVA usually can’t save its credential. Sign-in and the code are one-time and expire in minutes; each device gets its own connection you can revoke anytime from NOVA.</p>
+    <p class="note">No browser, or not the Home&nbsp;Assistant owner? Then you connect with a six&#8209;digit code. The wizard opens the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the code.</p>
+    <p class="note">Over SSH, this only works well on Linux. On Windows and macOS, run setup on the computer itself. Over SSH, HA&nbsp;NOVA usually can’t save its login there.</p>
+    <p class="note">The sign-in and the code work once and expire in minutes. Each device gets its own connection. You can cut it off anytime in&nbsp;NOVA.</p>
   </section>
 
   <section class="section" id="what-you-can-do">
     <h2>What you can do</h2>
-    <p class="section-lead">You talk to the assistant you already use. HA NOVA does the careful part.</p>
+    <p class="section-lead">Talk to the AI app you already use. HA&nbsp;NOVA does the careful&nbsp;part.</p>
+    <figure class="figure chat" data-reveal>
+      <svg class="scene" viewBox="0 0 520 172" role="img" aria-label="You write: Turn off the kitchen light. HA NOVA answers: It’s off. I checked.">
+        <g class="bubble-you">
+          <rect class="d c" x="180" y="12" width="320" height="56" rx="22"/>
+          <text x="340" y="47" text-anchor="middle" class="t-chat">Turn off the kitchen light</text>
+        </g>
+        <g class="bubble-nova">
+          <rect class="d a" x="20" y="100" width="300" height="56" rx="22"/>
+          <g class="typing">
+            <circle cx="60" cy="128" r="4"/>
+            <circle cx="78" cy="128" r="4"/>
+            <circle cx="96" cy="128" r="4"/>
+          </g>
+          <g class="reply">
+            <path class="d a" d="M44 128 l8 8 l15 -17" stroke-width="2.5" pathLength="1"/>
+            <text x="80" y="135" class="t-chat">It’s off. I checked.</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption>Simple things run right away. Then HA&nbsp;NOVA checks&nbsp;them.</figcaption>
+    </figure>
     <div class="says" role="list">
       <div class="says-head" aria-hidden="true">
         <span class="says-you">You say</span>
@@ -113,134 +140,187 @@ the verdict, and DESIGN.md
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Check my automations for problems”</p>
-        <p class="says-result">Audits against 40+ rules — catches conflicts, dead triggers, and mistakes you’d never spot manually.</p>
+        <p class="says-result">Checks them against 40+ rules. Finds conflicts, dead triggers, and mistakes that are hard to spot.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Why didn’t my motion light trigger last night?”</p>
-        <p class="says-result">Replays the actual trace and shows exactly where it failed and why.</p>
+        <p class="says-result">Replays what really happened. Shows where it failed and why.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Turn on the porch light at sunset and off at 11&nbsp;PM”</p>
-        <p class="says-result">Builds, previews, and reviews the automation before it touches your config.</p>
+        <p class="says-result">Builds the automation and checks it. Shows it to you before it saves anything.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“What happened to my living room temperature overnight?”</p>
-        <p class="says-result">Pulls history and summarizes the timeline in plain language.</p>
+        <p class="says-result">Reads the history and tells you what happened, in plain words.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Build a dashboard for the living room”</p>
-        <p class="says-result">Builds whole dashboards and views with the custom cards you installed, lists every view and card that changes, and saves a copy first — “undo that” restores it.</p>
+        <p class="says-result">Builds the dashboard with the custom cards you have. Lists every view and card that changes. Saves a copy first, so “undo that” brings it back.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Turn off the kitchen light”</p>
-        <p class="says-result">Turns it off right away and checks that it really is off.</p>
+        <p class="says-result">Turns it off right away. Then checks that it really is off.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Unlock the front door”</p>
-        <p class="says-result">Shows exactly what will happen, then waits for you: Confirm in a window on your computer, a tap on your linked phone, or a one-time code.</p>
+        <p class="says-result">Shows what will happen, then waits for your OK. You click Confirm in a window, tap your linked phone, or type a one-time code.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“What do I have, and where is this sensor used?”</p>
-        <p class="says-result">Counts rooms, devices, automations, and integrations itself and lists the automations, scripts, scenes, groups, helpers, and dashboard cards that use a sensor, and says what it couldn’t check — exact numbers, never a guess.</p>
+        <p class="says-result">Counts your rooms, devices, automations, and integrations. Lists the automations, scripts, scenes, groups, helpers, and dashboard cards that use the sensor. Says what it couldn’t check. Exact numbers, never a guess.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“My door sensor died, I paired a new one”</p>
-        <p class="says-result">Moves automations, scripts, scenes, dashboards, helpers, and energy sources to the new device in one reviewed plan.</p>
+        <p class="says-result">Moves automations, scripts, scenes, dashboards, helpers, and energy sources to the new device. You check it all as one plan.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Turn this Node-RED flow into an automation”</p>
-        <p class="says-result">Lists what the rule does, maps each device to a real entity, builds a native automation, and keeps the old rule disabled, not deleted.</p>
+        <p class="says-result">Explains what the flow does and finds each device. Builds a normal Home&nbsp;Assistant automation. Turns the old rule off, but keeps it.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Check my ESPHome config for the garage sensor”</p>
-        <p class="says-result">Explains the device file in plain words and flags removed keys, pins that can’t do what the file asks, and passwords written into it.</p>
+        <p class="says-result">Explains the device file in plain words. Flags removed settings, pins that can’t do the job, and passwords written into the file.</p>
       </div>
     </div>
   </section>
 
   <section class="section section-safety" id="safe-by-design">
-    <h2>Safe by design</h2>
-    <p class="section-lead">Safety is the product, not a setting. Automations and scripts run the full workflow below; helpers are previewed and verified; device control runs unambiguous everyday actions right away and verifies them, everything else is previewed first; dashboards show every changed view and card, save a copy first, and can be undone.</p>
+    <div class="safety-head">
+      <div>
+        <h2>Safe by design</h2>
+        <p class="section-lead">Safety is the core of HA&nbsp;NOVA. Here is what happens when the AI wants to change&nbsp;something.</p>
+      </div>
+      <svg class="scene safety-emblem" viewBox="0 0 120 132" role="img" aria-label="A shield with a check mark" data-reveal>
+        <g class="shield-body">
+          <path class="d a" d="M60 8 L104 24 V60 C104 92 84 112 60 124 C36 112 16 92 16 60 V24 Z" stroke-width="2.5" pathLength="1"/>
+          <path class="d a check" d="M40 64 l14 14 l26 -30" stroke-width="3" pathLength="1"/>
+        </g>
+      </svg>
+    </div>
     <ol class="workflow" data-reveal>
       <li data-reveal>
-        <h3>Researches first</h3>
-        <p>Reads your real entities, automations, and traces before proposing anything. No guessing.</p>
+        <h3>Looks first</h3>
+        <p>Reads your real devices, automations, and past runs first. No guessing.</p>
       </li>
       <li data-reveal>
         <h3>Shows the exact change</h3>
-        <p>For anything beyond an unambiguous everyday action, you see the precise diff before a single byte is written.</p>
+        <p>You see exactly what will change before anything is saved. Only simple everyday actions skip this step.</p>
       </li>
       <li data-reveal>
-        <h3>You approve</h3>
-        <p>Unambiguous everyday actions run right away and are checked afterwards; everything else waits for your yes. Unlocking a door, opening a gate or garage, disarming the alarm, restarting Home&nbsp;Assistant, and deletes need your explicit confirmation — HA&nbsp;NOVA decides which is which, never the AI. If anything changed since the preview, nothing is sent.</p>
-        <p>Where your computer can show one, a confirmation window opens: click Confirm (OK on Windows) or Cancel, and your AI never sees a code. Without a desktop (for example a headless Linux machine), the one phone you linked asks (Home&nbsp;Assistant Companion app; not with a standalone relay that runs on your own token). You answer on the phone or its Apple Watch without unlocking it, so whoever holds your phone can answer while a request is open (up to 90 seconds), and only for that one action; linking, moving, or turning off phone confirmation needs the unlocked phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat. With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one; the AI can see it too, so it only counts when you type it yourself. Automation, script, and dashboard deletes use the same window or phone; other deletes (helpers, scenes, areas, and the like) take a four-digit code in chat.</p>
-        <p>Anything you allow to control your screen — computer use, or apps you granted Accessibility; on Windows and some Linux desktops, other programs — can click that window too. Turn it off with <code>ha-nova setup confirm-window off</code>.</p>
+        <h3>You say OK</h3>
+        <p>Simple everyday actions run right away and get checked after. Everything else waits for your yes. HA&nbsp;NOVA decides which is which, never the AI. If anything changed since the preview, nothing is sent.</p>
+        <p>Some actions need more than a yes: unlocking a door, opening a gate or garage, turning off the alarm, restarting Home&nbsp;Assistant, and deletes. You confirm them in one of three ways:</p>
+        <ul class="confirm" data-reveal>
+          <li>
+            <svg class="scene" viewBox="0 0 160 120" aria-hidden="true">
+              <rect class="d n" x="14" y="10" width="132" height="100" rx="10"/>
+              <path class="d n" d="M14 30 H146"/>
+              <path class="d n" d="M32 50 H112 M32 62 H90"/>
+              <rect class="d n" x="30" y="78" width="46" height="22" rx="11"/>
+              <g class="press">
+                <rect class="d c" x="84" y="78" width="46" height="22" rx="11"/>
+                <path class="d c" d="M99 89 l5 5 l9 -10" pathLength="1"/>
+              </g>
+            </svg>
+            <span>Click Confirm in a window</span>
+          </li>
+          <li>
+            <svg class="scene" viewBox="0 0 160 120" aria-hidden="true">
+              <rect class="d n" x="52" y="6" width="56" height="108" rx="11"/>
+              <path class="d n" d="M72 16 H88"/>
+              <path class="d n" d="M64 40 H96 M64 52 H86"/>
+              <g class="press">
+                <rect class="d c" x="62" y="76" width="36" height="22" rx="11"/>
+                <path class="d c" d="M73 87 l5 5 l9 -10" pathLength="1"/>
+              </g>
+            </svg>
+            <span>Tap your linked phone</span>
+          </li>
+          <li>
+            <svg class="scene" viewBox="0 0 160 120" aria-hidden="true">
+              <rect class="d a" x="12" y="36" width="136" height="48" rx="10"/>
+              <text class="t-code digit" x="44" y="68" text-anchor="middle">4</text>
+              <text class="t-code digit" x="68" y="68" text-anchor="middle">8</text>
+              <text class="t-code digit" x="92" y="68" text-anchor="middle">1</text>
+              <text class="t-code digit" x="116" y="68" text-anchor="middle">7</text>
+            </svg>
+            <span>Type a one-time code</span>
+          </li>
+        </ul>
+        <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
+        <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks you, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the phone or its Apple Watch without unlocking it. So whoever holds your phone can answer too. That only works for that one action, while it waits (up to 90 seconds). To link, move, or turn off the phone, you must unlock it. Once a phone is linked, an action it can’t reach is refused. It never moves to chat.</p>
+        <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form. The AI can see the code too. So it only counts when you type it yourself.</p>
+        <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
+        <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
       </li>
       <li data-reveal>
-        <h3>Captures a recovery point</h3>
-        <p>Before a covered delete or full replacement, HA NOVA snapshots the item it is about to change, so “gone” has a way back.</p>
+        <h3>Saves a way back</h3>
+        <p>Before a covered delete or a full replacement, HA&nbsp;NOVA saves a copy of the item. So a deleted item can come back.</p>
       </li>
       <li data-reveal>
-        <h3>Writes and verifies</h3>
-        <p>Applies the change, then checks that what landed is what you approved.</p>
+        <h3>Saves and checks</h3>
+        <p>Saves the change, then reads it back. It checks that the result matches what you said OK to.</p>
       </li>
       <li data-reveal>
-        <h3>Audits itself</h3>
-        <p>Reviews its own work afterwards: mistakes, conflicts, reliability issues.</p>
+        <h3>Checks its own work</h3>
+        <p>Looks for mistakes, conflicts, and things that may break later.</p>
       </li>
       <li data-reveal>
         <h3>Offers a safe test</h3>
-        <p>After saving an automation or script, you get a test plan matched to the risk — from a zero-impact logic check to a real run that names which devices will switch before you say go.</p>
+        <p>After it saves an automation or script, you get a test plan that fits the risk. It can be a check that switches nothing, or a real run. Before a real run, it names the devices that will switch and waits for your go.</p>
       </li>
       <li data-reveal>
-        <h3>Offers a way back</h3>
-        <p>Reply <code>revert</code> to undo the latest verified update. Deleted automations, scripts, scenes, dashboards, and storage helpers can be restored from their config snapshot — “undo that” right after a delete works too; beyond that, a Home&nbsp;Assistant Backup. Covers changes made through HA NOVA.</p>
+        <h3>Lets you undo</h3>
+        <p>Reply <code>revert</code> to undo the latest checked update. Deleted automations, scripts, scenes, dashboards, and storage helpers can come back from their saved copy. “Undo that” right after a delete works too. For anything else, use a Home&nbsp;Assistant Backup. This only covers changes made through HA&nbsp;NOVA.</p>
       </li>
     </ol>
+    <p class="note">Automations and scripts get all eight steps. Helpers get a preview and a check. Dashboards show every changed view and card, save a copy first, and can be undone. For devices, simple everyday actions run right away and get checked. Everything else shows a preview first.</p>
     <h3 class="rules-title">Ground rules</h3>
     <ul class="rules">
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9" rx="1.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><circle cx="12" cy="15" r="1.2"/></svg>
-        <p>Relay credentials stay out of the AI.</p>
+        <p>The Relay’s Home&nbsp;Assistant login never reaches the AI.</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
-        <p>Every device is paired on its own: Home&nbsp;Assistant sign-in or a six-digit code, both one-time and short-lived, revocable with one click from NOVA on App installs.</p>
+        <p>Each device connects on its own. The sign-in and the six-digit code work once and expire fast. On App installs, one click in NOVA cuts off a device.</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
-        <p>Every rule the AI follows is a markdown file you can read.</p>
+        <p>Every rule the AI follows is a plain text file you can read.</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 17a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 18.7 9.6 3.75 3.75 0 0 1 18 17"/><path d="M4.5 20.5 19.5 4.5"/></svg>
-        <p>No HA NOVA-operated cloud relay, no usage analytics, no installation counting.</p>
+        <p>No HA&nbsp;NOVA cloud in the middle. No usage tracking. No install counting.</p>
       </li>
     </ul>
   </section>
 
   <section class="section" id="cloud">
     <h2>At home and away <span class="beta">Beta</span></h2>
-    <p class="section-lead">Local access stays first; your own Home&nbsp;Assistant Link subscription (formerly Home&nbsp;Assistant Cloud) becomes the automatic fallback — no manual URL switching, and credentials stay in your OS’s native credential store. Requires HA&nbsp;OS or Supervised with remote access enabled and a desktop session for the one-time authorization; Container, Core, WSL, and headless setups stay local-only.</p>
+    <p class="section-lead">At home, your computer talks to Home&nbsp;Assistant directly. Away, it can use your Home&nbsp;Assistant Link plan (formerly Home&nbsp;Assistant Cloud). It switches by itself. Your login stays in your computer’s own safe&nbsp;storage.</p>
     <figure class="figure" data-reveal>
-      <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="Your machine connects to Home Assistant directly over a locked local link; your Home Assistant Link account arches above as the automatic Beta fallback">
+      <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="At home, your computer reaches Home Assistant directly over a locked link. Away, your Home Assistant Link plan is the automatic fallback.">
         <!-- direct local link, first light -->
         <path class="d c" d="M212 226 H588" pathLength="1"/>
         <g transform="translate(388, 212)">
           <rect class="d c" x="0" y="10" width="24" height="19" rx="4"/>
           <path class="d c" d="M5 10 V7 a7 7 0 0 1 14 0 v3" pathLength="1"/>
         </g>
+        <text x="400" y="272" text-anchor="middle" class="t-label t-cyan">At home: direct</text>
         <!-- cloud fallback arc, second light -->
         <path class="d a slow" d="M190 180 C 300 40, 500 40, 610 170" pathLength="1"/>
         <g transform="translate(352, 18)">
           <path class="d a" d="M24 44 a14 14 0 0 1 4 -27.4 A18 18 0 0 1 63 13 a13 13 0 0 1 5 31 Z" pathLength="1"/>
         </g>
-        <text x="400" y="134" text-anchor="middle" class="t-label t-amber">Home Assistant Link</text>
-        <!-- your machine -->
+        <text x="400" y="134" text-anchor="middle" class="t-label t-amber">Away: Home Assistant Link</text>
+        <!-- your computer -->
         <g transform="translate(60, 150)">
           <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
           <path class="d c" d="M0 92 h152" pathLength="1"/>
         </g>
-        <text x="136" y="290" text-anchor="middle" class="t-label">Your machine</text>
+        <text x="136" y="290" text-anchor="middle" class="t-label">Your computer</text>
         <!-- home assistant -->
         <g transform="translate(596, 128)">
           <path class="d c" d="M0 52 L52 8 L104 52" pathLength="1"/>
@@ -250,62 +330,62 @@ the verdict, and DESIGN.md
         </g>
         <text x="648" y="290" text-anchor="middle" class="t-label">Home Assistant</text>
       </svg>
-      <figcaption class="visually-hidden">Local stays first; cloud is the automatic fallback (Beta).</figcaption>
+      <figcaption class="visually-hidden">Direct at home first. Home Assistant Link is the automatic fallback (Beta).</figcaption>
     </figure>
+    <p class="note">You need HA&nbsp;OS or Supervised, with remote access turned on. You also need a desktop session to approve it once. Container, Core, WSL, and headless setups work at home&nbsp;only.</p>
   </section>
 
   <section class="section" id="how-it-works">
     <h2>How it works</h2>
-    <p class="section-lead">A lean NOVA Relay runs as an App on your Home&nbsp;Assistant server and, on the local path, is the only component that talks to Home&nbsp;Assistant. Everything the AI knows lives in readable markdown skills on your machine. The relay stays dumb; the skills stay smart. The checks that must never depend on the AI — which actions need a preview or your confirmation, whether anything changed since the preview — run in the HA&nbsp;NOVA command on your machine.</p>
-    <figure class="figure" data-reveal>
-      <svg class="scene scene-wide" viewBox="0 0 900 360" role="img" aria-label="Architecture: your machine with markdown skills talks over an encrypted link to the NOVA Relay, which alone connects to Home Assistant">
+    <p class="section-lead">The NOVA Relay is an App on your Home&nbsp;Assistant server. When you connect at home, it is the only part that talks to Home&nbsp;Assistant. Everything the AI knows lives in skills: plain text files on your computer. The relay stays dumb. The skills stay smart.</p>
+    <figure class="figure flow" data-reveal>
+      <svg class="scene scene-wide" viewBox="0 0 900 360" role="img" aria-label="Your computer, with your AI app and the skills, connects over a locked link to the NOVA Relay. Only the relay talks to Home Assistant.">
         <!-- links -->
-        <path class="d c" d="M196 216 H262" pathLength="1"/>
-        <path class="d c" d="M352 216 H428" pathLength="1"/>
+        <path class="d c" d="M196 216 H428" pathLength="1"/>
         <path class="d a" d="M548 216 H726" pathLength="1"/>
-        <g transform="translate(378, 200)">
+        <g transform="translate(301, 200)">
           <rect class="d c" x="0" y="9" width="22" height="17" rx="4"/>
           <path class="d c" d="M4.5 9 V6.5 a6.5 6.5 0 0 1 13 0 V9" pathLength="1"/>
         </g>
-        <!-- your machine -->
+        <!-- a request travels: your computer, then the relay, then Home Assistant -->
+        <circle class="pulse pulse-c" cx="196" cy="216" r="5" fill="#18BCF2"/>
+        <circle class="pulse pulse-a" cx="548" cy="216" r="5" fill="#FFB347"/>
+        <!-- your computer: a chat and a skill file on screen -->
         <g transform="translate(40, 152)">
           <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
           <path class="d c" d="M0 92 h152" pathLength="1"/>
+          <rect class="d n" x="28" y="16" width="56" height="22" rx="9"/>
+          <rect class="d n" x="40" y="46" width="44" height="18" rx="8"/>
+          <path class="d c" d="M96 14 h18 l8 8 v42 h-26 Z" pathLength="1"/>
+          <path class="d c" d="M101 34 h16 M101 44 h16 M101 54 h10" pathLength="1"/>
         </g>
-        <text x="116" y="296" text-anchor="middle" class="t-label">Your machine</text>
-        <!-- skills -->
-        <g transform="translate(268, 158)">
-          <rect class="d n" x="16" y="10" width="52" height="66" rx="4"/>
-          <rect class="d c" x="8" y="18" width="52" height="66" rx="4"/>
-          <path class="d c" d="M18 36 h14 M18 48 h32 M18 60 h32 M18 72 h22" pathLength="1"/>
-        </g>
-        <text x="310" y="296" text-anchor="middle" class="t-label t-cyan">Skills</text>
+        <text x="116" y="296" text-anchor="middle" class="t-label">Your computer</text>
+        <text x="116" y="322" text-anchor="middle" class="t-sub">AI app + skills</text>
         <!-- relay -->
         <g transform="translate(432, 150)">
           <rect class="d a" x="0" y="0" width="112" height="112" rx="24" stroke-width="2.5"/>
           <image href="assets/icon.svg" x="20" y="20" width="72" height="72"/>
         </g>
         <text x="488" y="296" text-anchor="middle" class="t-label">NOVA Relay</text>
-        <g transform="translate(436, 306)">
-          <rect class="d a" x="0" y="0" width="104" height="26" rx="7"/>
-          <text x="52" y="18" text-anchor="middle" class="t-code t-code-sm">428 316</text>
-        </g>
+        <text x="488" y="322" text-anchor="middle" class="t-sub">App on your server</text>
         <!-- home assistant -->
         <g transform="translate(730, 128)">
           <path class="d c" d="M0 52 L52 8 L104 52" pathLength="1"/>
           <path class="d c" d="M12 52 v60 h80 v-60" pathLength="1"/>
           <rect class="d c" x="30" y="68" width="22" height="20"/>
+          <rect class="d a lamp" x="30" y="68" width="22" height="20"/>
           <path class="d a" d="M66 112 v-30 h18 v30" pathLength="1"/>
         </g>
         <text x="782" y="296" text-anchor="middle" class="t-label">Home Assistant</text>
       </svg>
       <figcaption class="visually-hidden">The relay stays dumb; the skills stay smart.</figcaption>
     </figure>
+    <p class="note">Some checks must never depend on the AI. They run in the HA&nbsp;NOVA program on your computer. They decide what needs a preview or your OK. They also stop a change if anything changed since the&nbsp;preview.</p>
   </section>
 
   <section class="section" id="skills-not-tools">
     <h2>Skills first, not a tool catalog</h2>
-    <p class="section-lead">A typical tool server pushes its whole catalog into your assistant by default. HA NOVA hands it one skill, on demand: a markdown file you can open and read.</p>
+    <p class="section-lead">A typical tool server loads its whole tool list into your AI by default. HA&nbsp;NOVA hands it one skill when needed: a text file you can open and&nbsp;read.</p>
     <div class="versus">
       <figure class="figure" data-reveal>
         <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop buried under a toppling stack of tools">
@@ -315,9 +395,11 @@ the verdict, and DESIGN.md
             <rect class="d n" x="44" y="74" width="56" height="16" rx="4"/>
             <rect class="d n" x="38" y="96" width="56" height="16" rx="4"/>
             <rect class="d n" x="46" y="118" width="56" height="16" rx="4"/>
-            <rect class="d n" x="104" y="44" width="52" height="15" rx="4" transform="rotate(14 130 51)"/>
-            <rect class="d n" x="128" y="70" width="52" height="15" rx="4" transform="rotate(24 154 77)"/>
-            <rect class="d n" x="150" y="100" width="52" height="15" rx="4" transform="rotate(33 176 107)"/>
+            <g class="topple">
+              <rect class="d n" x="104" y="44" width="52" height="15" rx="4" transform="rotate(14 130 51)"/>
+              <rect class="d n" x="128" y="70" width="52" height="15" rx="4" transform="rotate(24 154 77)"/>
+              <rect class="d n" x="150" y="100" width="52" height="15" rx="4" transform="rotate(33 176 107)"/>
+            </g>
           </g>
           <g transform="translate(150, 96)">
             <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
@@ -327,16 +409,18 @@ the verdict, and DESIGN.md
         <figcaption>The whole catalog, by default.</figcaption>
       </figure>
       <figure class="figure" data-reveal>
-        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop receiving a single markdown skill from a locked server">
+        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop getting one skill file from a locked server">
           <g transform="translate(60, 96)">
             <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
             <path class="d c" d="M0 92 h152" pathLength="1"/>
           </g>
           <path class="d c" d="M228 76 C 214 90, 208 100, 202 112" pathLength="1"/>
           <g transform="translate(228, 40)">
-            <path class="d c" d="M0 8 h30 l14 14 v44 h-44 Z" pathLength="1"/>
-            <path class="d c" d="M30 8 v14 h14" pathLength="1"/>
-            <path class="d c" d="M8 34 h12 M8 46 h26" pathLength="1"/>
+            <g class="handoff">
+              <path class="d c" d="M0 8 h30 l14 14 v44 h-44 Z" pathLength="1"/>
+              <path class="d c" d="M30 8 v14 h14" pathLength="1"/>
+              <path class="d c" d="M8 34 h12 M8 46 h26" pathLength="1"/>
+            </g>
           </g>
           <g transform="translate(292, 128)">
             <rect class="d a" x="0" y="0" width="64" height="24" rx="6"/>
@@ -349,14 +433,14 @@ the verdict, and DESIGN.md
             </g>
           </g>
         </svg>
-        <figcaption>One skill, on demand.</figcaption>
+        <figcaption>One skill, when needed.</figcaption>
       </figure>
     </div>
   </section>
 
   <section class="section" id="get-started">
     <h2>Get started</h2>
-    <p class="section-lead">You need Home&nbsp;Assistant — any install type. HA&nbsp;OS and Supervised get the NOVA Relay App via the wizard; Container and Core run the same relay as a standalone container with a token-based setup.</p>
+    <p class="section-lead">You need Home&nbsp;Assistant. Any install type works. On HA&nbsp;OS and Supervised, the wizard sets up the NOVA Relay App. Container and Core run the same relay as a standalone container, set up with a&nbsp;token.</p>
     <div class="install">
       <div class="install-block" data-reveal>
         <p class="install-label">macOS / Linux</p>
@@ -373,7 +457,7 @@ the verdict, and DESIGN.md
         </div>
       </div>
     </div>
-    <p class="note">Want to look first? The <a href="demo/">demo house</a> is a simulated Home&nbsp;Assistant with no real devices, to look around before you connect your own. Everyone shares one login and it resets every hour, so never enter real names, passwords, or tokens there.</p>
+    <p class="note">Want to look first? The <a href="demo/">demo house</a> is a test Home&nbsp;Assistant with no real devices. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
     <p class="clients-label">Works with</p>
     <ul class="clients">
       <li>Claude Code</li>
@@ -383,7 +467,7 @@ the verdict, and DESIGN.md
       <li>Google Antigravity</li>
       <li>Hermes Agent <span class="preview">preview</span></li>
     </ul>
-    <p class="note">Actively developed. Back up your configs before letting AI touch anything.</p>
+    <p class="note">HA&nbsp;NOVA is young and changes often. Back up your setup before you let AI change&nbsp;anything.</p>
   </section>
 </main>
 
