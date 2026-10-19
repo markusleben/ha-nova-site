@@ -113,21 +113,21 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <h2>What you can do</h2>
     <p class="section-lead">Talk to the AI app you already use. HA&nbsp;NOVA does the careful&nbsp;part.</p>
     <figure class="figure chat" data-reveal>
-      <svg class="scene" viewBox="0 0 520 172" role="img" aria-label="You write: Turn off the kitchen light. HA NOVA answers: It’s off. I checked.">
+      <svg class="scene" viewBox="0 0 400 172" role="img" aria-label="You write: Turn off the kitchen light. HA NOVA answers: It’s off. I checked.">
         <g class="bubble-you">
-          <rect class="d c" x="180" y="12" width="320" height="56" rx="22"/>
-          <text x="340" y="47" text-anchor="middle" class="t-chat">Turn off the kitchen light</text>
+          <rect class="d c" x="70" y="12" width="320" height="56" rx="22"/>
+          <text x="230" y="47" text-anchor="middle" class="t-chat">Turn off the kitchen light</text>
         </g>
         <g class="bubble-nova">
-          <rect class="d a" x="20" y="100" width="300" height="56" rx="22"/>
+          <rect class="d a" x="10" y="100" width="280" height="56" rx="22"/>
           <g class="typing">
-            <circle cx="60" cy="128" r="4"/>
-            <circle cx="78" cy="128" r="4"/>
-            <circle cx="96" cy="128" r="4"/>
+            <circle cx="46" cy="128" r="4"/>
+            <circle cx="64" cy="128" r="4"/>
+            <circle cx="82" cy="128" r="4"/>
           </g>
           <g class="reply">
-            <path class="d a" d="M44 128 l8 8 l15 -17" stroke-width="2.5" pathLength="1"/>
-            <text x="80" y="135" class="t-chat">It’s off. I checked.</text>
+            <path class="d a" d="M32 128 l8 8 l15 -17" stroke-width="2.5" pathLength="1"/>
+            <text x="66" y="135" class="t-chat">It’s off. I checked.</text>
           </g>
         </g>
       </svg>
@@ -249,7 +249,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           </li>
         </ul>
         <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-        <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks you, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the phone or its Apple Watch without unlocking it. So whoever holds your phone can answer too. That only works for that one action, while it waits (up to 90 seconds). To link, move, or turn off the phone, you must unlock it. Once a phone is linked, an action it can’t reach is refused. It never moves to chat.</p>
+        <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off the phone, you must unlock it. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
         <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form. The AI can see the code too. So it only counts when you type it yourself.</p>
         <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
         <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
