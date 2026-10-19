@@ -17,11 +17,15 @@ want="$(tr -d '[:space:]' < .readme-sync)"
 have="$(shasum -a 256 "$readme" | cut -d' ' -f1)"
 [[ "$want" == "$have" ]] || say "the product README changed since the last site sync (recorded $want, now $have) — diff it against the page and update .readme-sync"
 
+found=0
 while IFS= read -r cmd; do
+  found=$((found + 1))
   grep -qF "$cmd" "$page" || say "install command missing or changed on the page: $cmd"
 done < <(grep -E '^(curl -fsSL https://raw\.githubusercontent\.com/markusleben/ha-nova/main/install\.sh \| bash|irm https://raw\.githubusercontent\.com/markusleben/ha-nova/main/install\.ps1 \| iex)$' "$readme")
+[[ "$found" -eq 2 ]] || say "expected the 2 known install commands in the README, found $found — did an install command change?"
 
 grep -qiE 'add-on' "$page" && say 'the page says "Add-on" (use "App")'
-grep -qE '\bv?[0-9]+\.[0-9]+\.[0-9]+\b' <(sed -e 's/<[^>]*>//g' "$page") && say "the page shows a version number"
+# raw source, so attributes (alt, aria-label, meta/og) count too
+grep -qE '\bv?[0-9]+\.[0-9]+\.[0-9]+\b' "$page" && say "the page shows a version number"
 
 exit "$fail"
