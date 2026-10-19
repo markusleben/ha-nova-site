@@ -89,7 +89,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <text x="120" y="124" text-anchor="middle" class="t-btn">Sign in</text>
           </g>
         </svg>
-        <strong>Sign in with Home&nbsp;Assistant.</strong> Your browser opens the Home&nbsp;Assistant login. Sign in as the owner. The wizard sets up the NOVA Relay App if needed. Then this computer connects by&nbsp;itself.
+        <strong>Sign in with Home&nbsp;Assistant.</strong> Your browser opens the Home&nbsp;Assistant login. Sign in as the owner. The wizard sets up the NOVA Relay App if needed, and this computer connects by&nbsp;itself.
       </li>
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A laptop showing your home, with a check mark">
@@ -104,9 +104,6 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <strong>Get a first look.</strong> Setup sums up your home in one line. It points out up to two things to check, like a low battery. It also gives you example requests with your own room and device&nbsp;names.
       </li>
     </ol>
-    <p class="note">No browser, or not the Home&nbsp;Assistant owner? Then you connect with a six&#8209;digit code. The wizard opens the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the code.</p>
-    <p class="note">Over SSH, this only works well on Linux. On Windows and macOS, run setup on the computer itself. Over SSH, HA&nbsp;NOVA usually can’t save its login there.</p>
-    <p class="note">The sign-in and the code work once and expire in minutes. Each device gets its own connection. You can cut it off anytime in&nbsp;NOVA.</p>
   </section>
 
   <section class="section" id="what-you-can-do">
@@ -205,62 +202,58 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>Shows the exact change</h3>
-        <p>You see exactly what will change before anything is saved. Only one clear everyday action, like turning off one light, skips this step.</p>
+        <p>You see exactly what will change before anything is saved. Only one clear everyday action, like turning off one light, skips this.</p>
       </li>
       <li data-reveal>
         <h3>You approve</h3>
-        <p>Simple everyday actions run right away and get checked after. Everything else waits for your yes. HA&nbsp;NOVA decides which is which, never the AI. If anything changed since the preview, nothing is sent.</p>
-        <p>Some actions need more than a yes: unlocking a door, opening a gate or garage, turning off the alarm, restarting Home&nbsp;Assistant, and deletes. You confirm them in one of three ways:</p>
-        <ul class="confirm" data-reveal>
+        <p>Everything else waits for your yes. HA&nbsp;NOVA decides what needs it, never the AI.</p>
+        <p>Locks, gates, the alarm, restarting Home&nbsp;Assistant, and deletes need more than a yes. You confirm them on your computer or your phone:</p>
+        <ul class="confirm-ways" data-reveal>
           <li>
-            <svg class="scene" viewBox="0 0 160 120" aria-hidden="true">
-              <rect class="d n" x="14" y="10" width="132" height="100" rx="10"/>
-              <path class="d n" d="M14 30 H146"/>
-              <path class="d n" d="M32 50 H112 M32 62 H90"/>
-              <rect class="d n" x="30" y="78" width="46" height="22" rx="11"/>
+            <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
+              <rect class="d n" x="14" y="10" width="172" height="124" rx="12"/>
+              <path class="d n" d="M14 34 H186"/>
+              <path class="d n" d="M36 58 H150 M36 74 H118"/>
+              <rect class="d n" x="34" y="96" width="60" height="26" rx="13"/>
               <g class="press">
-                <rect class="d c" x="84" y="78" width="46" height="22" rx="11"/>
-                <path class="d c" d="M99 89 l5 5 l9 -10" pathLength="1"/>
+                <rect class="d c" x="106" y="96" width="60" height="26" rx="13"/>
+                <path class="d c" d="M126 109 l6 6 l11 -12" pathLength="1"/>
               </g>
             </svg>
-            <span>Click Confirm in a window</span>
+            <span>Click Confirm in a window on your computer</span>
           </li>
           <li>
-            <svg class="scene" viewBox="0 0 160 120" aria-hidden="true">
-              <rect class="d n" x="52" y="6" width="56" height="108" rx="11"/>
-              <path class="d n" d="M72 16 H88"/>
-              <path class="d n" d="M64 40 H96 M64 52 H86"/>
+            <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
+              <rect class="d n" x="66" y="6" width="68" height="138" rx="13"/>
+              <path class="d n" d="M90 18 H110"/>
+              <path class="d n" d="M80 48 H120 M80 62 H108"/>
               <g class="press">
-                <rect class="d c" x="62" y="76" width="36" height="22" rx="11"/>
-                <path class="d c" d="M73 87 l5 5 l9 -10" pathLength="1"/>
+                <rect class="d c" x="78" y="94" width="44" height="26" rx="13"/>
+                <path class="d c" d="M91 107 l6 6 l11 -12" pathLength="1"/>
               </g>
             </svg>
             <span>Tap your linked phone</span>
           </li>
-          <li>
-            <svg class="scene" viewBox="0 0 160 120" aria-hidden="true">
-              <rect class="d a" x="12" y="36" width="136" height="48" rx="10"/>
-              <text class="t-code digit" x="44" y="68" text-anchor="middle">4</text>
-              <text class="t-code digit" x="68" y="68" text-anchor="middle">8</text>
-              <text class="t-code digit" x="92" y="68" text-anchor="middle">1</text>
-              <text class="t-code digit" x="116" y="68" text-anchor="middle">7</text>
-            </svg>
-            <span>Type a one&#8209;time code</span>
-          </li>
         </ul>
-        <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-        <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
-        <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one. The AI can see the code too. So it only counts when you type it yourself.</p>
-        <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
-        <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
+        <p class="confirm-fallback">No screen and no phone? You type a one-time code. The AI can see it too, so it only counts when you type it yourself.</p>
+        <details class="more">
+          <summary>More about confirming</summary>
+          <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
+          <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
+          <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one.</p>
+          <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
+          <p>If anything changed since the preview, nothing is sent.</p>
+          <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
+          <p>Every safety rule, and the test behind it: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/safety.md">the safety page on GitHub</a>.</p>
+        </details>
       </li>
       <li data-reveal>
         <h3>Saves a way back</h3>
-        <p>Before a covered delete or a full replacement, HA&nbsp;NOVA saves a copy of the item. So a deleted item can come back.</p>
+        <p>Before a covered delete or a full replacement, HA&nbsp;NOVA saves a copy of the item.</p>
       </li>
       <li data-reveal>
         <h3>Saves and checks</h3>
-        <p>Saves the change, then reads it back. It checks that the result matches what you approved.</p>
+        <p>Saves the change, then reads it back to check that it matches what you approved.</p>
       </li>
       <li data-reveal>
         <h3>Checks its own work</h3>
@@ -268,14 +261,22 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>Offers a safe test</h3>
-        <p>After it saves an automation or script, you get a test plan that fits the risk. It can be a check that switches nothing, or a real run. Before a real run, it names the devices that will switch and waits for your go.</p>
+        <p>After saving an automation or script, you get a test plan that fits the risk. Before a real run, it names the devices that will switch and waits for your go.</p>
       </li>
       <li data-reveal>
         <h3>Lets you undo</h3>
-        <p>Reply <code>revert</code> to undo the latest checked update. Deleted automations, scripts, scenes, dashboards, and storage helpers can come back from their saved copy. “Undo that” right after a delete works too. For anything else, use a Home&nbsp;Assistant Backup. Revert and saved copies only cover changes made through HA&nbsp;NOVA. A Home&nbsp;Assistant Backup covers the whole system.</p>
+        <p>Reply <code>revert</code> to undo the latest checked update. Deleted items come back from their saved copy.</p>
+        <details class="more">
+          <summary>More about undo</summary>
+          <p>Saved copies cover deleted automations, scripts, scenes, dashboards, and storage helpers. “Undo that” right after a delete works too.</p>
+          <p>Revert and saved copies only cover changes made through HA&nbsp;NOVA. For anything else, use a Home&nbsp;Assistant Backup. It covers the whole system.</p>
+        </details>
       </li>
     </ol>
-    <p class="note">Automations and scripts get all eight steps. Helpers get a preview and a check. Dashboards show every changed view and card, save a copy first, and can be undone. For devices, simple everyday actions run right away and get checked. Everything else shows a preview first.</p>
+    <details class="more">
+      <summary>Which changes get all eight steps</summary>
+      <p>Automations and scripts get all eight steps. Helpers get a preview and a check. Dashboards show every changed view and card, save a copy first, and can be undone. For devices, one clear everyday action runs right away and gets checked. Everything else shows a preview first.</p>
+    </details>
     <h3 class="rules-title">Ground rules</h3>
     <ul class="rules">
       <li data-reveal>
@@ -284,7 +285,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
-        <p>On App installs, each device connects on its own. The sign-in and the six-digit code work once and expire fast. One click in NOVA cuts off a device. (The standalone container uses one shared token.)</p>
+        <p>On App installs, each device gets its own connection. Sign-in works once and expires in minutes. One click in NOVA cuts a device off. (The standalone container uses one shared token.)</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
@@ -390,7 +391,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <span>Home Assistant</span>
       </div>
     </figure>
-    <p class="note">Some checks must never depend on the AI. They run in the HA&nbsp;NOVA program on your computer. They decide what needs a preview or your confirmation. They also stop a change if anything changed since the&nbsp;preview.</p>
+    <p class="note">Some checks must never depend on the AI. So the HA&nbsp;NOVA program on your computer runs them. It decides what needs a preview or your confirmation. It stops a change if anything changed since the&nbsp;preview.</p>
   </section>
 
   <section class="section" id="skills-not-tools">
@@ -463,6 +464,12 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         </div>
       </div>
     </div>
+    <p class="note">No browser, using SSH, or not the Home&nbsp;Assistant owner? Then you connect with a six&#8209;digit code from the NOVA page instead.</p>
+    <details class="more">
+      <summary>Connect with a code</summary>
+      <p>The wizard opens the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the six-digit code. It works once and expires in minutes.</p>
+      <p>Over SSH, this only works well on Linux. On Windows and macOS, run setup on the computer itself. Over SSH, HA&nbsp;NOVA usually can’t save its login there.</p>
+    </details>
     <p class="note">Want to look first? The <a href="demo/">demo house</a> is a test Home&nbsp;Assistant with no real devices. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
     <p class="clients-label">Works with</p>
     <ul class="clients">

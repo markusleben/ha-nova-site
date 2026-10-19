@@ -395,18 +395,52 @@ a:focus-visible {
 .safety-head .section-lead { margin-bottom: 0; }
 .safety-emblem { flex: 0 0 auto; width: 120px; }
 
-.confirm {
+.confirm-ways {
   list-style: none;
-  margin: 1.25rem 0 0.25rem;
+  margin: 1.25rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  max-width: 32rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 30rem;
 }
-.confirm li { text-align: center; }
-.confirm .scene { max-width: 10rem; margin: 0 auto 0.5rem; }
-.confirm span { display: block; color: var(--ink); font-size: 0.9375rem; font-weight: 600; line-height: 1.35; }
+.confirm-ways li { text-align: center; }
+.confirm-ways .scene { max-width: 13rem; margin: 0 auto 0.6rem; }
+.confirm-ways span { display: block; color: var(--ink); font-weight: 600; line-height: 1.35; }
+.workflow .confirm-fallback { margin-top: 1rem; font-size: 0.9375rem; }
+
+/* folded detail: native <details>, a hairline and a cyan summary with a turning chevron */
+.more {
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--hairline);
+  max-width: 52ch;
+}
+.section > .more { max-width: var(--measure); }
+.more summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0 0.2rem;
+  color: var(--cyan);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  list-style: none;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.2s var(--ease-rise);
+}
+.more[open] summary::before { transform: rotate(45deg); }
+.more summary:hover { color: #4FCDF6; }
+.more summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
+.more p, .workflow .more p { font-size: 0.9375rem; margin: 0.6rem 0 0; }
 
 .demo-scene { max-width: 15rem; margin: 0 0 2rem; }
 
@@ -441,19 +475,12 @@ a:focus-visible {
 
   /* buttons that get pressed: Sign in, then Confirm and the phone tap */
   .js .steps .inview .press,
-  .js .confirm.inview .press { animation: press 0.42s var(--ease-rise) 1.15s both; }
-  .js .confirm.inview li:nth-child(2) .press { animation-delay: 1.85s; }
-  .js [data-reveal].confirm .press .d[pathLength] { transition-delay: 1.45s; transition-duration: 0.4s; }
-  .js [data-reveal].confirm li:nth-child(2) .press .d[pathLength] { transition-delay: 2.15s; }
-  /* the checks wait for the trio itself, not for the workflow step around it */
-  .js .confirm:not(.inview) .d[pathLength] { stroke-dashoffset: 1; }
-
-  /* the code is typed digit by digit */
-  .js .confirm .digit { opacity: 0; }
-  .js .confirm.inview .digit { animation: fade-in 0.12s linear 2.6s both; }
-  .js .confirm.inview .digit:nth-of-type(2) { animation-delay: 2.8s; }
-  .js .confirm.inview .digit:nth-of-type(3) { animation-delay: 3s; }
-  .js .confirm.inview .digit:nth-of-type(4) { animation-delay: 3.2s; }
+  .js .confirm-ways.inview .press { animation: press 0.42s var(--ease-rise) 1.15s both; }
+  .js .confirm-ways.inview li:nth-child(2) .press { animation-delay: 1.85s; }
+  .js [data-reveal].confirm-ways .press .d[pathLength] { transition-delay: 1.45s; transition-duration: 0.4s; }
+  .js [data-reveal].confirm-ways li:nth-child(2) .press .d[pathLength] { transition-delay: 2.15s; }
+  /* the checks wait for the pair itself, not for the workflow step around it */
+  .js .confirm-ways:not(.inview) .d[pathLength] { stroke-dashoffset: 1; }
 
   /* a window lights up once the connection is made */
   .js .lamp { opacity: 0; }
@@ -735,7 +762,7 @@ a:focus-visible {
 }
 
 .workflow p + p,
-.workflow .confirm + p { margin-top: 0.75rem; }
+.workflow .confirm-ways + p { margin-top: 0.75rem; }
 
 .workflow code,
 .rules code {
@@ -1066,8 +1093,8 @@ a:focus-visible {
   .safety-head { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
   .safety-emblem { width: 76px; }
 
-  .confirm { gap: 0.6rem; }
-  .confirm span { font-size: 0.875rem; }
+  .confirm-ways { gap: 0.9rem; }
+  .confirm-ways span { font-size: 0.9375rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
