@@ -207,7 +207,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <li data-reveal>
         <h3>You approve</h3>
         <p>Everything else waits for your yes. HA&nbsp;NOVA decides what needs it, never the AI.</p>
-        <p>Locks, gates, the alarm, restarting Home&nbsp;Assistant, and deletes need more than a yes. You confirm them on your computer or your phone:</p>
+        <p>Locks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than a yes. You confirm them on your computer or your phone:</p>
         <ul class="confirm-ways" data-reveal>
           <li>
             <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
@@ -235,7 +235,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <span>Tap your linked phone</span>
           </li>
         </ul>
-        <p class="confirm-fallback">No screen and no phone? You type a one-time code. The AI can see it too, so it only counts when you type it yourself.</p>
+        <p class="confirm-fallback">No screen and no phone? You type a one-time code. Some deletes, like helpers and scenes, always use one. The AI can see the code, so it only counts when you type it yourself.</p>
         <details class="more">
           <summary>More about confirming</summary>
           <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
@@ -261,11 +261,11 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>Offers a safe test</h3>
-        <p>After saving an automation or script, you get a test plan that fits the risk. Before a real run, it names the devices that will switch and waits for your go.</p>
+        <p>After saving an automation or script, you get a test plan that fits the risk. It can switch nothing, or name every device that will switch before you say go.</p>
       </li>
       <li data-reveal>
         <h3>Lets you undo</h3>
-        <p>Reply <code>revert</code> to undo the latest checked update. Deleted items come back from their saved copy.</p>
+        <p>Reply <code>revert</code> to undo the latest checked update. Deleted automations, scripts, scenes, and dashboards come back from their saved copy.</p>
         <details class="more">
           <summary>More about undo</summary>
           <p>Saved copies cover deleted automations, scripts, scenes, dashboards, and storage helpers. “Undo that” right after a delete works too.</p>
@@ -285,7 +285,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
-        <p>On App installs, each device gets its own connection. Sign-in works once and expires in minutes. One click in NOVA cuts a device off. (The standalone container uses one shared token.)</p>
+        <p>On App installs, each device gets its own connection. Sign-in and the code work once and expire in minutes. One click in NOVA cuts a device off. (The standalone container uses one shared token.)</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
@@ -464,7 +464,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         </div>
       </div>
     </div>
-    <p class="note">No browser, using SSH, or not the Home&nbsp;Assistant owner? Then you connect with a six&#8209;digit code from the NOVA page instead.</p>
+    <p class="note">No browser, not the Home&nbsp;Assistant owner, or using SSH on Linux? Then you connect with a six&#8209;digit code from the NOVA page instead.</p>
     <details class="more">
       <summary>Connect with a code</summary>
       <p>The wizard opens the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the six-digit code. It works once and expires in minutes.</p>

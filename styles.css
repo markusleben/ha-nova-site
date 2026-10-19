@@ -761,8 +761,7 @@ a:focus-visible {
   max-width: 52ch;
 }
 
-.workflow p + p,
-.workflow .confirm-ways + p { margin-top: 0.75rem; }
+.workflow p + p { margin-top: 0.75rem; }
 
 .workflow code,
 .rules code {
