@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HA NOVA — Talk to your home. Every change checked.</title>
-  <meta name="description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your OK.">
+  <meta name="description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to confirm.">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="HA NOVA — Talk to your home. Every change checked.">
-  <meta property="og:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your OK.">
+  <meta property="og:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to confirm.">
   <meta property="og:url" content="https://hanova.app/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
   <meta property="og:image:width" content="1280">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="HA NOVA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HA NOVA — Talk to your home. Every change checked.">
-  <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your OK.">
+  <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to confirm.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -52,7 +52,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
   <img class="hero-star" src="assets/icon.svg" alt="" width="132" height="132">
   <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
   <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>Talk to your home.<br>Every change checked.</h1>
-  <p class="hero-sub">Connect your AI to Home&nbsp;Assistant. Simple things run right away. Other changes show a preview first. Locks, alarms, and deletes wait for your&nbsp;OK.</p>
+  <p class="hero-sub">Connect your AI to Home&nbsp;Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to&nbsp;confirm.</p>
   <p class="hero-ctas">
     <a class="btn btn-primary" href="#get-started">Get started</a>
     <a class="btn btn-ghost" href="https://github.com/markusleben/ha-nova">View on GitHub</a>
@@ -63,7 +63,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
 <main>
   <section class="section" id="pairing">
     <h2>Three steps to connect</h2>
-    <p class="section-lead">No terminal skills needed. You paste one command, and a wizard guides you. Then you sign in with Home&nbsp;Assistant once.</p>
+    <p class="section-lead">No terminal skills needed. On HA&nbsp;OS or Supervised, you paste one command and a wizard guides you. Then you sign in with Home&nbsp;Assistant once.</p>
     <ol class="steps">
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A terminal window with one command typed in">
@@ -74,7 +74,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <path class="d c" d="M40 70 l10 8 l-10 8" pathLength="1"/>
           <path class="d c" d="M60 78 h62" pathLength="1"/>
           <path class="d c" d="M132 78 h40" pathLength="1"/>
-          <rect class="cursor" x="40" y="96" width="9" height="14" fill="#18BCF2" stroke="none"/>
+          <path class="d c cursor" d="M40 110 h12" stroke-width="3"/>
         </svg>
         <strong>Run the installer.</strong> Paste one command on macOS, Linux, or Windows. The wizard finds your Home&nbsp;Assistant.
       </li>
@@ -160,11 +160,11 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Turn off the kitchen light”</p>
-        <p class="says-result">Turns it off right away. Then checks that it really is off.</p>
+        <p class="says-result">Turns it off right away. Then checks that it really is off. Whole rooms and scenes show a preview first.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“Unlock the front door”</p>
-        <p class="says-result">Shows what will happen, then waits for your OK. You click Confirm in a window, tap your linked phone, or type a one-time code.</p>
+        <p class="says-result">Shows what will happen, then waits for you to confirm. You click Confirm in a window, tap your linked phone, or type a one-time code.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“What do I have, and where is this sensor used?”</p>
@@ -205,10 +205,10 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>Shows the exact change</h3>
-        <p>You see exactly what will change before anything is saved. Only simple everyday actions skip this step.</p>
+        <p>You see exactly what will change before anything is saved. Only one clear everyday action, like turning off one light, skips this step.</p>
       </li>
       <li data-reveal>
-        <h3>You say OK</h3>
+        <h3>You approve</h3>
         <p>Simple everyday actions run right away and get checked after. Everything else waits for your yes. HA&nbsp;NOVA decides which is which, never the AI. If anything changed since the preview, nothing is sent.</p>
         <p>Some actions need more than a yes: unlocking a door, opening a gate or garage, turning off the alarm, restarting Home&nbsp;Assistant, and deletes. You confirm them in one of three ways:</p>
         <ul class="confirm" data-reveal>
@@ -245,12 +245,12 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
               <text class="t-code digit" x="92" y="68" text-anchor="middle">1</text>
               <text class="t-code digit" x="116" y="68" text-anchor="middle">7</text>
             </svg>
-            <span>Type a one-time code</span>
+            <span>Type a one&#8209;time code</span>
           </li>
         </ul>
         <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-        <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off the phone, you must unlock it. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
-        <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form. The AI can see the code too. So it only counts when you type it yourself.</p>
+        <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
+        <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one. The AI can see the code too. So it only counts when you type it yourself.</p>
         <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
         <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
       </li>
@@ -260,7 +260,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>Saves and checks</h3>
-        <p>Saves the change, then reads it back. It checks that the result matches what you said OK to.</p>
+        <p>Saves the change, then reads it back. It checks that the result matches what you approved.</p>
       </li>
       <li data-reveal>
         <h3>Checks its own work</h3>
@@ -272,7 +272,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>Lets you undo</h3>
-        <p>Reply <code>revert</code> to undo the latest checked update. Deleted automations, scripts, scenes, dashboards, and storage helpers can come back from their saved copy. “Undo that” right after a delete works too. For anything else, use a Home&nbsp;Assistant Backup. This only covers changes made through HA&nbsp;NOVA.</p>
+        <p>Reply <code>revert</code> to undo the latest checked update. Deleted automations, scripts, scenes, dashboards, and storage helpers can come back from their saved copy. “Undo that” right after a delete works too. For anything else, use a Home&nbsp;Assistant Backup. Revert and saved copies only cover changes made through HA&nbsp;NOVA. A Home&nbsp;Assistant Backup covers the whole system.</p>
       </li>
     </ol>
     <p class="note">Automations and scripts get all eight steps. Helpers get a preview and a check. Dashboards show every changed view and card, save a copy first, and can be undone. For devices, simple everyday actions run right away and get checked. Everything else shows a preview first.</p>
@@ -284,7 +284,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
-        <p>Each device connects on its own. The sign-in and the six-digit code work once and expire fast. On App installs, one click in NOVA cuts off a device.</p>
+        <p>On App installs, each device connects on its own. The sign-in and the six-digit code work once and expire fast. One click in NOVA cuts off a device. (The standalone container uses one shared token.)</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
@@ -299,7 +299,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
 
   <section class="section" id="cloud">
     <h2>At home and away <span class="beta">Beta</span></h2>
-    <p class="section-lead">At home, your computer talks to Home&nbsp;Assistant directly. Away, it can use your Home&nbsp;Assistant Link plan (formerly Home&nbsp;Assistant Cloud). It switches by itself. Your login stays in your computer’s own safe&nbsp;storage.</p>
+    <p class="section-lead">At home, your computer talks to Home&nbsp;Assistant directly. “Local only” stays the default. Away, it can use your paid Home&nbsp;Assistant Link plan (formerly Home&nbsp;Assistant Cloud). It switches by itself. Your login stays in your computer’s own safe&nbsp;storage.</p>
     <figure class="figure" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="At home, your computer reaches Home Assistant directly over a locked link. Away, your Home Assistant Link plan is the automatic fallback.">
         <!-- direct local link, first light -->
@@ -310,7 +310,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         </g>
         <text x="400" y="272" text-anchor="middle" class="t-label t-cyan">At home: direct</text>
         <!-- cloud fallback arc, second light -->
-        <path class="d a slow" d="M190 180 C 300 40, 500 40, 610 170" pathLength="1"/>
+        <path class="d a slow" d="M200 172 C 300 40, 500 40, 610 170" pathLength="1"/>
         <g transform="translate(352, 18)">
           <path class="d a" d="M24 44 a14 14 0 0 1 4 -27.4 A18 18 0 0 1 63 13 a13 13 0 0 1 5 31 Z" pathLength="1"/>
         </g>
@@ -326,18 +326,23 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <path class="d c" d="M0 52 L52 8 L104 52" pathLength="1"/>
           <path class="d c" d="M12 52 v60 h80 v-60" pathLength="1"/>
           <rect class="d c" x="30" y="68" width="22" height="20"/>
+          <rect class="d a lamp" x="30" y="68" width="22" height="20"/>
           <path class="d a" d="M66 112 v-30 h18 v30" pathLength="1"/>
         </g>
         <text x="648" y="290" text-anchor="middle" class="t-label">Home Assistant</text>
       </svg>
       <figcaption class="visually-hidden">Direct at home first. Home Assistant Link is the automatic fallback (Beta).</figcaption>
+      <div class="scene-legend legend-cloud" aria-hidden="true">
+        <span>Your computer</span><span>Home Assistant</span>
+        <span class="t-cyan-text">At home: direct</span><span class="t-amber-text">Away: Home Assistant Link</span>
+      </div>
     </figure>
-    <p class="note">You need HA&nbsp;OS or Supervised, with remote access turned on. You also need a desktop session to approve it once. Container, Core, WSL, and headless setups work at home&nbsp;only.</p>
+    <p class="note">You need HA&nbsp;OS or Supervised, with remote access turned on. You also need a desktop session to approve it once. Container, Core, WSL, headless, service, and gateway setups work at home&nbsp;only.</p>
   </section>
 
   <section class="section" id="how-it-works">
     <h2>How it works</h2>
-    <p class="section-lead">The NOVA Relay is an App on your Home&nbsp;Assistant server. When you connect at home, it is the only part that talks to Home&nbsp;Assistant. Everything the AI knows lives in skills: plain text files on your computer. The relay stays dumb. The skills stay smart.</p>
+    <p class="section-lead">The NOVA Relay is an App on your Home&nbsp;Assistant server. When you connect locally, it is the only part that talks to Home&nbsp;Assistant. Everything the AI knows lives in skills: plain text files on your computer. The relay stays dumb. The skills stay smart.</p>
     <figure class="figure flow" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 900 360" role="img" aria-label="Your computer, with your AI app and the skills, connects over a locked link to the NOVA Relay. Only the relay talks to Home Assistant.">
         <!-- links -->
@@ -379,8 +384,13 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <text x="782" y="296" text-anchor="middle" class="t-label">Home Assistant</text>
       </svg>
       <figcaption class="visually-hidden">The relay stays dumb; the skills stay smart.</figcaption>
+      <div class="scene-legend legend-flow" aria-hidden="true">
+        <span>Your computer<small>AI app + skills</small></span>
+        <span>NOVA Relay<small>App on your server</small></span>
+        <span>Home Assistant</span>
+      </div>
     </figure>
-    <p class="note">Some checks must never depend on the AI. They run in the HA&nbsp;NOVA program on your computer. They decide what needs a preview or your OK. They also stop a change if anything changed since the&nbsp;preview.</p>
+    <p class="note">Some checks must never depend on the AI. They run in the HA&nbsp;NOVA program on your computer. They decide what needs a preview or your confirmation. They also stop a change if anything changed since the&nbsp;preview.</p>
   </section>
 
   <section class="section" id="skills-not-tools">
@@ -409,27 +419,23 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <figcaption>The whole catalog, by default.</figcaption>
       </figure>
       <figure class="figure" data-reveal>
-        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop getting one skill file from a locked server">
+        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop opening one skill file from a small stack of skill files on your computer">
           <g transform="translate(60, 96)">
             <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
             <path class="d c" d="M0 92 h152" pathLength="1"/>
           </g>
-          <path class="d c" d="M228 76 C 214 90, 208 100, 202 112" pathLength="1"/>
-          <g transform="translate(228, 40)">
-            <g class="handoff">
-              <path class="d c" d="M0 8 h30 l14 14 v44 h-44 Z" pathLength="1"/>
-              <path class="d c" d="M30 8 v14 h14" pathLength="1"/>
-              <path class="d c" d="M8 34 h12 M8 46 h26" pathLength="1"/>
-            </g>
+          <!-- the skill files on your computer -->
+          <g transform="translate(250, 104)">
+            <path class="d n" d="M24 0 h22 l10 10 v50 h-32 Z"/>
+            <path class="d n" d="M12 8 h22 l10 10 v50 h-32 Z"/>
+            <path class="d n" d="M0 16 h22 l10 10 v50 h-32 Z"/>
           </g>
-          <g transform="translate(292, 128)">
-            <rect class="d a" x="0" y="0" width="64" height="24" rx="6"/>
-            <rect class="d a" x="0" y="30" width="64" height="24" rx="6"/>
-            <circle cx="52" cy="12" r="2.5" fill="#18BCF2" stroke="none"/>
-            <circle cx="52" cy="42" r="2.5" fill="#18BCF2" stroke="none"/>
-            <g transform="translate(44, 44)">
-              <rect class="d a" x="0" y="8" width="18" height="14" rx="3"/>
-              <path class="d a" d="M3.5 8 V6 a5.5 5.5 0 0 1 11 0 v2" pathLength="1"/>
+          <!-- the one skill the AI needs, opened on screen -->
+          <g transform="translate(116, 106)">
+            <g class="handoff">
+              <path class="d c" d="M0 0 h28 l12 12 v48 h-40 Z" pathLength="1"/>
+              <path class="d c" d="M28 0 v12 h12" pathLength="1"/>
+              <path class="d c" d="M8 26 h14 M8 38 h24 M8 50 h18" pathLength="1"/>
             </g>
           </g>
         </svg>
