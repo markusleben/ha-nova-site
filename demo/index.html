@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HA NOVA demo house</title>
-  <meta name="description" content="A simulated Home Assistant house with no real devices, to look around before you connect your own.">
+  <meta name="description" content="A test Home Assistant house with no real devices. Look around before you connect your own.">
   <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/demo/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="HA NOVA demo house">
-  <meta property="og:description" content="A simulated Home Assistant house with no real devices, to look around before you connect your own.">
+  <meta property="og:description" content="A test Home Assistant house with no real devices. Look around before you connect your own.">
   <meta property="og:url" content="https://hanova.app/demo/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
   <meta property="og:site_name" content="HA NOVA">
@@ -26,12 +26,12 @@
   <img class="hero-star" src="../assets/icon.svg" alt="" width="132" height="132">
   <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
   <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>The demo house</h1>
-  <p class="hero-sub">A simulated Home&nbsp;Assistant house with no real devices, to look around before you connect your own.</p>
+  <p class="hero-sub">A test Home&nbsp;Assistant house with no real devices. Look around before you connect your&nbsp;own.</p>
   <div class="callout" role="note" aria-labelledby="warning-title">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
     <div>
       <h2 class="visually-hidden" id="warning-title">Before you open the demo</h2>
-      <p><strong>Public demo — everyone shares one account.</strong> Anything you enter is visible to other visitors until the next reset. Never enter real names, addresses, passwords, API keys or tokens, and don’t connect real accounts or devices.</p>
+      <p><strong>Public demo: everyone shares one account.</strong> Other visitors can see what you enter until the next reset. Never enter real names, addresses, passwords, API keys, or tokens. Don’t connect real accounts or devices.</p>
     </div>
   </div>
   <p class="hero-ctas">
@@ -44,6 +44,15 @@
   <section class="section" id="how-the-demo-works">
     <h2>How the demo works</h2>
     <p class="section-lead">One shared house, one shared login, a fresh start every hour.</p>
+    <svg class="scene demo-scene" viewBox="0 0 240 170" role="img" aria-label="A house with a circular arrow around it: the demo starts fresh every hour" data-reveal>
+      <path class="d a slow" d="M141.9 29.9 A64 64 0 1 1 78.9 41" pathLength="1"/>
+      <path class="d a arrowhead" d="M76.1 51.6 L78.9 41 L67.9 42"/>
+      <path class="d c" d="M84 96 L120 64 L156 96" pathLength="1"/>
+      <path class="d c" d="M94 92 V130 H146 V92" pathLength="1"/>
+      <rect class="d n" x="102" y="102" width="16" height="14" rx="1"/>
+      <rect class="d a lamp" x="102" y="102" width="16" height="14" rx="1"/>
+      <path class="d a" d="M128 130 V110 H138 V130" pathLength="1"/>
+    </svg>
     <ul class="rules">
       <li>
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15.5" r="3.5"/><path d="M10.5 13 19.5 4"/><path d="M16 7.5l2.5 2.5M13.5 10l2 2"/></svg>
@@ -51,11 +60,11 @@
       </li>
       <li>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
-        <p>You are an admin: change anything, write automations, break things.</p>
+        <p>You are an admin. Change anything, write automations, break things.</p>
       </li>
       <li>
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
-        <p>Everything is wiped at the top of every hour (UTC).<span id="countdown" hidden> Next reset in <strong><time id="next"></time></strong>.</span></p>
+        <p>Everything resets at the top of every hour (UTC).<span id="countdown" hidden> Next reset in <strong><time id="next"></time></strong>.</span></p>
       </li>
     </ul>
     <p class="note" id="ha-version" hidden></p>
@@ -72,6 +81,18 @@
 </footer>
 
 <script>
+// Scenes play once when they scroll into view; without JS they show their last frame.
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('inview'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+} else {
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('inview'); });
+}
+
 // Resets run every hour at :00 UTC, so the countdown needs no server.
 var next = document.getElementById('next');
 var nextShort = document.getElementById('next-short');

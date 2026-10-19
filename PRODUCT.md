@@ -57,6 +57,7 @@ Binding visual constraints from the original brief (recorded, not expanded; the 
 - Typography: system sans, generous whitespace, no webfonts.
 - **The star is sacred**: only `assets/logo.svg` / `assets/icon.svg` — never redrawn, distorted, glowed/shadowed, or rebuilt in CSS.
 - Brand tone: honest, precise, anti-hype.
+- Copy level (Markus, 2026-10-19): very plain English, about a 5th-grade reading level for an adult reader. Short sentences (aim for 15 words or fewer), common words, active voice, no jargon; the hero is a short promise (sub-line 25 words or fewer), detail moves down the page. Hero tagline since then: "Talk to your home. Every change checked." (the README still says "One code to connect.", which predates sign-in pairing).
 
 ## Evidence on Hand
 
