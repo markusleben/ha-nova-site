@@ -808,7 +808,7 @@ a:focus-visible {
   color: var(--ink);
 }
 
-/* ---------- Legal pages (Impressum, Datenschutz) ---------- */
+/* ---------- Privacy page ---------- */
 
 .legal {
   max-width: calc(var(--measure) + 3rem);
