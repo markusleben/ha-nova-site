@@ -86,12 +86,12 @@
       "css": ".ds-beta { display: inline-block; padding: 0.15rem 0.65rem; border: 1px solid rgba(255, 179, 71, 0.55); border-radius: 999px; color: #FFB347; font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }"
     },
     {
-      "name": "Code Bar",
+      "name": "Install Console",
       "kind": "input",
-      "refersTo": "codebar",
-      "description": "The page's only panel: translucent night surface holding an install command and a cyan Copy button.",
-      "html": "<div class=\"ds-codebar\"><pre class=\"ds-codebar-pre\"><code class=\"ds-codebar-code\">curl -fsSL https://example.com/install.sh | bash</code></pre><button class=\"ds-codebar-copy\" type=\"button\">Copy</button></div>",
-      "css": ".ds-codebar { display: flex; align-items: stretch; border: 1px solid rgba(184, 204, 224, 0.16); border-radius: 10px; background: rgba(13, 21, 37, 0.6); overflow: hidden; max-width: 100%; } .ds-codebar-pre { margin: 0; padding: 0.9rem 1.1rem; overflow-x: auto; flex: 1 1 auto; min-width: 0; } .ds-codebar-code { color: #E8EDF2; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.9375rem; white-space: pre; } .ds-codebar-copy { flex: 0 0 auto; border: 0; border-left: 1px solid rgba(184, 204, 224, 0.16); background: transparent; color: #18BCF2; font: 600 0.9375rem/1 -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; padding: 0 1.25rem; cursor: pointer; min-width: 6em; transition: background-color 0.2s ease, color 0.2s ease, transform 0.16s ease-out; } .ds-codebar-copy:hover { background: rgba(24, 188, 242, 0.12); } .ds-codebar-copy:active { transform: scale(0.97); } .ds-codebar-copy:focus-visible { outline: 2px solid #18BCF2; outline-offset: 3px; }"
+      "refersTo": "install-console",
+      "description": "The page's call to action and only panel: night glass with a cyan neon frame, OS tabs, the install command with a cyan prompt, and a primary Copy pill that turns amber when done.",
+      "html": "<div class=\"ds-console\"><div class=\"ds-console-cmd\"><span class=\"ds-console-prompt\">$</span><code>curl -fsSL https://example.com/install.sh | bash</code></div><button class=\"ds-console-copy\" type=\"button\">Copy</button></div>",
+      "css": ".ds-console { padding: 1.5rem; border: 1.5px solid #18BCF2; border-radius: 24px; background: radial-gradient(120% 90% at 0% 0%, rgba(24, 188, 242, 0.07), transparent 60%), rgba(13, 21, 37, 0.6); filter: drop-shadow(0 0 5px rgba(24, 188, 242, 0.4)); max-width: 100%; } .ds-console-cmd { display: flex; gap: 0.75em; padding: 1.1rem 1.25rem; border: 1px solid rgba(184, 204, 224, 0.16); border-radius: 10px; background: rgba(5, 18, 29, 0.55); font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 1rem; color: #E8EDF2; white-space: pre-wrap; overflow-wrap: anywhere; } .ds-console-prompt { color: #18BCF2; user-select: none; } .ds-console-copy { margin-top: 1.25rem; min-width: 10rem; padding: 0.85rem 1.9rem; border: 1px solid #18BCF2; border-radius: 999px; background: #18BCF2; color: #05121D; font: 600 1.0625rem/1.2 -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif; cursor: pointer; } .ds-console-copy:hover { background: #4FCDF6; } .ds-console-copy:focus-visible { outline: 2px solid #18BCF2; outline-offset: 3px; }"
     },
     {
       "name": "Says Row",

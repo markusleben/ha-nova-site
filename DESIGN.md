@@ -113,11 +113,16 @@ components:
   chip:
     rounded: "{rounded.pill}"
     padding: "0.35rem 1rem"
-  codebar:
+  install-console:
     backgroundColor: "{colors.panel-night}"
+    textColor: "{colors.moonlit-slate}"
+    rounded: "{rounded.scene-tile}"
+    padding: "clamp(1.25rem, 3.2vw, 2.5rem)"
+  install-command:
+    backgroundColor: "rgba(5, 18, 29, 0.55)"
     textColor: "{colors.starlight-ink}"
     rounded: "{rounded.md}"
-    padding: "0.9rem 1.1rem"
+    padding: "1.1rem 1.25rem"
   beta-badge:
     textColor: "{colors.nova-amber}"
     rounded: "{rounded.pill}"
@@ -158,11 +163,11 @@ A near-monochrome night-blue field with exactly two accent lights whose meanings
 
 ### Neutral
 - **Night Top / Mid / Deep** (#0A0E1A → #0D1525 → #0A1628): The page background, a single top-to-bottom `linear-gradient(180deg, …)` with the mid stop at 45%. There is no separate "surface" color; sections live directly on this gradient.
-- **Starlight Ink** (#E8EDF2): Headings, the display tagline, emphasized copy, quotes, scene labels, code in code bars — anything that must lead.
+- **Starlight Ink** (#E8EDF2): Headings, the display tagline, emphasized copy, quotes, scene labels, install commands — anything that must lead.
 - **Moonlit Slate** (#B8CCE0): Default body text, secondary copy, and the tracked hero wordmark.
 - **Hairline** (rgba(184,204,224,0.16)): Every rule, border, and divider in UI chrome. One value, everywhere.
 - **Scene Neutral** (rgba(184,204,224,0.5)): The muted stroke for non-semantic scene linework (chassis, frames, props); it never glows.
-- **Panel Night** (rgba(13,21,37,0.6)): The only translucent surface, reserved for install code bars.
+- **Panel Night** (rgba(13,21,37,0.6)): The only translucent surface, reserved for the install console.
 - **Star dots**: pure white radial-gradient points, 0.8–2px, opacity 0.2–0.3, split across four `position: fixed` layers (`html::before/::after`, `body::before/::after`): near-static fine grain (21s), two shimmer layers (9s / 11s, phase-shifted, 0.68→1), and five brighter stars with a 6–7px halo at **Star Halo** (rgba(255,255,255,0.1)) split over two flare layers (16s and 19s with −7s phase, `main::before`) so their soft flares wander instead of syncing. Halos stay white — accents never decorate the sky.
 
 ### Named Rules
@@ -197,7 +202,7 @@ A centered single-column one-pager. The hero is a centered stack on the open nig
 
 Structure inside sections is hairline-topped rows and grids, not cards: the pairing steps are a 3-column grid (2.5rem gap) of hairline-topped items, each opening with its own small neon scene; the "You say / What happens" table is a 5fr/7fr two-column grid whose rows are separated by hairline bottoms; the ground rules are a 2-column grid of hairline-topped icon+text pairs; the skills-vs-tools comparison is a two-figure `1fr 1fr` grid (3rem gap) with centered ink captions. Leads sit directly under headings at 1.125rem with a 62ch measure.
 
-Responsive behavior (content never scrolls the page horizontally; code bars scroll internally):
+Responsive behavior (content never scrolls the page horizontally; install commands wrap inside their box):
 - **≤860px**: the ground-rules grid drops to one column; the versus comparison stacks to one centered column (max 26rem).
 - **≤720px**: the says-table drops its header row and stacks each row (an inline uppercase cyan "You say" label is injected before quotes); pairing steps stack (their scenes cap at 17rem); buttons go full-width (max 20rem); the workflow indents tighter; wide-scene SVG text bumps up (labels 17→28px, small code 14→22px) to stay readable.
 
@@ -205,7 +210,7 @@ Responsive behavior (content never scrolls the page horizontally; code bars scro
 - **Hero entrance**: staggered rise (translateY(16px) + fade, 1s) at delays 0 / 0.08s / 0.16s / 0.26s / 0.36s for star, wordmark, tagline, subline, CTAs.
 - **Scroll reveals**: `[data-reveal]` elements fade up 18px over 0.7s when an IntersectionObserver (threshold 0.2, rootMargin −8% bottom) marks them `.inview`; siblings inside groups stagger in gentle 0.08s steps (workflow steps 0.12s steps).
 - **Line drawing**: scene strokes carry `pathLength="1"` and draw via a dash transition (1s ease-out, 0.25s delay); the `.slow` variant (1.4s, 0.75s delay) is reserved for the cloud fallback arc so the cyan local link always draws first and the amber fallback second — the sequencing is semantic, not decorative.
-- **Ambient**: the amber workflow thread scaleY-draws over 1.6s as the chain reveals; five star layers move in three behaviors (near-static grain 21s, shimmer 9s/11s phase-shifted, halo stars flaring softly on desynced 16s/19s cycles); the terminal cursor blinks (`steps(1)`, 1.1s); buttons and the copy button press down with `scale(0.97)` over 0.16s on :active.
+- **Ambient**: the amber workflow thread scaleY-draws over 1.6s as the chain reveals; five star layers move in three behaviors (near-static grain 21s, shimmer 9s/11s phase-shifted, halo stars flaring softly on desynced 16s/19s cycles); the terminal cursor and the install console cursor blink (`steps(1)`, 1.1s); buttons and the copy button press down with `scale(0.97)` over 0.16s on :active.
 - **Hero delight (desktop only, ≥860px)**: a meteor — a 160px white streak on a long shallow diagonal across the sky above the brand star (never touching it), visible ~1.6s, crossing once ~4s after load (80s cycle, −74s delay) and then rarely — and a quiet four-star constellation right of the brand star whose 0.1-alpha hairlines draw themselves once on load. Both white, both hidden on small screens, both gone under reduced motion.
 - **Scene beats** (revision 3): each scene plays its own point once when it scrolls in, then rests on its final frame: the chat reply shows typing dots, then lands with a drawn check; the safety shield draws, settles (translate/scale) and draws its check; Sign in, then the window's Confirm and the phone button press (`scale(0.9)`, 0.42s) — window and phone are the confirmations shown big; the one-time code is only a small line of text; a cyan dot travels from your computer to the relay, an amber dot from the relay to Home Assistant, whose window then lights; the tool pile tumbles on and the one skill is handed over; the demo house's hourly reset arrow comes around. Transform, opacity, and stroke-dash only; layout shift measured 0. All scene beats live inside `@media (prefers-reduced-motion: no-preference)`, so reduced motion and no-JS show the final frame.
 - **GPU warm-up** (invisible): a browser builds a GPU program the first time it draws each effect, which freezes the screen for ~150–250 ms. So 1.4s after load, a sandboxed, inert iframe copy of the page at opacity 0.004 plays the reveals screen by screen (about 2–3s), then is removed. It stores nothing on the device, stops on the first scroll, click or key, and is skipped under reduced motion. Keep it in step with new reveal states or effects.
@@ -213,14 +218,14 @@ Responsive behavior (content never scrolls the page horizontally; code bars scro
 
 ## Elevation & Depth
 
-UI chrome is completely flat: no box-shadows, no glows, no layered surfaces. Depth is atmospheric instead — the fixed, breathing star field sits behind a scrolling page and the background gradient darkens toward the fold. The one sanctioned luminance is inside the authored scenes: semantic strokes glow softly via `filter: drop-shadow(0 0 5px <accent at 0.4 alpha>)`, reading as neon light in the night, not as elevation. The single translucent surface, Panel Night (rgba(13,21,37,0.6)) on code bars, reads as recessed glass, not as a lifted card.
+UI chrome is completely flat: no box-shadows, no glows, no layered surfaces. Depth is atmospheric instead — the fixed, breathing star field sits behind a scrolling page and the background gradient darkens toward the fold. The one sanctioned luminance is inside the authored scenes: semantic strokes glow softly via `filter: drop-shadow(0 0 5px <accent at 0.4 alpha>)`, reading as neon light in the night, not as elevation. The single translucent surface, Panel Night (rgba(13,21,37,0.6)) on the install console, reads as recessed glass, not as a lifted card; its glowing frame is scene linework.
 
 ### Named Rules
 **The No-Shadow Rule.** UI chrome never casts a shadow and never glows — including (especially) the star logo. Only authored scene linework may glow, and only via the fixed 5px drop-shadow at 0.4 alpha of its own stroke color. If a chrome element needs separation, it gets a hairline, not elevation.
 
 ## Shapes
 
-Two form languages coexist: pills and hairlines. Everything interactive or badge-like is a full pill (999px) — buttons, client chips, the Beta badge. Surfaces are softly rounded: code bars at 10px, inline code chips at 5px. Workflow step markers are 35px circles with a 1px amber border on a Night Mid fill, threaded on a 1px vertical amber gradient line (0.7 → 0.15 alpha).
+Two form languages coexist: pills and hairlines. Everything interactive or badge-like is a full pill (999px) — buttons, client chips, the Beta badge. Surfaces are softly rounded: the install console at 24px, its command box at 10px, inline code chips at 5px. Workflow step markers are 35px circles with a 1px amber border on a Night Mid fill, threaded on a 1px vertical amber gradient line (0.7 → 0.15 alpha).
 
 Scene linework is single-stroke neon: `fill: none`, 2px strokes with round caps and joins (the relay tile steps up to 2.5px, the confirmation checkmark to 3px — weight tracks importance), semantic cyan/amber glowing strokes, non-glowing Scene Neutral (rgba(184,204,224,0.5)) for props, and generous rounded corners (the relay tile at 24px radius). One sanctioned fill: a "lit window" (`.lamp`) gets an amber fill (0.6 alpha) behind its amber stroke, because light is the point of that beat. Section emblems (the safety shield, 120px; 76px on phones) sit beside or above the section heading, never as an eyebrow label. UI icons are the same language at small scale: 22px rendered (24 viewBox), 1.5px strokes, round caps, no fills, no glow.
 
@@ -241,8 +246,13 @@ Scene linework is single-stroke neon: `fill: none`, 2px strokes with round caps 
 ### List Rows (instead of cards)
 The system's replacement for cards: content blocks open with a 1px hairline top and ~1.1–1.5rem padding beneath it. Used by pairing steps (small neon scene, cyan counter numeral, ink-bold title line), says-rows (hairline bottoms, 1.4rem vertical padding), ground rules (amber line icon + text), and the footer story. No backgrounds, no radii, no borders on the other three sides.
 
-### Code Bars
-The only "panel" on the page: a flex bar with 1px hairline border, 10px radius, Panel Night translucent fill. Inside, a `pre` (0.9rem 1.1rem padding, internal horizontal scroll) and a Copy button separated by a hairline left border — cyan text, transparent fill, hover tint rgba(24,188,242,0.12), :active scale(0.97), and a 2s "Copied!" state that flips the label to amber (the change is now on the safe side).
+### Install Console (Get started)
+The page's call to action and the only "panel": Panel Night fill with a faint cyan light in the top-left corner, 24px radius, framed by one 1.5px cyan neon line — an inline SVG `rect` (`pathLength="1"`, scene `.c` glow) that draws itself over 1.6s as the block scrolls in. The frame counts as scene linework, not chrome: it is your computer, so it is cyan and may glow. At ≥1200px it breaks out of the text column to 1120px, centered, so the longest command fits on one line; below that it wraps (`pre-wrap`, `overflow-wrap: anywhere`) instead of scrolling, so the whole line always shows.
+- **Top bar:** a pill segmented tablist (macOS · Linux · Windows; plain text labels, no OS logos) with roving tabindex, arrow/Home/End keys; the selected tab gets a cyan 14% tint and a 55% cyan border. Right side: a cyan uppercase label "Runs on your computer". JS picks the visitor's system (User-Agent Client Hints, then the UA); phones get the first tab plus a line "On a phone? Open this page on your computer."
+- **Panels:** where to paste (Terminal / a terminal / PowerShell), then the command row: a recessed 10px-radius box (Abyss Ink at 55%, hairline) with a cyan prompt (`$`, `PS>`, not copyable), the command in ink mono `clamp(0.9375rem, …, 1.125rem)`, and a blinking cyan block cursor. All panels share one grid cell (inactive ones `visibility: hidden`), so switching tabs never moves the page.
+- **Copy:** a primary cyan pill with a 20px line icon. On copy it turns to "Copied" with an amber outline and a drawn check (amber = done, now in your hands), a cyan light band sweeps the command once (0.9s), and a polite live region says "Copied. Now paste it in Terminal." If copying fails, the line is selected and the live region says how to copy by hand.
+- **Under it:** a hairline-topped line on what happens next, then a centered calm link "No terminal? Try the demo house first".
+- **No JS:** no tabs and no Copy buttons; all three commands are listed with their own heading. Reduced motion: frame drawn, no cursor blink, no sweep, no check draw.
 
 ### More (folded detail)
 Native `<details class="more">` for detail that would make a section a text wall on phones (confirmation routes, undo scope, setup with a code): a hairline top, a cyan 600 summary at 0.9375rem with a small chevron that turns on open, body at 0.9375rem. Every fact behind a fold must still be on the page; the summary names what is inside.
