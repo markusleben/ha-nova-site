@@ -445,32 +445,52 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     </div>
   </section>
 
-  <section class="section" id="get-started">
+  <section class="section section-start" id="get-started">
     <h2>Get started</h2>
-    <p class="section-lead">You need Home&nbsp;Assistant. Any install type works. On HA&nbsp;OS and Supervised, the wizard sets up the NOVA Relay App. Container and Core run the same relay as a standalone container, set up with a&nbsp;token.</p>
-    <div class="install">
-      <div class="install-block" data-reveal>
-        <p class="install-label">macOS / Linux</p>
-        <div class="codebar">
-          <pre tabindex="0" aria-label="Install command for macOS and Linux"><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code></pre>
-          <button class="copy" type="button">Copy</button>
+    <p class="section-lead">One line to copy. One wizard. One sign&#8209;in.</p>
+    <div class="console" data-reveal>
+      <svg class="scene console-frame" aria-hidden="true" focusable="false"><rect class="d c" x="0" y="0" width="100%" height="100%" rx="24" pathLength="1"/></svg>
+      <div class="console-bar">
+        <div class="os-tabs" role="tablist" aria-label="Your computer">
+          <button type="button" role="tab" id="os-tab-mac" aria-controls="os-mac" aria-selected="true">macOS</button>
+          <button type="button" role="tab" id="os-tab-linux" aria-controls="os-linux" aria-selected="false" tabindex="-1">Linux</button>
+          <button type="button" role="tab" id="os-tab-windows" aria-controls="os-windows" aria-selected="false" tabindex="-1">Windows</button>
+        </div>
+        <p class="console-side">Runs on your computer</p>
+      </div>
+      <p class="console-phone" hidden>On a phone or tablet? Open this page on your computer.</p>
+      <div class="os-panels">
+        <div class="os-panel is-active" id="os-mac">
+          <h3 class="os-name">macOS</h3>
+          <p class="os-where">Open the <strong>Terminal</strong> app, paste the line, and press&nbsp;Enter.</p>
+          <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
+          <button class="copy-cmd" type="button" data-where="Terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the macOS command</span></button>
+        </div>
+        <div class="os-panel" id="os-linux">
+          <h3 class="os-name">Linux</h3>
+          <p class="os-where">Open a <strong>terminal</strong>, paste the line, and press&nbsp;Enter.</p>
+          <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
+          <button class="copy-cmd" type="button" data-where="the terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the Linux command</span></button>
+        </div>
+        <div class="os-panel" id="os-windows">
+          <h3 class="os-name">Windows</h3>
+          <p class="os-where">Open <strong>PowerShell</strong> from the Start menu, paste the line, and press&nbsp;Enter.</p>
+          <div class="cmd"><span class="cmd-prompt" aria-hidden="true">PS&gt;</span><pre><code>irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
+          <button class="copy-cmd" type="button" data-where="PowerShell"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the Windows command</span></button>
         </div>
       </div>
-      <div class="install-block" data-reveal>
-        <p class="install-label">Windows (PowerShell)</p>
-        <div class="codebar">
-          <pre tabindex="0" aria-label="Install command for Windows PowerShell"><code>irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex</code></pre>
-          <button class="copy" type="button">Copy</button>
-        </div>
-      </div>
+      <p class="console-next">The wizard finds your Home&nbsp;Assistant. If you own it, you sign in once in your&nbsp;browser.</p>
+      <p class="visually-hidden" role="status" id="copy-status"></p>
     </div>
+    <p class="start-alt">No terminal? <a href="demo/">Try the demo house&nbsp;first</a></p>
+    <p class="note">You need Home&nbsp;Assistant. Any install type works. On HA&nbsp;OS and Supervised, the wizard sets up the NOVA Relay App. Container and Core run the same relay as a standalone container, set up with a&nbsp;token.</p>
     <p class="note">No browser, not the Home&nbsp;Assistant owner, or using SSH on Linux? Then you connect with a six&#8209;digit code from the NOVA page instead.</p>
     <details class="more">
       <summary>Connect with a code</summary>
       <p>The wizard opens the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the six-digit code. It works once and expires in minutes.</p>
       <p>Over SSH, this only works well on Linux. On Windows and macOS, run setup on the computer itself. Over SSH, HA&nbsp;NOVA usually can’t save its login there.</p>
     </details>
-    <p class="note">Want to look first? The <a href="demo/">demo house</a> is a test Home&nbsp;Assistant with no real devices. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
+    <p class="note">The <a href="demo/">demo house</a> is a test Home&nbsp;Assistant with no real devices. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
     <p class="clients-label">Works with</p>
     <ul class="clients">
       <li>Claude Code</li>
@@ -495,33 +515,82 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
 </footer>
 
 <script>
-document.querySelectorAll('.copy').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var text = btn.parentNode.querySelector('code').textContent;
+/* Get started: pick the visitor's computer, keep the other two one click away. */
+(function () {
+  var tabs = [].slice.call(document.querySelectorAll('.os-tabs [role="tab"]'));
+  var status = document.getElementById('copy-status');
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      panel.classList.toggle('is-active', on);
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function (t, i) {
+    var panel = document.getElementById(t.getAttribute('aria-controls'));
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', t.id);
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      var n = tabs.length, to = { ArrowRight: i + 1, ArrowLeft: i - 1 + n, Home: 0, End: n - 1 }[e.key];
+      if (to === undefined) return;
+      e.preventDefault();
+      select(tabs[to % n], true);
+    });
+  });
+  var ua = navigator.userAgent, plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+  var phone = (navigator.userAgentData && navigator.userAgentData.mobile) || /Android|iPhone|iPad|iPod|Mobi/.test(ua) ||
+    (navigator.maxTouchPoints > 1 && (/Mac/.test(plat) || matchMedia('(pointer: coarse)').matches));
+  var os = /Mac/i.test(plat + ua) ? 'mac' : /Win/i.test(plat) || /Windows/.test(ua) ? 'windows' : /Linux|X11/i.test(plat + ua) && !/CrOS/.test(ua) ? 'linux' : 'mac'; // ChromeOS: no pick
+  select(document.getElementById('os-tab-' + os));
+  if (phone) document.querySelector('.console-phone').hidden = false;
+
+  document.querySelectorAll('.copy-cmd').forEach(function (btn) {
+    var label = btn.querySelector('.copy-label'), code = btn.parentNode.querySelector('code'), timer;
+    function say(text) { status.textContent = ''; setTimeout(function () { status.textContent = text; }, 100); }
     function done() {
-      btn.textContent = 'Copied!';
+      clearTimeout(timer);
+      btn.classList.remove('copied');
+      void btn.offsetWidth; // replay the sweep on a second click
       btn.classList.add('copied');
-      setTimeout(function () {
-        btn.textContent = 'Copy';
+      label.textContent = 'Copied';
+      say('Copied. Now paste it in ' + btn.dataset.where + '.');
+      timer = setTimeout(function () {
         btn.classList.remove('copied');
-      }, 2000);
+        label.textContent = 'Copy';
+      }, 2400);
+    }
+    function failed() {
+      // let the visitor copy it by hand: select the line
+      var r = document.createRange();
+      r.selectNodeContents(code);
+      getSelection().removeAllRanges();
+      getSelection().addRange(r);
+      say('Copy did not work. The line is selected. Press Control C, or Command C on a Mac.');
     }
     function legacy() {
-      var ta = document.createElement('textarea');
-      ta.value = text;
+      var ta = document.createElement('textarea'), ok = false;
+      ta.value = code.textContent;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
       document.body.appendChild(ta);
       ta.select();
-      document.execCommand('copy');
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
       document.body.removeChild(ta);
-      done();
+      btn.focus({ preventScroll: true }); // select() moved focus to the textarea
+      ok ? done() : failed();
     }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, legacy);
-    } else {
-      legacy();
-    }
+    btn.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code.textContent).then(done, legacy);
+      } else {
+        legacy();
+      }
+    });
   });
-});
+})();
 
 if ('IntersectionObserver' in window) {
   var io = new IntersectionObserver(function (entries) {
