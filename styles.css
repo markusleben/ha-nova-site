@@ -999,6 +999,8 @@ a:focus-visible {
   width: 0.55em;
   height: 1.1em;
   margin-left: 0.35em;
+  /* takes no line width, so it never wraps onto a line of its own */
+  margin-right: -0.9em;
   vertical-align: -0.18em;
   background: rgba(24, 188, 242, 0.7);
 }
