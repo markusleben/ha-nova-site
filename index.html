@@ -536,6 +536,76 @@ if ('IntersectionObserver' in window) {
 } else {
   document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('inview'); });
 }
+
+/* GPU warm-up. The first time a browser draws an effect (glow, fading text,
+   rounded clip) it builds a GPU program for it, which freezes the screen for
+   up to ~250 ms. Once the hero has risen, run the reveals in a near-invisible
+   copy of the page (an iframe, so it never counts as page content), screen by
+   screen, started at a few points of their run. The freezes then happen
+   now, not mid-scroll. It stops at the first scroll, click or key press.
+   Nothing is stored on the device. */
+if ('IntersectionObserver' in window && 'inert' in HTMLElement.prototype &&
+    matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  addEventListener('load', function () {
+    var f = null, stopped = false;
+    function stop() {
+      stopped = true;
+      if (f) { f.style.display = 'none'; setTimeout(function () { f.remove(); }); }
+      ['scroll', 'pointerdown', 'keydown'].forEach(function (t) { removeEventListener(t, stop); });
+    }
+    ['scroll', 'pointerdown', 'keydown'].forEach(function (t) { addEventListener(t, stop, { passive: true }); });
+    setTimeout(function () {
+      // opened mid-page (don't freeze reveals the visitor is watching) or in a
+      // background tab (the work would land on the moment the tab is shown)
+      if (stopped || scrollY || document.hidden) return stop();
+      f = document.createElement('iframe');
+      f.setAttribute('aria-hidden', 'true');
+      f.tabIndex = -1;
+      f.inert = true;
+      f.setAttribute('sandbox', 'allow-same-origin'); // no scripts in the copy
+      // inline, so a stale cached stylesheet can never show the copy
+      f.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;border:0;opacity:.004;pointer-events:none;z-index:-1';
+      // transparent like the real reveal layers; hero included so every
+      // section sits on the same sub-pixel offset as on the page
+      f.srcdoc = '<!doctype html><html class="js"><link rel="stylesheet" href="styles.css"><style>' +
+        'html{overflow:hidden}html,body{background:none}html::before,html::after,body::before,body::after,main::before{content:none}' +
+        '[data-reveal],[data-reveal] *,[data-reveal]::before{transition-delay:var(--warm-start)!important;animation-delay:var(--warm-start)!important}' +
+        '.warm-snap *,.warm-snap *::before{transition:none!important;animation:none!important}' +
+        '</style><body><div>' + document.querySelector('.hero').outerHTML +
+        '<main>' + document.querySelector('main').innerHTML + '</main></div>';
+      f.onload = function () {
+        var root = f.contentDocument.documentElement, page = f.contentDocument.body.firstChild;
+        var reveals = page.querySelectorAll('[data-reveal]');
+        // each pass shows every screen: at rest hidden, the reveals started at
+        // three points of their run, then at rest shown
+        var starts = [null, '0.03s', '-0.15s', '-0.4s', null], pass = 0, y = 0, frame = 0;
+        function replay() {
+          if (starts[pass] === null) return;
+          root.classList.add('warm-snap');
+          reveals.forEach(function (el) { el.classList.remove('inview'); });
+          void page.offsetHeight;
+          root.classList.remove('warm-snap');
+          root.style.setProperty('--warm-start', starts[pass]);
+          reveals.forEach(function (el) { el.classList.add('inview'); });
+        }
+        requestAnimationFrame(function step() {
+          if (stopped) return;
+          if (document.hidden) return stop(); // tab hidden mid-run: don't resume when it is shown
+          if (++frame % 3) return requestAnimationFrame(step); // 3 frames per screen: let tiles raster
+          y += innerHeight;
+          if (y >= page.offsetHeight) {
+            if (++pass === starts.length) return stop();
+            y = 0;
+          }
+          page.style.transform = 'translateY(' + (pass % 2 ? 0.5 - y : -y) + 'px)'; // odd passes off the pixel grid, like a mid-scroll page
+          replay();
+          requestAnimationFrame(step);
+        });
+      };
+      document.body.appendChild(f);
+    }, 1400);
+  });
+}
 </script>
 </body>
 </html>
