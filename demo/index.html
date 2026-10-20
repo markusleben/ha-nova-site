@@ -39,6 +39,7 @@
     <a class="btn btn-ghost" href="../">What is HA NOVA?</a>
   </p>
   <p class="note">Log in with <code>demo</code> / <code>demo</code> · next reset <span id="next-short">at the top of every hour (UTC)</span></p>
+  <p class="note">Or <a href="#claude">talk to it in Claude</a>, with nothing to install.</p>
 </div>
 
   <section class="section" id="how-the-demo-works">
@@ -68,6 +69,42 @@
       </li>
     </ul>
     <p class="note" id="ha-version" hidden></p>
+  </section>
+
+  <section class="section" id="claude">
+    <h2>Talk to the demo house in Claude</h2>
+    <p class="section-lead">Nothing to install. A free Claude account works. Add it on the web or in the Claude desktop app; then it works in the Claude phone app&nbsp;too.</p>
+    <p>
+      <a class="btn btn-primary" href="https://claude.ai/customize/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp">Add to Claude</a>
+    </p>
+    <p class="note">A free Claude plan can add one connector of its own. Already used it? Remove that one first in Claude: Settings → Connectors.</p>
+    <ol class="steps">
+      <li><strong>Add it.</strong> Choose Add to Claude. Claude opens with the demo filled in. If it asks how to sign in, choose “Sign in now” and “Use Claude’s published identity”. Then choose Add.</li>
+      <li><strong>Log in.</strong> The demo house’s login opens (if not, choose Connect). It asks to let Claude in: that is the demo, not your home. Type <code>demo</code> and <code>demo</code>.</li>
+      <li><strong>Ask.</strong> Open a new chat and say: “In the demo house, turn off the kitchen lights.”</li>
+    </ol>
+    <ul class="rules">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg>
+        <p>Unlocking a door asks you first. Here, Claude shows a short code, and you type it back. Claude sees the code too, so it is a light check. At home, a linked phone asks&nbsp;instead.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+        <p>The house resets at the top of every hour, which takes a few minutes. Then the demo signs Claude out. In Claude, choose Connect next to the demo in Settings → Connectors, and log in with <code>demo</code> /&nbsp;<code>demo</code>.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+        <p>Claude asks before each step at first. To ask less, open Settings → Connectors → HA NOVA demo. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs approval”: the demo has no phone, so that question is the check before the door&nbsp;unlocks.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <p>Other visitors can write text in the house, and Claude reads it. Use the demo in a new chat with no files and no other connectors&nbsp;on.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+        <p>Done? Remove the demo in Claude: Settings → Connectors. That frees the slot for your own&nbsp;home.</p>
+      </li>
+    </ul>
   </section>
 </main>
 
