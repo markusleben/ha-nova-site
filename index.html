@@ -555,7 +555,9 @@ if ('IntersectionObserver' in window && 'inert' in HTMLElement.prototype &&
     }
     ['scroll', 'pointerdown', 'keydown'].forEach(function (t) { addEventListener(t, stop, { passive: true }); });
     setTimeout(function () {
-      if (stopped || scrollY) return stop(); // opened mid-page: don't freeze reveals the visitor is watching
+      // opened mid-page (don't freeze reveals the visitor is watching) or in a
+      // background tab (the work would land on the moment the tab is shown)
+      if (stopped || scrollY || document.hidden) return stop();
       f = document.createElement('iframe');
       f.setAttribute('aria-hidden', 'true');
       f.tabIndex = -1;
@@ -588,6 +590,7 @@ if ('IntersectionObserver' in window && 'inert' in HTMLElement.prototype &&
         }
         requestAnimationFrame(function step() {
           if (stopped) return;
+          if (document.hidden) return stop(); // tab hidden mid-run: don't resume when it is shown
           if (++frame % 3) return requestAnimationFrame(step); // 3 frames per screen: let tiles raster
           y += innerHeight;
           if (y >= page.offsetHeight) {
