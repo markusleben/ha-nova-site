@@ -64,7 +64,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
 <main>
   <section class="section" id="pairing">
     <h2>Three steps to connect</h2>
-    <p class="section-lead">No terminal skills needed. On HA&nbsp;OS or Supervised, you paste one command. A page opens in your browser and guides you. Then you sign in with Home&nbsp;Assistant once.</p>
+    <p class="section-lead">No terminal skills needed. You paste one command on your computer. A page opens in your browser and guides you. Then you sign in with Home&nbsp;Assistant once.</p>
     <ol class="steps">
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A terminal window with one command typed in">
@@ -144,7 +144,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <circle class="d c" cx="133" cy="115" r="9"/>
           </g>
         </svg>
-        <strong>Turn on remote access.</strong> In Home&nbsp;Assistant, turn on remote access for Home&nbsp;Assistant Link. It may still say Home&nbsp;Assistant Cloud there. Your own HTTPS address works&nbsp;too.
+        <strong>Turn on remote access.</strong> In Home&nbsp;Assistant, turn on remote access for Home&nbsp;Assistant Link. Settings may still show its old name. Your own HTTPS address works&nbsp;too.
       </li>
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The NOVA page in Home Assistant, with the chat apps switch turned on">
@@ -296,7 +296,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <li data-reveal>
         <h3>You approve</h3>
         <p>Everything else waits for your yes. HA&nbsp;NOVA decides what needs it, never the AI.</p>
-        <p>Locks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than a yes. You confirm them on your computer or your phone:</p>
+        <p>Locks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than a yes. You confirm them on your computer or your linked phone. Both ask at the same time, and the first answer&nbsp;counts:</p>
         <ul class="confirm-ways" data-reveal>
           <li>
             <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
@@ -321,14 +321,14 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
                 <path class="d c" d="M91 107 l6 6 l11 -12" pathLength="1"/>
               </g>
             </svg>
-            <span>Tap your linked phone</span>
+            <span>Or tap your linked phone at the same&nbsp;time</span>
           </li>
         </ul>
         <p class="confirm-fallback">No screen and no phone? You type a one-time code. Some deletes, like helpers and scenes, always use one. The AI can see the code, so it only counts when you type it yourself.</p>
         <details class="more">
           <summary>More about confirming</summary>
           <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-          <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
+          <p><strong>Phone.</strong> The one phone you linked asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts, and the phone shows the result. With no screen, like on a Linux server, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
           <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one.</p>
           <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
           <p>If anything changed since the preview, nothing is sent. Before a restart, HA&nbsp;NOVA checks your config first. If something is wrong, it says what before you&nbsp;confirm.</p>
@@ -393,7 +393,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
 
   <section class="section" id="cloud">
     <h2>At home and away <span class="beta">Beta</span></h2>
-    <p class="section-lead">At home, your computer talks to Home&nbsp;Assistant directly. “Local only” stays the default. Away, it can use your paid Home&nbsp;Assistant Link plan (formerly Home&nbsp;Assistant Cloud). It switches by itself. Your login stays in your computer’s own safe&nbsp;storage.</p>
+    <p class="section-lead">At home, your computer talks to Home&nbsp;Assistant directly. “Local only” stays the default. Away, it can use your paid Home&nbsp;Assistant Link plan (formerly Home&nbsp;Assistant Cloud; Nabu&nbsp;Casa). It switches by itself. Your login stays in your computer’s own safe&nbsp;storage.</p>
     <figure class="figure" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="At home, your computer reaches Home Assistant directly over a locked link. Away, your Home Assistant Link plan is the automatic fallback.">
         <!-- direct local link, first light -->
@@ -487,57 +487,6 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <p class="note">Some checks must never depend on the AI. So the HA&nbsp;NOVA program on your computer runs them. It decides what needs a preview or your confirmation. It stops a change if anything changed since the&nbsp;preview.</p>
   </section>
 
-  <section class="section" id="skills-not-tools">
-    <h2>Skills first, not a tool catalog</h2>
-    <p class="section-lead">A typical tool server loads its whole tool list into your AI by default. HA&nbsp;NOVA hands it one skill when needed: a text file you can open and&nbsp;read.</p>
-    <div class="versus">
-      <figure class="figure" data-reveal>
-        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop buried under a toppling stack of tools">
-          <g class="dim">
-            <rect class="d n" x="40" y="30" width="56" height="16" rx="4"/>
-            <rect class="d n" x="36" y="52" width="56" height="16" rx="4"/>
-            <rect class="d n" x="44" y="74" width="56" height="16" rx="4"/>
-            <rect class="d n" x="38" y="96" width="56" height="16" rx="4"/>
-            <rect class="d n" x="46" y="118" width="56" height="16" rx="4"/>
-            <g class="topple">
-              <rect class="d n" x="104" y="44" width="52" height="15" rx="4" transform="rotate(14 130 51)"/>
-              <rect class="d n" x="128" y="70" width="52" height="15" rx="4" transform="rotate(24 154 77)"/>
-              <rect class="d n" x="150" y="100" width="52" height="15" rx="4" transform="rotate(33 176 107)"/>
-            </g>
-          </g>
-          <g transform="translate(150, 96)">
-            <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
-            <path class="d c" d="M0 92 h152" pathLength="1"/>
-          </g>
-        </svg>
-        <figcaption>The whole catalog, by default.</figcaption>
-      </figure>
-      <figure class="figure" data-reveal>
-        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop opening one skill file from a small stack of skill files on your computer">
-          <g transform="translate(60, 96)">
-            <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
-            <path class="d c" d="M0 92 h152" pathLength="1"/>
-          </g>
-          <!-- the skill files on your computer -->
-          <g transform="translate(250, 104)">
-            <path class="d n" d="M24 0 h22 l10 10 v50 h-32 Z"/>
-            <path class="d n" d="M12 8 h22 l10 10 v50 h-32 Z"/>
-            <path class="d n" d="M0 16 h22 l10 10 v50 h-32 Z"/>
-          </g>
-          <!-- the one skill the AI needs, opened on screen -->
-          <g transform="translate(116, 106)">
-            <g class="handoff">
-              <path class="d c" d="M0 0 h28 l12 12 v48 h-40 Z" pathLength="1"/>
-              <path class="d c" d="M28 0 v12 h12" pathLength="1"/>
-              <path class="d c" d="M8 26 h14 M8 38 h24 M8 50 h18" pathLength="1"/>
-            </g>
-          </g>
-        </svg>
-        <figcaption>One skill, when needed.</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <section class="section section-start" id="get-started">
     <h2>Get started</h2>
     <p class="section-lead">One line to copy. One setup page. One sign&#8209;in.</p>
@@ -575,7 +524,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <p class="console-next">A page opens in your browser and finds your Home&nbsp;Assistant. The owner signs in there&nbsp;once.</p>
       <p class="visually-hidden" role="status" id="copy-status"></p>
     </div>
-    <p class="start-alt">No terminal? <a href="demo/">Try the demo house&nbsp;first</a></p>
+    <p class="start-alt">No terminal? <a href="#chat-apps">Use Claude or ChatGPT</a>: Claude in the browser or on your phone, ChatGPT on the&nbsp;web.</p>
     <p class="note">You need Home&nbsp;Assistant. Any install type works. On HA&nbsp;OS and Supervised, setup installs the NOVA Relay App for&nbsp;you. Container and Core run the same relay as a standalone container, set up with a&nbsp;token.</p>
     <p class="note">Not the owner? The page asks the owner to sign in. No browser, or using SSH on Linux? Then you connect with a six&#8209;digit code from the NOVA page&nbsp;instead.</p>
     <details class="more">
@@ -584,7 +533,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <p>Can’t sign in on this computer at all? Choose “Use a six-digit code instead”. The owner can make it on any&nbsp;device.</p>
       <p>Over SSH, this only works well on Linux. On Windows and macOS, run setup on the computer itself. Over SSH, HA&nbsp;NOVA usually can’t save its login there.</p>
     </details>
-    <p class="note">The <a href="demo/">demo house</a> is a test Home&nbsp;Assistant with no real devices. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
+    <p class="note">The <a href="demo/">demo house</a> is a test Home&nbsp;Assistant with no real devices. Look around before you connect your own. <code>ha-nova try</code> connects your AI app to it, and the setup page offers it when it finds no Home&nbsp;Assistant. <code>ha-nova try --stop</code> removes it. Or choose “Add to Claude” on the <a href="demo/#claude">demo page</a>. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
     <p class="clients-label">Works with</p>
     <ul class="clients">
       <li>Claude Code</li>

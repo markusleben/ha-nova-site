@@ -457,7 +457,7 @@ a:focus-visible {
    the start frame hidden; .inview (IntersectionObserver, once) plays it. */
 
 @media (prefers-reduced-motion: no-preference) {
-  .press, .bubble-nova, .shield-body, .topple, .handoff, .typing circle {
+  .press, .bubble-nova, .shield-body, .typing circle {
     transform-box: fill-box;
     transform-origin: center;
   }
@@ -501,9 +501,6 @@ a:focus-visible {
   .js .demo-scene .arrowhead { opacity: 0; }
   .js .demo-scene.inview .arrowhead { animation: fade-in 0.3s ease-out 2.1s both; }
 
-  /* skills vs tools: the pile tumbles on; the one skill is handed over */
-  .js .versus .inview .topple { animation: topple 0.9s var(--ease-rise) 0.5s both; }
-  .js .versus .inview .handoff { animation: handoff 0.9s var(--ease-rise) 0.5s both; }
 }
 
 @keyframes bubble-in {
@@ -540,14 +537,6 @@ a:focus-visible {
   12%, 88% { opacity: 1; }
   100% { opacity: 0; transform: translateX(178px); }
 }
-@keyframes topple {
-  from { opacity: 0; transform: translate(-14px, -22px) rotate(-8deg); }
-  to   { opacity: 1; transform: none; }
-}
-@keyframes handoff {
-  from { opacity: 0.3; transform: translate(146px, 6px) scale(0.9); }
-  to   { opacity: 1; transform: none; }
-}
 
 .figure {
   margin: 2.5rem 0 0;
@@ -559,13 +548,6 @@ a:focus-visible {
   color: var(--ink);
   font-weight: 600;
   text-align: center;
-}
-
-.versus {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: end;
 }
 
 /* ---------- Scroll reveal & line drawing ---------- */
@@ -1162,6 +1144,7 @@ a:focus-visible {
   animation: rise 1s var(--ease-rise) 0.42s both;
 }
 .hero .note + .note { margin-top: 0.6rem; }
+.note code { white-space: nowrap; }
 
 .callout strong {
   display: block;
@@ -1237,13 +1220,6 @@ a:focus-visible {
 
   /* the hero corner is too close to the text on small screens */
   .hero::before, .hero-constellation { display: none; }
-
-  .versus {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 26rem;
-    margin-inline: auto;
-  }
 }
 
 @media (max-width: 720px) {
