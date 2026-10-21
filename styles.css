@@ -385,14 +385,18 @@ a:focus-visible {
 .figure.chat { max-width: 26rem; margin: 0 0 2.5rem; }
 .figure.chat figcaption { margin-top: 0.75rem; text-align: left; font-weight: 400; color: var(--ink-soft); font-size: 0.9375rem; }
 
-.safety-head {
+.safety-head, .section-head {
   display: flex;
   align-items: center;
   gap: 2rem;
   justify-content: space-between;
 }
-.safety-head .section-lead { margin-bottom: 0; }
-.safety-emblem { flex: 0 0 auto; width: 120px; }
+.safety-head .section-lead, .section-head .section-lead { margin-bottom: 0; }
+.safety-emblem, .section-emblem { flex: 0 0 auto; width: 120px; }
+
+/* chat apps: three easy steps under the heading */
+.steps-title { margin-top: 2.5rem; font-size: 1.25rem; }
+.steps-title + .steps { margin-top: 1.25rem; }
 
 .confirm-ways {
   list-style: none;
@@ -453,7 +457,7 @@ a:focus-visible {
    the start frame hidden; .inview (IntersectionObserver, once) plays it. */
 
 @media (prefers-reduced-motion: no-preference) {
-  .press, .bubble-nova, .shield-body, .topple, .handoff, .typing circle {
+  .press, .bubble-nova, .shield-body, .typing circle {
     transform-box: fill-box;
     transform-origin: center;
   }
@@ -486,6 +490,7 @@ a:focus-visible {
   .js .steps .inview .lamp,
   .js .demo-scene.inview .lamp { animation: fade-in 0.7s ease-out 1.25s both; }
   .js #cloud .figure.inview .lamp { animation: fade-in 0.7s ease-out 2.2s both; }
+  .js #chat-apps .steps .inview .lamp { animation-delay: 1.6s; }
 
   /* a request travels: your computer, the relay, then Home Assistant lights up */
   .js .flow.inview .pulse-c { animation: pulse-c 1s ease-in-out 1.3s both; }
@@ -496,9 +501,6 @@ a:focus-visible {
   .js .demo-scene .arrowhead { opacity: 0; }
   .js .demo-scene.inview .arrowhead { animation: fade-in 0.3s ease-out 2.1s both; }
 
-  /* skills vs tools: the pile tumbles on; the one skill is handed over */
-  .js .versus .inview .topple { animation: topple 0.9s var(--ease-rise) 0.5s both; }
-  .js .versus .inview .handoff { animation: handoff 0.9s var(--ease-rise) 0.5s both; }
 }
 
 @keyframes bubble-in {
@@ -535,14 +537,6 @@ a:focus-visible {
   12%, 88% { opacity: 1; }
   100% { opacity: 0; transform: translateX(178px); }
 }
-@keyframes topple {
-  from { opacity: 0; transform: translate(-14px, -22px) rotate(-8deg); }
-  to   { opacity: 1; transform: none; }
-}
-@keyframes handoff {
-  from { opacity: 0.3; transform: translate(146px, 6px) scale(0.9); }
-  to   { opacity: 1; transform: none; }
-}
 
 .figure {
   margin: 2.5rem 0 0;
@@ -554,13 +548,6 @@ a:focus-visible {
   color: var(--ink);
   font-weight: 600;
   text-align: center;
-}
-
-.versus {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: end;
 }
 
 /* ---------- Scroll reveal & line drawing ---------- */
@@ -1156,6 +1143,8 @@ a:focus-visible {
 .js .hero .note {
   animation: rise 1s var(--ease-rise) 0.42s both;
 }
+.hero .note + .note { margin-top: 0.6rem; }
+.note code { white-space: nowrap; }
 
 .callout strong {
   display: block;
@@ -1231,13 +1220,6 @@ a:focus-visible {
 
   /* the hero corner is too close to the text on small screens */
   .hero::before, .hero-constellation { display: none; }
-
-  .versus {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 26rem;
-    margin-inline: auto;
-  }
 }
 
 @media (max-width: 720px) {
@@ -1288,8 +1270,8 @@ a:focus-visible {
   .legend-cloud { grid-template-columns: 1fr 1fr; }
   .legend-cloud span:nth-child(even) { text-align: right; }
 
-  .safety-head { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
-  .safety-emblem { width: 76px; }
+  .safety-head, .section-head { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
+  .safety-emblem, .section-emblem { width: 76px; }
 
   .confirm-ways { gap: 0.9rem; }
 
@@ -1328,4 +1310,22 @@ a:focus-visible {
     transform: none;
     transition: none;
   }
+}
+
+/* demo page: which app. Only the chosen panel shows (with JS), so a short one leaves no gap. */
+.js .app-panels { display: block; }
+.js .app-panels .os-panel:not(.is-active) { display: none; }
+.app-tabs { flex-wrap: wrap; justify-content: center; }
+.app-panels .steps { margin-top: 1.5rem; }
+.app-step { margin: 1.75rem 0 0.75rem; font-size: 1.0625rem; }
+.app-step strong { color: var(--ink); }
+.app-panels .copy-cmd { margin-top: 0.75rem; }
+.says-list { margin: 1rem 0 0; padding-left: 1.4rem; font-size: 1.0625rem; color: var(--ink); }
+.says-list li + li { margin-top: 0.5rem; }
+#try .console-bar { margin-top: 1.25rem; }
+#try .callout { margin: 0 0 2.5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  /* three commands in one panel: sweep only the one copied */
+  .app-panels .os-panel:has(.copied) .cmd::after { animation: none; }
+  .app-panels .cmd:has(+ .copy-cmd.copied)::after { animation: sweep 0.9s var(--ease-rise) both; }
 }

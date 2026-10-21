@@ -55,15 +55,16 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
   <p class="hero-sub">Connect your AI to Home&nbsp;Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to&nbsp;confirm.</p>
   <p class="hero-ctas">
     <a class="btn btn-primary" href="#get-started">Get started</a>
-    <a class="btn btn-ghost" href="https://github.com/markusleben/ha-nova">View on GitHub</a>
+    <a class="btn btn-ghost" href="demo/">Try HA NOVA in 1 minute</a>
   </p>
-  <p class="note">Or look around the <a href="demo/">demo house</a>&nbsp;first.</p>
+  <p class="note"><a href="#chat-apps">Use it from your phone</a> in the Claude app. ChatGPT works on the web. No computer has to stay&nbsp;on.</p>
+  <p class="note">The 1-minute try needs no Home&nbsp;Assistant: it uses a shared demo&nbsp;house.</p>
 </header>
 
 <main>
   <section class="section" id="pairing">
     <h2>Three steps to connect</h2>
-    <p class="section-lead">No terminal skills needed. On HA&nbsp;OS or Supervised, you paste one command and a wizard guides you. Then you sign in with Home&nbsp;Assistant once.</p>
+    <p class="section-lead">No terminal skills needed. You paste one command on your computer. A page opens in your browser and guides you. Then you sign in with Home&nbsp;Assistant once.</p>
     <ol class="steps">
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A terminal window with one command typed in">
@@ -76,7 +77,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <path class="d c" d="M132 78 h40" pathLength="1"/>
           <path class="d c cursor" d="M40 110 h12" stroke-width="3"/>
         </svg>
-        <strong>Run the installer.</strong> Paste one command on macOS, Linux, or Windows. The wizard finds your Home&nbsp;Assistant.
+        <strong>Run the installer.</strong> Paste one command on macOS, Linux, or Windows. A page opens in your browser. It finds your Home&nbsp;Assistant and your AI&nbsp;apps.
       </li>
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The Home Assistant login in your browser, with a Sign in button">
@@ -89,21 +90,105 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <text x="120" y="124" text-anchor="middle" class="t-btn">Sign in</text>
           </g>
         </svg>
-        <strong>Sign in with Home&nbsp;Assistant.</strong> Your browser opens the Home&nbsp;Assistant login. Sign in as the owner. The wizard sets up the NOVA Relay App if needed, and this computer connects by&nbsp;itself.
+        <strong>Sign in with Home&nbsp;Assistant.</strong> Sign in as the owner: the first account made when Home&nbsp;Assistant was set up. Setup installs and starts the NOVA Relay App if needed. Then this computer connects by&nbsp;itself.
       </li>
       <li data-reveal>
-        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="A laptop showing your home, with a check mark">
-          <rect class="d c" x="36" y="34" width="120" height="78" rx="8"/>
-          <path class="d c" d="M24 124 h144" pathLength="1"/>
-          <path class="d c" d="M76 80 L96 62 L116 80" pathLength="1"/>
-          <path class="d c" d="M81 76 V98 H111 V76" pathLength="1"/>
-          <rect class="d n" x="89" y="82" width="12" height="10" rx="1"/>
-          <rect class="d a lamp" x="89" y="82" width="12" height="10" rx="1"/>
-          <path class="d a" d="M164 76 l16 18 l34 -42" stroke-width="3" pathLength="1"/>
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="Your phone asks to link, with an Allow button">
+          <rect class="d n" x="86" y="6" width="68" height="148" rx="13"/>
+          <path class="d n" d="M110 18 H130"/>
+          <path class="d n" d="M100 50 H140 M100 64 H128"/>
+          <g class="press">
+            <rect class="d c" x="96" y="100" width="48" height="26" rx="13"/>
+            <text x="120" y="117" text-anchor="middle" class="t-btn">Allow</text>
+          </g>
         </svg>
-        <strong>Get a first look.</strong> Setup sums up your home in one line. It points out up to two things to check, like a low battery. It also gives you example requests with your own room and device&nbsp;names.
+        <strong>Add your phone, then look around.</strong> The Confirm window on this computer is on. To add your phone, click “Use this phone”, then tap “Allow” on it. Then you see your home at a glance, with things worth a look, like a low&nbsp;battery.
       </li>
     </ol>
+  </section>
+
+  <section class="section" id="chat-apps">
+    <div class="section-head">
+      <div>
+        <h2>Use it from your phone</h2>
+        <p class="section-lead">Ask about your home and change it in the Claude app on your phone. Claude on the web and on desktop works too, and so does ChatGPT on the web. No computer has to stay&nbsp;on.</p>
+      </div>
+      <svg class="scene section-emblem chat" viewBox="0 0 120 184" role="img" aria-label="A phone with a chat: you ask, HA NOVA answers with a check mark" data-reveal>
+        <rect class="d n" x="14" y="4" width="92" height="176" rx="16"/>
+        <path class="d n" d="M50 16 H70"/>
+        <rect class="d c" x="40" y="38" width="56" height="26" rx="11"/>
+        <path class="d n" d="M50 51 H86"/>
+        <g class="bubble-nova">
+          <rect class="d a" x="24" y="80" width="64" height="36" rx="12"/>
+          <g class="typing">
+            <circle cx="42" cy="98" r="3"/>
+            <circle cx="56" cy="98" r="3"/>
+            <circle cx="70" cy="98" r="3"/>
+          </g>
+          <g class="reply">
+            <path class="d a" d="M35 98 l5 5 l9 -10" stroke-width="2.5" pathLength="1"/>
+            <path class="d n" d="M56 98 H78"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <h3 class="steps-title">How easy is it?</h3>
+    <ol class="steps">
+      <li data-reveal>
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="Home Assistant Link, with its remote access switch turned on">
+          <g transform="translate(74, 8)">
+            <path class="d a" d="M24 60 a18 18 0 0 1 5 -35.5 A24 24 0 0 1 75 19 a17 17 0 0 1 7 41 Z" pathLength="1"/>
+          </g>
+          <g class="press">
+            <rect class="d c" x="92" y="100" width="56" height="30" rx="15"/>
+            <circle class="d c" cx="133" cy="115" r="9"/>
+          </g>
+        </svg>
+        <strong>Turn on remote access.</strong> In Home&nbsp;Assistant, turn on remote access for Home&nbsp;Assistant Link. Settings may still show its <a href="#cloud">old name</a>. Your own HTTPS address works&nbsp;too.
+      </li>
+      <li data-reveal>
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The NOVA page in Home Assistant, with the chat apps switch turned on">
+          <rect class="d n" x="30" y="10" width="180" height="140" rx="12"/>
+          <image href="assets/icon.svg" x="46" y="24" width="22" height="22"/>
+          <path class="d n" d="M78 35 H134"/>
+          <path class="d n" d="M46 80 H120 M46 94 H100"/>
+          <g class="press">
+            <rect class="d c" x="140" y="74" width="50" height="28" rx="14"/>
+            <circle class="d c" cx="176" cy="88" r="8"/>
+          </g>
+          <path class="d n" d="M46 126 H150"/>
+        </svg>
+        <strong>Flip the switch.</strong> Turn on chat apps in setup, or on the NOVA page in the Home&nbsp;Assistant sidebar. Home&nbsp;Assistant restarts&nbsp;once.
+      </li>
+      <li data-reveal>
+        <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="An Add to Claude button, and your home lights up">
+          <rect class="d n" x="12" y="14" width="152" height="132" rx="12"/>
+          <path class="d n" d="M12 38 H164"/>
+          <path class="d n" d="M32 62 H128 M32 76 H104"/>
+          <g class="press">
+            <rect class="d c" x="28" y="98" width="120" height="28" rx="14"/>
+            <text x="88" y="116" text-anchor="middle" class="t-btn">Add to Claude</text>
+          </g>
+          <path class="d c" d="M178 96 L203 74 L228 96" pathLength="1"/>
+          <path class="d c" d="M184 96 V126 H222 V96" pathLength="1"/>
+          <rect class="d n" x="197" y="102" width="12" height="10" rx="1"/>
+          <rect class="d a lamp" x="197" y="102" width="12" height="10" rx="1"/>
+        </svg>
+        <strong>Add it to your chat.</strong> Click “Add to Claude”, or paste the address setup shows into ChatGPT. Then sign in to Home&nbsp;Assistant as the&nbsp;owner.
+      </li>
+    </ol>
+    <p class="note"><strong>Needs Home&nbsp;Assistant Link remote access</strong>, or your own HTTPS address. You also need Home&nbsp;Assistant 2026.10 or newer, on HA&nbsp;OS or Supervised. Only the owner can turn it on and use&nbsp;it.</p>
+    <p class="note">Unlocks and deletes still wait for a tap on your phone. No phone linked? Then you type a code in the chat. The AI can see that code too, so it protects less than your&nbsp;phone.</p>
+    <details class="more">
+      <summary>More about chat apps</summary>
+      <p>On the NOVA page, you can require the phone, or let chat apps only&nbsp;read.</p>
+      <p>Everyday actions, like a light, run right away. Then HA&nbsp;NOVA checks them. But at first, Claude asks before each step. To ask less, open Settings → Connectors → HA&nbsp;NOVA in Claude. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs&nbsp;approval”.</p>
+      <p>Your own address needs a valid certificate. Self-signed certificates, plain <code>http://</code>, Tailscale, and local addresses don’t&nbsp;work.</p>
+      <p>Claude or ChatGPT then holds a Home&nbsp;Assistant sign-in for your account. It works for all of Home&nbsp;Assistant, not only HA&nbsp;NOVA. Anyone who can use your Claude or ChatGPT account can reach your home through it. To sign them out, open your Home&nbsp;Assistant profile, then&nbsp;Security.</p>
+      <p>Helpers, dashboards, and files still need HA&nbsp;NOVA on a&nbsp;computer.</p>
+      <p>Turn chat apps off before you remove the NOVA Relay&nbsp;App.</p>
+      <p>Step by step, which ChatGPT plans work, and what to do if it doesn’t connect: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/chat-apps.md">the chat apps guide on GitHub</a>.</p>
+    </details>
   </section>
 
   <section class="section" id="what-you-can-do">
@@ -168,6 +253,10 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <p class="says-result">Counts your rooms, devices, automations, and integrations. Lists the automations, scripts, scenes, groups, helpers, and dashboard cards that use the sensor. Says what it couldn’t check. Exact numbers, never a guess.</p>
       </div>
       <div class="says-row" role="listitem" data-reveal>
+        <p class="says-quote">“What’s the average temperature upstairs?”</p>
+        <p class="says-result">Works out averages and totals across rooms in one step. Names the sensors it used, and any it couldn’t&nbsp;read.</p>
+      </div>
+      <div class="says-row" role="listitem" data-reveal>
         <p class="says-quote">“My door sensor died, I paired a new one”</p>
         <p class="says-result">Moves automations, scripts, scenes, dashboards, helpers, and energy sources to the new device. You check it all as one plan.</p>
       </div>
@@ -207,7 +296,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <li data-reveal>
         <h3>You approve</h3>
         <p>Everything else waits for your yes. HA&nbsp;NOVA decides what needs it, never the AI.</p>
-        <p>Locks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than a yes. You confirm them on your computer or your phone:</p>
+        <p>Locks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than a yes. You confirm them on your computer or your linked phone. Both ask at the same time, and the first answer&nbsp;counts:</p>
         <ul class="confirm-ways" data-reveal>
           <li>
             <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
@@ -232,17 +321,17 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
                 <path class="d c" d="M91 107 l6 6 l11 -12" pathLength="1"/>
               </g>
             </svg>
-            <span>Tap your linked phone</span>
+            <span>Or tap your linked phone at the same&nbsp;time</span>
           </li>
         </ul>
         <p class="confirm-fallback">No screen and no phone? You type a one-time code. Some deletes, like helpers and scenes, always use one. The AI can see the code, so it only counts when you type it yourself.</p>
         <details class="more">
           <summary>More about confirming</summary>
           <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-          <p><strong>Phone.</strong> No screen, like on a Linux server? Then the one phone you linked asks, in the Home&nbsp;Assistant Companion app. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
+          <p><strong>Phone.</strong> The one phone you linked asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts, and the phone shows the result. With no screen, like on a Linux server, or with the window turned off, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
           <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one.</p>
           <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
-          <p>If anything changed since the preview, nothing is sent.</p>
+          <p>If anything changed since the preview, nothing is sent. Before a restart, HA&nbsp;NOVA checks your config first. If something is wrong, it says what before you&nbsp;confirm.</p>
           <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
           <p>Every safety rule, and the test behind it: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/safety.md">the safety page on GitHub</a>.</p>
         </details>
@@ -284,6 +373,10 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <p>The Relay’s Home&nbsp;Assistant login never reaches the AI.</p>
       </li>
       <li data-reveal>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 20 20 4"/></svg>
+        <p>Stored codes stay hidden from the AI. That means a lock or alarm code in its settings, the backup password, and the Thread network key. Codes written into automations are not&nbsp;hidden.</p>
+      </li>
+      <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
         <p>On App installs, each device gets its own connection. Sign-in and the code work once and expire in minutes. One click in NOVA cuts a device off. (The standalone container uses one shared token.)</p>
       </li>
@@ -300,7 +393,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
 
   <section class="section" id="cloud">
     <h2>At home and away <span class="beta">Beta</span></h2>
-    <p class="section-lead">At home, your computer talks to Home&nbsp;Assistant directly. “Local only” stays the default. Away, it can use your paid Home&nbsp;Assistant Link plan (formerly Home&nbsp;Assistant Cloud). It switches by itself. Your login stays in your computer’s own safe&nbsp;storage.</p>
+    <p class="section-lead">At home, your computer talks to Home&nbsp;Assistant directly. “Local only” stays the default. Away, it can use your paid Home&nbsp;Assistant Link plan (formerly Home&nbsp;Assistant Cloud; Nabu&nbsp;Casa). It switches by itself. Your login stays in your computer’s own safe&nbsp;storage.</p>
     <figure class="figure" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 800 340" role="img" aria-label="At home, your computer reaches Home Assistant directly over a locked link. Away, your Home Assistant Link plan is the automatic fallback.">
         <!-- direct local link, first light -->
@@ -394,60 +487,9 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <p class="note">Some checks must never depend on the AI. So the HA&nbsp;NOVA program on your computer runs them. It decides what needs a preview or your confirmation. It stops a change if anything changed since the&nbsp;preview.</p>
   </section>
 
-  <section class="section" id="skills-not-tools">
-    <h2>Skills first, not a tool catalog</h2>
-    <p class="section-lead">A typical tool server loads its whole tool list into your AI by default. HA&nbsp;NOVA hands it one skill when needed: a text file you can open and&nbsp;read.</p>
-    <div class="versus">
-      <figure class="figure" data-reveal>
-        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop buried under a toppling stack of tools">
-          <g class="dim">
-            <rect class="d n" x="40" y="30" width="56" height="16" rx="4"/>
-            <rect class="d n" x="36" y="52" width="56" height="16" rx="4"/>
-            <rect class="d n" x="44" y="74" width="56" height="16" rx="4"/>
-            <rect class="d n" x="38" y="96" width="56" height="16" rx="4"/>
-            <rect class="d n" x="46" y="118" width="56" height="16" rx="4"/>
-            <g class="topple">
-              <rect class="d n" x="104" y="44" width="52" height="15" rx="4" transform="rotate(14 130 51)"/>
-              <rect class="d n" x="128" y="70" width="52" height="15" rx="4" transform="rotate(24 154 77)"/>
-              <rect class="d n" x="150" y="100" width="52" height="15" rx="4" transform="rotate(33 176 107)"/>
-            </g>
-          </g>
-          <g transform="translate(150, 96)">
-            <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
-            <path class="d c" d="M0 92 h152" pathLength="1"/>
-          </g>
-        </svg>
-        <figcaption>The whole catalog, by default.</figcaption>
-      </figure>
-      <figure class="figure" data-reveal>
-        <svg class="scene" viewBox="0 0 380 250" role="img" aria-label="A laptop opening one skill file from a small stack of skill files on your computer">
-          <g transform="translate(60, 96)">
-            <rect class="d c" x="12" y="0" width="128" height="80" rx="8"/>
-            <path class="d c" d="M0 92 h152" pathLength="1"/>
-          </g>
-          <!-- the skill files on your computer -->
-          <g transform="translate(250, 104)">
-            <path class="d n" d="M24 0 h22 l10 10 v50 h-32 Z"/>
-            <path class="d n" d="M12 8 h22 l10 10 v50 h-32 Z"/>
-            <path class="d n" d="M0 16 h22 l10 10 v50 h-32 Z"/>
-          </g>
-          <!-- the one skill the AI needs, opened on screen -->
-          <g transform="translate(116, 106)">
-            <g class="handoff">
-              <path class="d c" d="M0 0 h28 l12 12 v48 h-40 Z" pathLength="1"/>
-              <path class="d c" d="M28 0 v12 h12" pathLength="1"/>
-              <path class="d c" d="M8 26 h14 M8 38 h24 M8 50 h18" pathLength="1"/>
-            </g>
-          </g>
-        </svg>
-        <figcaption>One skill, when needed.</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <section class="section section-start" id="get-started">
     <h2>Get started</h2>
-    <p class="section-lead">One line to copy. One wizard. One sign&#8209;in.</p>
+    <p class="section-lead">One line to copy. One setup page. One sign&#8209;in.</p>
     <div class="console" data-reveal>
       <svg class="scene console-frame" aria-hidden="true" focusable="false"><rect class="d c" x="0" y="0" width="100%" height="100%" rx="24" pathLength="1"/></svg>
       <div class="console-bar">
@@ -479,18 +521,19 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <button class="copy-cmd" type="button" data-where="PowerShell"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the Windows command</span></button>
         </div>
       </div>
-      <p class="console-next">The wizard finds your Home&nbsp;Assistant. If you own it, you sign in once in your&nbsp;browser.</p>
+      <p class="console-next">A page opens in your browser and finds your Home&nbsp;Assistant. The owner signs in there&nbsp;once.</p>
       <p class="visually-hidden" role="status" id="copy-status"></p>
     </div>
-    <p class="start-alt">No terminal? <a href="demo/">Try the demo house&nbsp;first</a></p>
-    <p class="note">You need Home&nbsp;Assistant. Any install type works. On HA&nbsp;OS and Supervised, the wizard sets up the NOVA Relay App. Container and Core run the same relay as a standalone container, set up with a&nbsp;token.</p>
-    <p class="note">No browser, not the Home&nbsp;Assistant owner, or using SSH on Linux? Then you connect with a six&#8209;digit code from the NOVA page instead.</p>
+    <p class="start-alt">No AI app on your computer? <a href="#chat-apps">Use Claude or ChatGPT</a>: Claude in the browser or on your phone, ChatGPT on the&nbsp;web.</p>
+    <p class="note">You need Home&nbsp;Assistant. Any install type works. On HA&nbsp;OS and Supervised, setup installs the NOVA Relay App for&nbsp;you. Container and Core run the same relay as a standalone container, set up with a&nbsp;token.</p>
+    <p class="note">Not the owner? The page asks the owner to sign in. No browser, or using SSH on Linux? Then you connect with a six&#8209;digit code from the NOVA page&nbsp;instead.</p>
     <details class="more">
       <summary>Connect with a code</summary>
-      <p>The wizard opens the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the six-digit code. It works once and expires in minutes.</p>
+      <p>Setup shows the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the six-digit code. It works once and expires in minutes.</p>
+      <p>Can’t sign in on this computer at all? Choose “Use a six-digit code instead”. The owner can make it on any&nbsp;device.</p>
       <p>Over SSH, this only works well on Linux. On Windows and macOS, run setup on the computer itself. Over SSH, HA&nbsp;NOVA usually can’t save its login there.</p>
     </details>
-    <p class="note">The <a href="demo/">demo house</a> is a test Home&nbsp;Assistant with no real devices. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
+    <p class="note"><a href="demo/">Try HA NOVA in 1 minute</a> in Claude, on a test house with no real devices. Nothing to install. ChatGPT on the web works too (tested with Pro; your plan’s rules apply). On your computer, <code>ha-nova try</code> connects your AI app to it, and the setup page offers it when it finds no Home&nbsp;Assistant. <code>ha-nova try --stop</code> removes it. Everyone shares one login, and it resets every hour. So never enter real names, passwords, or tokens&nbsp;there.</p>
     <p class="clients-label">Works with</p>
     <ul class="clients">
       <li>Claude Code</li>
@@ -500,6 +543,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <li>Google Antigravity</li>
       <li>Hermes Agent <span class="preview">preview</span></li>
     </ul>
+    <p class="note">And in Claude (also on your phone) and ChatGPT on the web, with <a href="#chat-apps">chat apps</a>.</p>
     <p class="note">HA&nbsp;NOVA is young and changes often. Back up your setup before you let AI change&nbsp;anything.</p>
   </section>
 </main>
