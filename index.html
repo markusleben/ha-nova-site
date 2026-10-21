@@ -144,7 +144,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <circle class="d c" cx="133" cy="115" r="9"/>
           </g>
         </svg>
-        <strong>Turn on remote access.</strong> In Home&nbsp;Assistant, turn on remote access for Home&nbsp;Assistant Link. Settings may still show its old name. Your own HTTPS address works&nbsp;too.
+        <strong>Turn on remote access.</strong> In Home&nbsp;Assistant, turn on remote access for Home&nbsp;Assistant Link. Settings may still show its <a href="#cloud">old name</a>. Your own HTTPS address works&nbsp;too.
       </li>
       <li data-reveal>
         <svg class="scene" viewBox="0 0 240 160" role="img" aria-label="The NOVA page in Home Assistant, with the chat apps switch turned on">
@@ -328,7 +328,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <details class="more">
           <summary>More about confirming</summary>
           <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-          <p><strong>Phone.</strong> The one phone you linked asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts, and the phone shows the result. With no screen, like on a Linux server, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
+          <p><strong>Phone.</strong> The one phone you linked asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts, and the phone shows the result. With no screen, like on a Linux server, or with the window turned off, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
           <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one.</p>
           <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, use a four-digit code in chat.</p>
           <p>If anything changed since the preview, nothing is sent. Before a restart, HA&nbsp;NOVA checks your config first. If something is wrong, it says what before you&nbsp;confirm.</p>
@@ -524,7 +524,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <p class="console-next">A page opens in your browser and finds your Home&nbsp;Assistant. The owner signs in there&nbsp;once.</p>
       <p class="visually-hidden" role="status" id="copy-status"></p>
     </div>
-    <p class="start-alt">No terminal? <a href="#chat-apps">Use Claude or ChatGPT</a>: Claude in the browser or on your phone, ChatGPT on the&nbsp;web.</p>
+    <p class="start-alt">No AI app on your computer? <a href="#chat-apps">Use Claude or ChatGPT</a>: Claude in the browser or on your phone, ChatGPT on the&nbsp;web.</p>
     <p class="note">You need Home&nbsp;Assistant. Any install type works. On HA&nbsp;OS and Supervised, setup installs the NOVA Relay App for&nbsp;you. Container and Core run the same relay as a standalone container, set up with a&nbsp;token.</p>
     <p class="note">Not the owner? The page asks the owner to sign in. No browser, or using SSH on Linux? Then you connect with a six&#8209;digit code from the NOVA page&nbsp;instead.</p>
     <details class="more">
