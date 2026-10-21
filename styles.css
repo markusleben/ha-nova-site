@@ -385,14 +385,18 @@ a:focus-visible {
 .figure.chat { max-width: 26rem; margin: 0 0 2.5rem; }
 .figure.chat figcaption { margin-top: 0.75rem; text-align: left; font-weight: 400; color: var(--ink-soft); font-size: 0.9375rem; }
 
-.safety-head {
+.safety-head, .section-head {
   display: flex;
   align-items: center;
   gap: 2rem;
   justify-content: space-between;
 }
-.safety-head .section-lead { margin-bottom: 0; }
-.safety-emblem { flex: 0 0 auto; width: 120px; }
+.safety-head .section-lead, .section-head .section-lead { margin-bottom: 0; }
+.safety-emblem, .section-emblem { flex: 0 0 auto; width: 120px; }
+
+/* chat apps: three easy steps under the heading */
+.steps-title { margin-top: 2.5rem; font-size: 1.25rem; }
+.steps-title + .steps { margin-top: 1.25rem; }
 
 .confirm-ways {
   list-style: none;
@@ -486,6 +490,7 @@ a:focus-visible {
   .js .steps .inview .lamp,
   .js .demo-scene.inview .lamp { animation: fade-in 0.7s ease-out 1.25s both; }
   .js #cloud .figure.inview .lamp { animation: fade-in 0.7s ease-out 2.2s both; }
+  .js #chat-apps .steps .inview .lamp { animation-delay: 1.6s; }
 
   /* a request travels: your computer, the relay, then Home Assistant lights up */
   .js .flow.inview .pulse-c { animation: pulse-c 1s ease-in-out 1.3s both; }
@@ -1156,6 +1161,7 @@ a:focus-visible {
 .js .hero .note {
   animation: rise 1s var(--ease-rise) 0.42s both;
 }
+.hero .note + .note { margin-top: 0.6rem; }
 
 .callout strong {
   display: block;
@@ -1288,8 +1294,8 @@ a:focus-visible {
   .legend-cloud { grid-template-columns: 1fr 1fr; }
   .legend-cloud span:nth-child(even) { text-align: right; }
 
-  .safety-head { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
-  .safety-emblem { width: 76px; }
+  .safety-head, .section-head { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
+  .safety-emblem, .section-emblem { width: 76px; }
 
   .confirm-ways { gap: 0.9rem; }
 
