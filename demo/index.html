@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HA NOVA demo house</title>
-  <meta name="description" content="A test Home Assistant house with no real devices. Look around before you connect your own.">
+  <title>Try HA NOVA on a demo house</title>
+  <meta name="description" content="Try HA NOVA on a test Home Assistant house with no real devices: in Claude with nothing to install, or from an AI app on your computer.">
   <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/demo/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="HA NOVA demo house">
-  <meta property="og:description" content="A test Home Assistant house with no real devices. Look around before you connect your own.">
+  <meta property="og:title" content="Try HA NOVA on a demo house">
+  <meta property="og:description" content="Try HA NOVA on a test Home Assistant house with no real devices: in Claude with nothing to install, or from an AI app on your computer.">
   <meta property="og:url" content="https://hanova.app/demo/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
   <meta property="og:site_name" content="HA NOVA">
@@ -25,22 +25,73 @@
 <div class="hero">
   <img class="hero-star" src="../assets/icon.svg" alt="" width="132" height="132">
   <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
-  <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>The demo house</h1>
-  <p class="hero-sub">A test Home&nbsp;Assistant house with no real devices. Look around before you connect your&nbsp;own.</p>
-  <div class="callout" role="note" aria-labelledby="warning-title">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
-    <div>
-      <h2 class="visually-hidden" id="warning-title">Before you open the demo</h2>
-      <p><strong>Public demo: everyone shares one account.</strong> Other visitors can see what you enter until the next reset. Never enter real names, addresses, passwords, API keys, or tokens. Don’t connect real accounts or devices.</p>
-    </div>
-  </div>
-  <p class="hero-ctas">
-    <a class="btn btn-primary" href="https://demo.hanova.app/demo-house/house">Open the demo</a>
-    <a class="btn btn-ghost" href="../">What is HA NOVA?</a>
-  </p>
-  <p class="note">Log in with <code>demo</code> / <code>demo</code> · next reset <span id="next-short">at the top of every hour (UTC)</span></p>
-  <p class="note">Or <a href="#claude">talk to it in Claude</a>, with nothing to install.</p>
+  <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>Try HA&nbsp;NOVA on a demo&nbsp;house</h1>
+  <p class="hero-sub">Talk to a test Home&nbsp;Assistant house with no real devices. Pick your AI app, then ask it to turn off a&nbsp;light.</p>
 </div>
+
+  <section class="section" id="try">
+    <h2>Which app do you use?</h2>
+    <div class="console-bar">
+      <div class="os-tabs app-tabs" role="tablist" aria-label="Your AI app">
+        <button type="button" role="tab" id="app-tab-claude" aria-controls="claude" aria-selected="true">Claude</button>
+        <button type="button" role="tab" id="app-tab-chatgpt" aria-controls="chatgpt" aria-selected="false" tabindex="-1">ChatGPT</button>
+        <button type="button" role="tab" id="app-tab-computer" aria-controls="computer" aria-selected="false" tabindex="-1">On my computer</button>
+      </div>
+    </div>
+    <div class="os-panels app-panels">
+      <div class="os-panel is-active" id="claude">
+        <h3 class="os-name">Claude</h3>
+        <p class="os-where">No install. A free Claude account works. Add it on the web or in the Claude desktop app; then it works in the Claude phone app&nbsp;too.</p>
+        <p>
+          <a class="btn btn-primary" href="https://claude.ai/customize/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp">Add to Claude</a>
+        </p>
+        <ol class="steps">
+          <li><strong>Add it.</strong> Choose Add to Claude. Claude opens with the demo filled in. If it asks how to sign in, choose “Sign in now” and “Use Claude’s published identity”. Then choose Add.</li>
+          <li><strong>Log in.</strong> The demo house’s login opens (if not, choose Connect). It asks to let Claude in: that is the demo, not your home. Type <code>demo</code> and <code>demo</code>.</li>
+          <li><strong>Ask.</strong> Open a new chat and say one of the lines below.</li>
+        </ol>
+        <details class="more">
+          <summary>Good to know in Claude</summary>
+          <p>A free Claude plan can add one connector of its own. Already used it? Remove that one first in Claude: Settings → Connectors.</p>
+          <p>Unlocking a door asks you first. Here, Claude shows a short code, and you type it back. Claude sees the code too, so it is a light check. At home, a linked phone asks&nbsp;instead.</p>
+          <p>The house resets at the top of every hour, which takes a few minutes. Then the demo signs Claude out. In Claude, choose Connect next to the demo in Settings → Connectors, and log in with <code>demo</code> /&nbsp;<code>demo</code>.</p>
+          <p>Claude asks before each step at first. To ask less, open Settings → Connectors → HA NOVA demo. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs approval”: the demo has no phone, so that question is the check before the door&nbsp;unlocks.</p>
+          <p>Done? Remove the demo in Claude: Settings → Connectors. That frees the slot for your own&nbsp;home.</p>
+        </details>
+      </div>
+      <div class="os-panel" id="chatgpt">
+        <h3 class="os-name">ChatGPT</h3>
+        <p class="os-where">ChatGPT’s free plan can’t add your own connectors. Use Claude for the demo for&nbsp;now.</p>
+        <!-- ChatGPT Plus or Pro: add once the maintainer's test passes.
+        <p class="os-where">In ChatGPT (Plus or Pro): paste this address as a new connector, then log in with <code>demo</code> / <code>demo</code>.</p>
+        <div class="cmd"><pre><code>https://demo.hanova.app/api/ha_nova/mcp</code></pre></div>
+        -->
+      </div>
+      <div class="os-panel" id="computer">
+        <h3 class="os-name">An app on my computer</h3>
+        <p class="os-where">For Codex, Claude Code, OpenCode, or Antigravity. Install HA&nbsp;NOVA, then connect the demo&nbsp;house.</p>
+        <p class="app-step"><strong>1. Install HA&nbsp;NOVA.</strong> On a Mac or Linux, paste this in the&nbsp;Terminal:</p>
+        <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
+          <button class="copy-cmd" type="button" data-where="the Terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the macOS and Linux command</span></button>
+        <p class="app-step">On Windows, paste this in PowerShell:</p>
+        <div class="cmd"><span class="cmd-prompt" aria-hidden="true">PS&gt;</span><pre><code>irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
+          <button class="copy-cmd" type="button" data-where="PowerShell"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the Windows command</span></button>
+        <p class="app-step"><strong>2. Connect the demo.</strong> A setup page opens. If it finds no Home&nbsp;Assistant, choose “Try HA NOVA on a demo house”. Otherwise, open a new terminal and run&nbsp;this:</p>
+        <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>ha-nova try</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
+          <button class="copy-cmd" type="button" data-where="the terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the ha-nova try command</span></button>
+        <p class="app-step"><strong>3. Ask.</strong> Open your AI app in a new chat and say one of the lines below. Done? <code>ha-nova try --stop</code> removes the demo&nbsp;house.</p>
+      </div>
+    </div>
+    <p class="visually-hidden" role="status" id="copy-status"></p>
+
+    <h3 class="steps-title">Then say these, one at a time</h3>
+    <ol class="says-list">
+      <li>“In the demo house, turn off the kitchen lights.”</li>
+      <li>“In the demo house, unlock the entrance door.” It asks you&nbsp;first.</li>
+      <li>“In the demo house, where is the bed light used?”</li>
+    </ol>
+    <p class="note"><a href="https://demo.hanova.app/demo-house/house">Open the house next to the chat and watch it change</a>. Log in with <code>demo</code> /&nbsp;<code>demo</code>.</p>
+  </section>
 
   <section class="section" id="how-the-demo-works">
     <h2>How the demo works</h2>
@@ -54,57 +105,28 @@
       <rect class="d a lamp" x="102" y="102" width="16" height="14" rx="1"/>
       <path class="d a" d="M128 130 V110 H138 V130" pathLength="1"/>
     </svg>
+    <div class="callout" role="note" aria-labelledby="warning-title">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+      <div>
+        <h3 class="visually-hidden" id="warning-title">Before you use the demo</h3>
+        <p><strong>Public demo: everyone shares one account.</strong> Other visitors can see what you enter until the next reset. Never enter real names, addresses, passwords, API keys, or tokens. Don’t connect real accounts or devices.</p>
+      </div>
+    </div>
     <ul class="rules">
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15.5" r="3.5"/><path d="M10.5 13 19.5 4"/><path d="M16 7.5l2.5 2.5M13.5 10l2 2"/></svg>
-        <p>Log in with <code>demo</code> / <code>demo</code>.</p>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
-        <p>You are an admin. Change anything, write automations, break things.</p>
-      </li>
       <li>
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
         <p>Everything resets at the top of every hour (UTC).<span id="countdown" hidden> Next reset in <strong><time id="next"></time></strong>.</span></p>
       </li>
-    </ul>
-    <p class="note" id="ha-version" hidden></p>
-  </section>
-
-  <section class="section" id="claude">
-    <h2>Talk to the demo house in Claude</h2>
-    <p class="section-lead">Nothing to install. A free Claude account works. Add it on the web or in the Claude desktop app; then it works in the Claude phone app&nbsp;too.</p>
-    <p>
-      <a class="btn btn-primary" href="https://claude.ai/customize/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp">Add to Claude</a>
-    </p>
-    <p class="note">A free Claude plan can add one connector of its own. Already used it? Remove that one first in Claude: Settings → Connectors.</p>
-    <ol class="steps">
-      <li><strong>Add it.</strong> Choose Add to Claude. Claude opens with the demo filled in. If it asks how to sign in, choose “Sign in now” and “Use Claude’s published identity”. Then choose Add.</li>
-      <li><strong>Log in.</strong> The demo house’s login opens (if not, choose Connect). It asks to let Claude in: that is the demo, not your home. Type <code>demo</code> and <code>demo</code>.</li>
-      <li><strong>Ask.</strong> Open a new chat and say: “In the demo house, turn off the kitchen lights.”</li>
-    </ol>
-    <ul class="rules">
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg>
-        <p>Unlocking a door asks you first. Here, Claude shows a short code, and you type it back. Claude sees the code too, so it is a light check. At home, a linked phone asks&nbsp;instead.</p>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
-        <p>The house resets at the top of every hour, which takes a few minutes. Then the demo signs Claude out. In Claude, choose Connect next to the demo in Settings → Connectors, and log in with <code>demo</code> /&nbsp;<code>demo</code>.</p>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-        <p>Claude asks before each step at first. To ask less, open Settings → Connectors → HA NOVA demo. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs approval”: the demo has no phone, so that question is the check before the door&nbsp;unlocks.</p>
-      </li>
       <li>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
-        <p>Other visitors can write text in the house, and Claude reads it. Use the demo in a new chat with no files and no other connectors&nbsp;on.</p>
+        <p>Other visitors can write text in the house, and your AI app reads it. Use the demo in a new chat with no files and no other connectors&nbsp;on.</p>
       </li>
       <li>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
-        <p>Done? Remove the demo in Claude: Settings → Connectors. That frees the slot for your own&nbsp;home.</p>
+        <p>In the house, everyone is an admin with <code>demo</code> / <code>demo</code>. Change anything, break things: it comes back at the next&nbsp;reset.</p>
       </li>
     </ul>
+    <p class="note" id="ha-version" hidden></p>
   </section>
 </main>
 
@@ -118,6 +140,67 @@
 </footer>
 
 <script>
+/* Which app: one panel at a time with JS; without it, all three are listed. */
+(function () {
+  var tabs = [].slice.call(document.querySelectorAll('.app-tabs [role="tab"]'));
+  var status = document.getElementById('copy-status');
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      panel.classList.toggle('is-active', on);
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function (t, i) {
+    var panel = document.getElementById(t.getAttribute('aria-controls'));
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', t.id);
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      var n = tabs.length, to = { ArrowRight: i + 1, ArrowLeft: i - 1 + n, Home: 0, End: n - 1 }[e.key];
+      if (to === undefined) return;
+      e.preventDefault();
+      select(tabs[to % n], true);
+    });
+  });
+  // a link to #chatgpt or #computer opens that choice
+  var wanted = tabs.filter(function (t) { return '#' + t.getAttribute('aria-controls') === location.hash; })[0];
+  select(wanted || tabs[0]);
+
+  document.querySelectorAll('.copy-cmd').forEach(function (btn) {
+    var label = btn.querySelector('.copy-label'), code = btn.previousElementSibling.querySelector('code'), timer;
+    function say(text) { status.textContent = ''; setTimeout(function () { status.textContent = text; }, 100); }
+    function done() {
+      clearTimeout(timer);
+      btn.classList.remove('copied');
+      void btn.offsetWidth; // replay the sweep on a second click
+      btn.classList.add('copied');
+      label.textContent = 'Copied';
+      say('Copied. Now paste it in ' + btn.dataset.where + '.');
+      timer = setTimeout(function () {
+        btn.classList.remove('copied');
+        label.textContent = 'Copy';
+      }, 2400);
+    }
+    function failed() {
+      var r = document.createRange();
+      r.selectNodeContents(code);
+      getSelection().removeAllRanges();
+      getSelection().addRange(r);
+      say('Copy did not work. The line is selected. Press Control C, or Command C on a Mac.');
+    }
+    btn.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code.textContent).then(done, failed);
+      } else {
+        failed();
+      }
+    });
+  });
+})();
+
 // Scenes play once when they scroll into view; without JS they show their last frame.
 if ('IntersectionObserver' in window) {
   var io = new IntersectionObserver(function (entries) {
@@ -132,7 +215,6 @@ if ('IntersectionObserver' in window) {
 
 // Resets run every hour at :00 UTC, so the countdown needs no server.
 var next = document.getElementById('next');
-var nextShort = document.getElementById('next-short');
 function tick() {
   var now = new Date();
   // seconds to the next :00 UTC; wraps to 0 at :00:00
@@ -140,7 +222,6 @@ function tick() {
   var m = Math.floor(left / 60), sec = left % 60;
   next.dateTime = 'PT' + m + 'M' + sec + 'S';
   next.textContent = (m ? m + ' min ' : '') + sec + ' s';
-  nextShort.textContent = left < 60 ? 'in less than a minute' : 'in about ' + Math.ceil(left / 60) + ' min';
 }
 tick();
 setInterval(tick, 1000);
