@@ -1311,3 +1311,21 @@ a:focus-visible {
     transition: none;
   }
 }
+
+/* demo page: which app. Only the chosen panel shows (with JS), so a short one leaves no gap. */
+.js .app-panels { display: block; }
+.js .app-panels .os-panel:not(.is-active) { display: none; }
+.app-tabs { flex-wrap: wrap; justify-content: center; }
+.app-panels .steps { margin-top: 1.5rem; }
+.app-step { margin: 1.75rem 0 0.75rem; font-size: 1.0625rem; }
+.app-step strong { color: var(--ink); }
+.app-panels .copy-cmd { margin-top: 0.75rem; }
+.says-list { margin: 1rem 0 0; padding-left: 1.4rem; font-size: 1.0625rem; color: var(--ink); }
+.says-list li + li { margin-top: 0.5rem; }
+#try .console-bar { margin-top: 1.25rem; }
+#try .callout { margin: 0 0 2.5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  /* three commands in one panel: sweep only the one copied */
+  .app-panels .os-panel:has(.copied) .cmd::after { animation: none; }
+  .app-panels .cmd:has(+ .copy-cmd.copied)::after { animation: sweep 0.9s var(--ease-rise) both; }
+}

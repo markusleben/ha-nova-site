@@ -21,6 +21,7 @@ found=0
 while IFS= read -r cmd; do
   found=$((found + 1))
   grep -qF "$cmd" "$page" || say "install command missing or changed on the page: $cmd"
+  grep -qF "$cmd" demo/index.html || say "install command missing or changed on demo/index.html: $cmd"
 done < <(grep -E '^(curl -fsSL https://raw\.githubusercontent\.com/markusleben/ha-nova/main/install\.sh \| bash|irm https://raw\.githubusercontent\.com/markusleben/ha-nova/main/install\.ps1 \| iex)$' "$readme")
 [[ "$found" -eq 2 ]] || say "expected the 2 known install commands in the README, found $found — did an install command change?"
 
