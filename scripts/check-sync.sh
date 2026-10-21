@@ -4,7 +4,8 @@
 # Fails (exit 1) and says why when:
 #   - the README changed since the last recorded sync (.readme-sync holds its sha256),
 #   - an install command from the README is not on the page verbatim,
-#   - the page shows a version number or the word "Add-on".
+#   - the page shows a version number or the word "Add-on",
+#   - a stylesheet link lacks the current styles.css content hash.
 # After syncing the page to a new README: sha256 of that README -> .readme-sync.
 set -euo pipefail
 
@@ -28,5 +29,11 @@ done < <(grep -E '^(curl -fsSL https://raw\.githubusercontent\.com/markusleben/h
 grep -qiE 'add-on' "$page" && say 'the page says "Add-on" (use "App")'
 # raw source, so attributes (alt, aria-label, meta/og) count too
 grep -qE '\bv?[0-9]+\.[0-9]+\.[0-9]+\b' "$page" && say "the page shows a version number"
+
+# stylesheet links carry styles.css's content hash, so browsers fetch new CSS right after a deploy
+css="$(shasum -a 256 styles.css | cut -c1-10)"
+for f in index.html privacy.html demo/index.html; do
+  grep -q "styles.css?h=$css" "$f" || say "$f: stylesheet link must be styles.css?h=$css (styles.css changed — update the hash)"
+done
 
 exit "$fail"
