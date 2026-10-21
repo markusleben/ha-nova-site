@@ -1323,4 +1323,9 @@ a:focus-visible {
 .says-list { margin: 1rem 0 0; padding-left: 1.4rem; font-size: 1.0625rem; color: var(--ink); }
 .says-list li + li { margin-top: 0.5rem; }
 #try .console-bar { margin-top: 1.25rem; }
-#how-the-demo-works .callout { margin: 0 0 2rem; }
+#try .callout { margin: 0 0 2.5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  /* three commands in one panel: sweep only the one copied */
+  .app-panels .os-panel:has(.copied) .cmd::after { animation: none; }
+  .app-panels .cmd:has(+ .copy-cmd.copied)::after { animation: sweep 0.9s var(--ease-rise) both; }
+}
