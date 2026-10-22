@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="HA NOVA — Talk to your home. Every change checked.">
   <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to confirm.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
-  <link rel="stylesheet" href="styles.css?h=e0faaa80a5">
+  <link rel="stylesheet" href="styles.css?h=ab021d0051">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -578,11 +578,11 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <dl class="faq">
       <div class="faq-item" id="free">
         <dt>Is it free?</dt>
-        <dd>Yes. HA&nbsp;NOVA is free and open source, under the <a href="https://github.com/markusleben/ha-nova/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License<span class="visually-hidden"> (opens in a new tab)</span></a>. Your AI app has its own&nbsp;plans. Away from home, you use your own paid Home&nbsp;Assistant Link plan, or your own HTTPS&nbsp;address.</dd>
+        <dd>Yes. HA&nbsp;NOVA is free and open source, under the <a href="https://github.com/markusleben/ha-nova/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License<span class="visually-hidden"> (opens in a new tab)</span></a>. Your AI app has its own plans. Away from home, your computer uses your own paid Home&nbsp;Assistant Link plan (Beta). Chat apps also work with your own HTTPS&nbsp;address.</dd>
       </div>
       <div class="faq-item" id="data">
         <dt>What data leaves my home?</dt>
-        <dd>Nothing goes to HA&nbsp;NOVA. There is no HA&nbsp;NOVA cloud in the middle, no usage tracking, and no install counting. At home, your computer talks to Home&nbsp;Assistant directly. Your AI app sees what it reads, and its maker’s rules apply. The Relay’s login and stored codes stay hidden from it. The demo house keeps a short log: see the <a href="privacy.html">privacy page</a>.</dd>
+        <dd>Nothing goes to HA&nbsp;NOVA. There is no HA&nbsp;NOVA cloud in the middle, and the program sends no usage data or install counts. At home, your computer talks to Home&nbsp;Assistant directly. Away, it goes through your own Home&nbsp;Assistant Link, and HA&nbsp;NOVA gets none of&nbsp;it. Your AI app sees what it reads, and its maker’s rules apply. The Relay’s login and stored codes stay hidden from it. The demo house keeps a short log: see the <a href="privacy.html">privacy page</a>.</dd>
       </div>
       <div class="faq-item" id="chatgpt">
         <dt>Does it work with ChatGPT?</dt>
@@ -590,7 +590,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </div>
       <div class="faq-item" id="uninstall">
         <dt>How do I remove it?</dt>
-        <dd>Run <code>ha-nova uninstall</code> on your computer. It asks one question: remove HA&nbsp;NOVA, remove it but keep the pairing for a reinstall, or cancel. On the last computer, it can remove the NOVA Relay App too, after the owner signs in. Use chat apps? Turn them off first. Tried the demo? <code>ha-nova try --stop</code> removes&nbsp;it.</dd>
+        <dd>Run <code>ha-nova uninstall</code> on your computer. It asks one question: remove HA&nbsp;NOVA, remove it but keep the pairing for a reinstall, or cancel. On the last computer, it can remove the NOVA Relay App too, after the owner signs in. Use chat apps? Turn them off before the App is removed. Tried the demo? <code>ha-nova try --stop</code> removes&nbsp;it.</dd>
       </div>
     </dl>
   </section>
@@ -753,7 +753,7 @@ if ('IntersectionObserver' in window && 'inert' in HTMLElement.prototype &&
       f.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;border:0;opacity:.004;pointer-events:none;z-index:-1';
       // transparent like the real reveal layers; the hero (inside <main>) keeps
       // every section on the same sub-pixel offset as on the page
-      f.srcdoc = '<!doctype html><html class="js"><link rel="stylesheet" href="styles.css?h=e0faaa80a5"><style>' +
+      f.srcdoc = '<!doctype html><html class="js"><link rel="stylesheet" href="styles.css?h=ab021d0051"><style>' +
         'html{overflow:hidden}html,body{background:none}html::before,html::after,body::before,body::after,main::before{content:none}' +
         '[data-reveal],[data-reveal] *,[data-reveal]::before{transition-delay:var(--warm-start)!important;animation-delay:var(--warm-start)!important}' +
         '.warm-snap *,.warm-snap *::before{transition:none!important;animation:none!important}' +
