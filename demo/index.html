@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Try HA NOVA on a demo house">
   <meta name="twitter:description" content="Try HA NOVA in 1 minute on a demo house: a Home Assistant with no real devices. In Claude or ChatGPT with nothing to install, or from an AI app on your computer.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
-  <link rel="stylesheet" href="../styles.css?h=a6bf7b070a">
+  <link rel="stylesheet" href="../styles.css?h=c2354f2ee7">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -77,8 +77,8 @@
           <li><strong>Ask.</strong> Start a new chat with no files, and with nothing else added. Say one of the lines&nbsp;below.</li>
         </ol>
         <details class="more">
-          <summary>Good to know in Claude</summary>
-          <p>On the free plan, you can add only one of your own. Already added one? Remove it first in Claude: Customize →&nbsp;Connectors.</p>
+          <summary>Good to know: no form, Team plans, and more</summary>
+          <p>On the free plan, Claude lets you add only one of these. Already added a different one? Remove it first: Customize →&nbsp;Connectors.</p>
           <p>On a Team or Enterprise plan? An owner adds it once for everyone: <a href="https://claude.ai/admin-settings/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp" target="_blank" rel="noopener noreferrer">Add for my organization<span class="visually-hidden"> (opens in a new tab)</span></a></p>
           <p>No form? Click + → Add custom connector, and paste this&nbsp;address:</p>
           <div class="cmd"><pre><code>https://demo.hanova.app/api/ha_nova/mcp</code></pre></div>
@@ -95,15 +95,15 @@
         <div class="cmd"><pre><code>https://demo.hanova.app/api/ha_nova/mcp</code></pre></div>
         <button class="copy-cmd" type="button" data-where="ChatGPT"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the demo address</span></button>
         <ol class="steps">
-          <li><strong>Add it.</strong> Open <a href="https://chatgpt.com/plugins" target="_blank" rel="noopener noreferrer">chatgpt.com/plugins<span class="visually-hidden"> (opens in a new tab)</span></a> and choose + to add your own server. Name it HA NOVA demo and paste the address under “Connection”. Pick the sign-in option, tick “I understand and want to continue”, then choose&nbsp;Create.</li>
-          <li><strong>Log in.</strong> The demo house’s login opens. Type <code>demo</code> and <code>demo</code>. ChatGPT often fails the first sign-in. Just choose Connect&nbsp;again.</li>
+          <li><strong>Add it.</strong> Open <a href="https://chatgpt.com/plugins" target="_blank" rel="noopener noreferrer">chatgpt.com/plugins<span class="visually-hidden"> (opens in a new tab)</span></a> and choose +, then the option that starts with “Add custom”. Name it HA NOVA demo and paste the address under “Connection”. For sign-in, pick the option with a login page. Tick “I understand and want to continue”, then choose “Create as a&nbsp;plugin”.</li>
+          <li><strong>Log in.</strong> The demo house’s login opens. Type <code>demo</code> and <code>demo</code>. ChatGPT often fails the first login. Just choose Connect&nbsp;again.</li>
           <li><strong>Ask.</strong> Start a new chat with no files, and with nothing else added. Type <code>@HA NOVA demo</code> and one of the lines&nbsp;below.</li>
         </ol>
+        <p class="os-where">Menus look different? See the exact names in <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/chat-apps.md" target="_blank" rel="noopener noreferrer">the chat apps guide<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
         <details class="more">
           <summary>Good to know in ChatGPT</summary>
-          <p>We tested it with Pro. The free plan can’t add HA&nbsp;NOVA.</p>
+          <p>We tested it with Pro, and your plan’s rules apply. The free plan can’t add HA&nbsp;NOVA.</p>
           <p>Still stuck on Connect? Remove HA&nbsp;NOVA demo in ChatGPT and add it&nbsp;again.</p>
-          <p>Exact menu names, step by step: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/chat-apps.md" target="_blank" rel="noopener noreferrer">the chat apps guide on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
         </details>
       </div>
       <div class="os-panel" id="computer">
@@ -120,10 +120,9 @@
         <p class="app-step"><strong>2. Connect the demo.</strong> A setup page opens. If it shows “Try HA NOVA on a demo house”, choose it. If not, open a new terminal and run&nbsp;this:</p>
         <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>ha-nova try</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
           <button class="copy-cmd" type="button" data-where="the terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the ha-nova try command</span></button>
-        <p class="app-step"><strong>3. Ask.</strong> Start your AI app in a new, empty folder, in a new chat. Say one of the lines&nbsp;below.</p>
+        <p class="app-step"><strong>3. Ask.</strong> Start your AI app in a new, empty folder, in a new chat. Say one of the lines below. Keep your app asking before it runs commands or opens&nbsp;files.</p>
         <details class="more">
           <summary>Good to know on your computer</summary>
-          <p>Don’t let your AI app run commands or open files without asking&nbsp;you.</p>
           <p>Done? <code>ha-nova try --stop</code> removes the demo&nbsp;house.</p>
         </details>
       </div>

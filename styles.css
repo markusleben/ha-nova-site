@@ -530,6 +530,7 @@ main .section { scroll-margin-top: 1rem; }
 .confirm-ways li { text-align: center; }
 .confirm-ways .scene { max-width: 13rem; margin: 0 auto 0.6rem; }
 .confirm-ways span { display: block; color: var(--ink); font-weight: 600; line-height: 1.35; }
+.workflow .confirm-fallback { margin-top: 1rem; font-size: 0.9375rem; }
 
 /* folded detail: native <details>, a hairline and a cyan summary with a turning chevron */
 .more {
