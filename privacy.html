@@ -9,20 +9,33 @@
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/privacy.html">
-  <link rel="stylesheet" href="styles.css?h=b1cf4b8772">
+  <link rel="stylesheet" href="styles.css?h=ab021d0051">
 </head>
 <body>
 
-<main class="legal">
-  <a class="legal-home" href="./">HA&nbsp;NOVA</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <nav class="topbar-inner" aria-label="Main">
+    <a class="topbar-home" href="./"><img src="assets/icon.svg" alt="" width="24" height="24"><span>HA&nbsp;NOVA</span></a>
+    <ul class="topbar-links">
+      <li><a href="demo/">Try the demo</a></li>
+      <li class="topbar-wide"><a href="./#safe-by-design">Is it safe?</a></li>
+      <li class="topbar-wide"><a href="./#how-it-works">How it works</a></li>
+      <li><a class="topbar-gh" href="https://github.com/markusleben/ha-nova" target="_blank" rel="noopener noreferrer"><span class="gh-mark" aria-hidden="true"></span><span class="gh-word">GitHub</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a class="btn btn-primary btn-small" href="./#get-started">Get started</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="legal" id="main">
   <h1>Privacy</h1>
 
   <h2>Who is responsible</h2>
-  <p>The HA NOVA maintainer is responsible for this site (the controller). Contact: <a href="https://github.com/markusleben/ha-nova/issues">GitHub Issues</a>. Issues are public, so don’t put personal data in one. Say what you need, and the maintainer will set up a private channel.</p>
+  <p>The HA NOVA maintainer is responsible for this site (the controller). Contact: <a href="https://github.com/markusleben/ha-nova/issues" target="_blank" rel="noopener noreferrer">GitHub Issues<span class="visually-hidden"> (opens in a new tab)</span></a>. Issues are public, so don’t put personal data in one. Say what you need, and the maintainer will set up a private channel.</p>
 
   <h2>Hosting of hanova.app (GitHub Pages)</h2>
   <p>GitHub Pages hosts hanova.app (GitHub, Inc., USA). When you open the site, GitHub handles the data it needs to send you the page. This is mainly your IP address, the date and time, and the page you asked for. GitHub says it stores the IP address for security. The purpose is to deliver the site safely. The legal basis is Art.&nbsp;6(1)(f) GDPR: a legitimate interest in a safe, working website. The maintainer can’t see these logs. GitHub decides how long it keeps them.</p>
-  <p>This sends data to the USA. GitHub is certified under the EU-US Data Privacy Framework. The European Commission covers the Framework with an adequacy decision (Art.&nbsp;45 GDPR). Details: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+  <p>This sends data to the USA. GitHub is certified under the EU-US Data Privacy Framework. The European Commission covers the Framework with an adequacy decision (Art.&nbsp;45 GDPR). Details: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub's privacy statement<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
 
   <h2>Cookies and tracking</h2>
   <p>hanova.app sets no cookies. It uses no tracking and no analytics. No fonts, scripts, or images load from other services.</p>
@@ -34,7 +47,7 @@
   <p>Your browser loads integration icons straight from brands.home-assistant.io. This is a service of the Open Home Foundation (Switzerland), delivered through Cloudflare. It gets your IP address. No referrer is sent. The purpose is to show the icons. The legal basis is Art.&nbsp;6(1)(f) GDPR.</p>
 
   <h2>Install count of older versions</h2>
-  <p>Older versions of HA NOVA could send a weekly install count, but only if you agreed (Art.&nbsp;6(1)(a) GDPR). The count holds a random install ID (stored only as a hash), the HA NOVA and Relay versions, and the operating system. The times of the first and last report are stored too. Cloudflare, Inc. (USA, certified under the EU-US Data Privacy Framework) handles your IP address as a processor. The count itself does not store it. Current versions send nothing, so updating stops the reports. Entries with no new report are deleted after 60&nbsp;days. Details: <a href="https://github.com/markusleben/ha-nova/blob/main/PRIVACY.md">PRIVACY.md</a>.</p>
+  <p>Older versions of HA NOVA could send a weekly install count, but only if you agreed (Art.&nbsp;6(1)(a) GDPR). The count holds a random install ID (stored only as a hash), the HA NOVA and Relay versions, and the operating system. The times of the first and last report are stored too. Cloudflare, Inc. (USA, certified under the EU-US Data Privacy Framework) handles your IP address as a processor. The count itself does not store it. Current versions send nothing, so updating stops the reports. Entries with no new report are deleted after 60&nbsp;days. Details: <a href="https://github.com/markusleben/ha-nova/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">PRIVACY.md<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
 
   <h2>Do you have to give data?</h2>
   <p>No law or contract makes you give any data. But without an IP address, the site and the demo can’t be delivered to you.</p>
@@ -49,10 +62,38 @@
 </main>
 
 <footer class="footer">
-  <p class="footer-links">
-    <a href="./">HA NOVA</a>
-    <a href="privacy.html" aria-current="page">Privacy</a>
-  </p>
+  <div class="footer-brand">
+    <a class="topbar-home" href="./"><img src="assets/icon.svg" alt="" width="24" height="24"><span>HA&nbsp;NOVA</span></a>
+    <p>Talk to your home.<br>Every change checked.</p>
+  </div>
+  <nav class="footer-map" aria-label="Site map">
+    <div>
+      <h2 class="footer-label">Use it</h2>
+      <ul>
+        <li><a href="demo/">Try the demo</a></li>
+        <li><a href="./#get-started">Get started</a></li>
+        <li><a href="./#chat-apps">Use it from your phone</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-label">Learn</h2>
+      <ul>
+        <li><a href="https://github.com/markusleben/ha-nova#readme" target="_blank" rel="noopener noreferrer">Docs (README)<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="./#uninstall">Uninstall</a></li>
+        <li><a href="https://github.com/markusleben/ha-nova/releases" target="_blank" rel="noopener noreferrer">What’s new<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-label">Project</h2>
+      <ul>
+        <li><a href="https://github.com/markusleben/ha-nova" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/markusleben/ha-nova/issues" target="_blank" rel="noopener noreferrer">Report a problem<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/markusleben/ha-nova/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+        <li><a href="https://demo.hanova.app/abuse" target="_blank" rel="noopener noreferrer">Report abuse<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+  </nav>
 </footer>
 </body>
 </html>
