@@ -4,29 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Try HA NOVA on a demo house</title>
-  <meta name="description" content="Try HA NOVA on a test Home Assistant house with no real devices: in Claude with nothing to install, or from an AI app on your computer.">
+  <meta name="description" content="Try HA NOVA in 1 minute on a demo house: a Home Assistant with no real devices. In Claude or ChatGPT with nothing to install, or from an AI app on your computer.">
   <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/demo/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Try HA NOVA on a demo house">
-  <meta property="og:description" content="Try HA NOVA on a test Home Assistant house with no real devices: in Claude with nothing to install, or from an AI app on your computer.">
+  <meta property="og:description" content="Try HA NOVA in 1 minute on a demo house: a Home Assistant with no real devices. In Claude or ChatGPT with nothing to install, or from an AI app on your computer.">
   <meta property="og:url" content="https://hanova.app/demo/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="The HA NOVA star and the line: Talk to your home. Every change checked.">
   <meta property="og:site_name" content="HA NOVA">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="../styles.css?h=b1cf4b8772">
+  <meta name="twitter:title" content="Try HA NOVA on a demo house">
+  <meta name="twitter:description" content="Try HA NOVA in 1 minute on a demo house: a Home Assistant with no real devices. In Claude or ChatGPT with nothing to install, or from an AI app on your computer.">
+  <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
+  <link rel="stylesheet" href="../styles.css?h=e0faaa80a5">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<main>
-<div class="hero">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <nav class="topbar-inner" aria-label="Main">
+    <a class="topbar-home" href="../"><img src="../assets/icon.svg" alt="" width="24" height="24"><span>HA&nbsp;NOVA</span></a>
+    <ul class="topbar-links">
+      <li><a href="./" aria-current="page">Try the demo</a></li>
+      <li class="topbar-wide"><a href="../#safe-by-design">Is it safe?</a></li>
+      <li class="topbar-wide"><a href="../#how-it-works">How it works</a></li>
+      <li><a class="topbar-gh" href="https://github.com/markusleben/ha-nova" target="_blank" rel="noopener noreferrer"><span class="gh-mark" aria-hidden="true"></span><span class="gh-word">GitHub</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a class="btn btn-primary btn-small" href="../#get-started">Get started</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+<div class="hero hero-demo">
   <img class="hero-star" src="../assets/icon.svg" alt="" width="132" height="132">
-  <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
   <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>Try HA&nbsp;NOVA on a demo&nbsp;house</h1>
-  <p class="hero-sub">Talk to a test Home&nbsp;Assistant house with no real devices. Pick your AI app, then ask it to turn off a&nbsp;light.</p>
+  <p class="hero-sub">A Home&nbsp;Assistant with no real devices. Pick your AI app, then ask it to turn off a&nbsp;light.</p>
 </div>
 
   <section class="section" id="try">
@@ -48,11 +67,12 @@
     <div class="os-panels app-panels">
       <div class="os-panel is-active" id="claude">
         <h3 class="os-name">Claude</h3>
-        <p class="os-where">No install. A free Claude account works. Add it on the web or in the Claude desktop app; then it works in the Claude phone app&nbsp;too.</p>
-        <p>
-          <a class="btn btn-primary" href="https://claude.ai/customize/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp">Add to Claude</a>
+        <p class="add-claude">
+          <a class="btn btn-primary" href="https://claude.ai/customize/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp" target="_blank" rel="noopener noreferrer">Add to Claude<span class="visually-hidden"> (opens in a new tab)</span></a>
         </p>
-        <p class="os-where">On a Team or Enterprise plan? An owner adds it once for everyone: <a href="https://claude.ai/admin-settings/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp">Add for my organization</a></p>
+        <p class="os-where">No install. A free Claude account works. Add it on the web or in the Claude desktop app; then it works in the Claude phone app&nbsp;too.</p>
+        <p class="os-where">Free plan: you can add one connector of your own. Already used it? Remove that one first in Claude: Settings →&nbsp;Connectors.</p>
+        <p class="os-where">On a Team or Enterprise plan? An owner adds it once for everyone: <a href="https://claude.ai/admin-settings/connectors?modal=add-custom-connector&amp;connectorName=HA%20NOVA%20demo&amp;connectorUrl=https%3A%2F%2Fdemo.hanova.app%2Fapi%2Fha_nova%2Fmcp" target="_blank" rel="noopener noreferrer">Add for my organization<span class="visually-hidden"> (opens in a new tab)</span></a></p>
         <p class="os-where">No form? Click + → Add custom connector, and paste this&nbsp;address:</p>
         <div class="cmd"><pre><code>https://demo.hanova.app/api/ha_nova/mcp</code></pre></div>
         <button class="copy-cmd" type="button" data-where="Claude"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the demo address</span></button>
@@ -63,7 +83,6 @@
         </ol>
         <details class="more">
           <summary>Good to know in Claude</summary>
-          <p>A free Claude plan can add one connector of its own. Already used it? Remove that one first in Claude: Settings → Connectors.</p>
           <p>Unlocking a door asks you first. Here, Claude shows a short code, and you type it back. Claude sees the code too, so it is a light check. At home, a linked phone asks&nbsp;instead.</p>
           <p>Your connection stays. Only the house resets every hour. That takes a few&nbsp;minutes.</p>
           <p>Claude asks before each step at first. To ask less, open Settings → Connectors → HA NOVA demo. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs approval”: the demo has no phone, so that question is the check before the door&nbsp;unlocks.</p>
@@ -76,20 +95,22 @@
         <div class="cmd"><pre><code>https://demo.hanova.app/api/ha_nova/mcp</code></pre></div>
         <button class="copy-cmd" type="button" data-where="ChatGPT"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the demo address</span></button>
         <ol class="steps">
-          <li><strong>Add it.</strong> Open <a href="https://chatgpt.com/plugins">chatgpt.com/plugins</a>, choose +, then “Add custom MCP server”. Name it HA NOVA demo and paste the address under “Connection”. Pick OAuth, tick “I understand and want to continue”, then choose&nbsp;Create.</li>
+          <li><strong>Add it.</strong> Open <a href="https://chatgpt.com/plugins" target="_blank" rel="noopener noreferrer">chatgpt.com/plugins<span class="visually-hidden"> (opens in a new tab)</span></a>, choose +, then “Add custom MCP server”. Name it HA NOVA demo and paste the address under “Connection”. Pick OAuth, tick “I understand and want to continue”, then choose&nbsp;Create.</li>
           <li><strong>Log in.</strong> The demo house’s login opens. Type <code>demo</code> and <code>demo</code>. ChatGPT often fails the first sign-in. Just choose Connect again. Still stuck on Connect? Remove the plugin in ChatGPT and add it&nbsp;again.</li>
           <li><strong>Ask.</strong> Open a new chat with no files and no other connectors on. Type <code>@HA NOVA demo</code> and one of the lines&nbsp;below.</li>
         </ol>
       </div>
       <div class="os-panel" id="computer">
         <h3 class="os-name">An app on my computer</h3>
-        <p class="os-where">For Codex, Claude Code, OpenCode, or Antigravity. Install HA&nbsp;NOVA, then connect the demo&nbsp;house.</p>
+        <p class="os-where">For Claude Code, Claude Desktop, Codex CLI, OpenCode, Google Antigravity, or Hermes Agent (preview). Install HA&nbsp;NOVA, then connect the demo&nbsp;house.</p>
         <p class="app-step"><strong>1. Install HA&nbsp;NOVA.</strong> On a Mac or Linux, paste this in the&nbsp;Terminal:</p>
         <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
           <button class="copy-cmd" type="button" data-where="the Terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the macOS and Linux command</span></button>
+          <a class="cmd-source" href="https://github.com/markusleben/ha-nova/blob/main/install.sh" target="_blank" rel="noopener noreferrer">Read the install script<span class="visually-hidden"> (opens in a new tab)</span></a>
         <p class="app-step">On Windows, paste this in PowerShell:</p>
         <div class="cmd"><span class="cmd-prompt" aria-hidden="true">PS&gt;</span><pre><code>irm https://raw.githubusercontent.com/markusleben/ha-nova/main/install.ps1 | iex</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
           <button class="copy-cmd" type="button" data-where="PowerShell"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the Windows command</span></button>
+          <a class="cmd-source" href="https://github.com/markusleben/ha-nova/blob/main/install.ps1" target="_blank" rel="noopener noreferrer">Read the install script<span class="visually-hidden"> (opens in a new tab)</span></a>
         <p class="app-step"><strong>2. Connect the demo.</strong> A setup page opens. If it shows “Try HA NOVA on a demo house”, choose it. If not, open a new terminal and run&nbsp;this:</p>
         <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>ha-nova try</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
           <button class="copy-cmd" type="button" data-where="the terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the ha-nova try command</span></button>
@@ -104,7 +125,7 @@
       <li>“In the demo house, unlock the entrance door.” It asks you&nbsp;first.</li>
       <li>“In the demo house, where is the bed light used?”</li>
     </ol>
-    <p class="note"><a href="https://demo.hanova.app/demo-house/house">Open the house next to the chat and watch it change</a>. Log in with <code>demo</code> /&nbsp;<code>demo</code>.</p>
+    <p class="note"><a href="https://demo.hanova.app/demo-house/house" target="_blank" rel="noopener noreferrer">Open the house next to the chat and watch it change<span class="visually-hidden"> (opens in a new tab)</span></a>. Log in with <code>demo</code> /&nbsp;<code>demo</code>.</p>
   </section>
 
   <section class="section" id="how-the-demo-works">
@@ -135,15 +156,47 @@
     </ul>
     <p class="note" id="ha-version" hidden></p>
   </section>
+
+  <section class="section section-try" id="your-home">
+    <h2>Ready for your own home?</h2>
+    <p class="section-lead">One line to copy. One setup page. One sign&#8209;in.</p>
+    <p class="cta-row"><a class="btn btn-primary" href="../#get-started">Get started</a><a class="btn btn-ghost" href="https://github.com/markusleben/ha-nova" target="_blank" rel="noopener noreferrer">See the code on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+  </section>
 </main>
 
 <footer class="footer">
-  <p class="footer-links">
-    <a href="../">HA NOVA</a>
-    <a href="https://github.com/markusleben/ha-nova">GitHub</a>
-    <a href="https://demo.hanova.app/abuse">Report abuse</a>
-    <a href="../privacy.html">Privacy</a>
-  </p>
+  <div class="footer-brand">
+    <a class="topbar-home" href="../"><img src="../assets/icon.svg" alt="" width="24" height="24"><span>HA&nbsp;NOVA</span></a>
+    <p>Talk to your home.<br>Every change checked.</p>
+  </div>
+  <nav class="footer-map" aria-label="Site map">
+    <div>
+      <h2 class="footer-label">Use it</h2>
+      <ul>
+        <li><a href="./" aria-current="page">Try the demo</a></li>
+        <li><a href="../#get-started">Get started</a></li>
+        <li><a href="../#chat-apps">Use it from your phone</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-label">Learn</h2>
+      <ul>
+        <li><a href="https://github.com/markusleben/ha-nova#readme" target="_blank" rel="noopener noreferrer">Docs (README)<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="../#uninstall">Uninstall</a></li>
+        <li><a href="https://github.com/markusleben/ha-nova/releases" target="_blank" rel="noopener noreferrer">What’s new<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-label">Project</h2>
+      <ul>
+        <li><a href="https://github.com/markusleben/ha-nova" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/markusleben/ha-nova/issues" target="_blank" rel="noopener noreferrer">Report a problem<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/markusleben/ha-nova/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="https://demo.hanova.app/abuse" target="_blank" rel="noopener noreferrer">Report abuse<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+  </nav>
 </footer>
 
 <script>
