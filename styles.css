@@ -387,7 +387,6 @@ code {
   font-size: 0.9375rem;
   animation: rise 1s var(--ease-rise) 0.4s both;
 }
-.hero-try + .note { margin-top: 1.25rem; }
 
 @keyframes rise {
   from { opacity: 0.001; transform: translateY(16px); }
@@ -565,6 +564,11 @@ main .section { scroll-margin-top: 1rem; }
 .more summary:hover { color: #4FCDF6; }
 .more summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
 .more p, .workflow .more p { font-size: 0.9375rem; margin: 0.6rem 0 0; }
+/* the rest of the "You say" rows, folded under the first five */
+.section > .says-more { max-width: none; border-top: 0; margin-top: 0.5rem; }
+.says-more .says { border-top: 0; margin-top: 0.4rem; }
+.says-more .says-quote { margin: 0; font-size: 1.1875rem; }
+.says-more .says-result { margin: 0; font-size: inherit; }
 
 .demo-scene { max-width: 15rem; margin: 0 0 2rem; }
 
@@ -955,13 +959,6 @@ main #get-started { scroll-margin-top: calc(0.5rem - clamp(5rem, 13vh, 8.5rem));
 
 /* the three steps sit above the console they describe */
 .section-start > .steps-title { margin-top: 0; text-align: center; }
-.steps-lead {
-  max-width: var(--measure);
-  margin: 0.6rem auto 0;
-  text-align: center;
-  font-size: 1rem;
-  text-wrap: balance;
-}
 .section-start > .steps { margin-bottom: 3.5rem; }
 
 .console {
@@ -1203,20 +1200,13 @@ main #get-started { scroll-margin-top: calc(0.5rem - clamp(5rem, 13vh, 8.5rem));
   font-size: 1.0625rem;
 }
 
-.start-source {
-  margin: 1.5rem 0 0;
-  text-align: center;
-  font-size: 1rem;
-}
-.start-source + .start-alt { margin-top: 0.5rem; }
-
 .start-alt {
   margin: 1.5rem 0 0;
   text-align: center;
   font-size: 1rem;
 }
 
-.section-start > .start-alt + .note { margin-top: 3.5rem; }
+.section-start > .start-alt + .more { margin-top: 2.5rem; }
 
 @media (prefers-reduced-motion: no-preference) {
   .js .cmd-cursor { animation: blink 1.1s steps(1) infinite; }
@@ -1327,6 +1317,7 @@ main #get-started { scroll-margin-top: calc(0.5rem - clamp(5rem, 13vh, 8.5rem));
 .faq-item { border-top: 1px solid var(--hairline); padding-top: 1.1rem; }
 .faq dt { color: var(--ink); font-weight: 600; font-size: 1.125rem; }
 .faq dd { margin: 0.4rem 0 0; }
+.faq code { white-space: nowrap; }
 
 /* ---------- Footer: a small site map ---------- */
 
