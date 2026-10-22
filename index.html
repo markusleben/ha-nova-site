@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HA NOVA: talk to your Home Assistant. Every change checked.</title>
-  <meta name="description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to confirm.">
+  <meta name="description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, the alarm, and deletes wait for your OK.">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="HA NOVA — Talk to your home. Every change checked.">
-  <meta property="og:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to confirm.">
+  <meta property="og:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, the alarm, and deletes wait for your OK.">
   <meta property="og:url" content="https://hanova.app/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
   <meta property="og:image:width" content="1280">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="HA NOVA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HA NOVA — Talk to your home. Every change checked.">
-  <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Locks, alarms, and deletes wait for you to confirm.">
+  <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, the alarm, and deletes wait for your OK.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
   <link rel="stylesheet" href="styles.css?h=c2354f2ee7">
   <script>document.documentElement.classList.add('js');</script>
@@ -190,7 +190,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>You approve</h3>
-        <p>Locks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than an OK. You confirm&nbsp;them:</p>
+        <p>Unlocks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than an OK. You confirm&nbsp;them:</p>
         <ul class="confirm-ways" data-reveal>
           <li>
             <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
@@ -218,12 +218,12 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <span>Or tap your linked phone at the same&nbsp;time</span>
           </li>
         </ul>
-        <p class="confirm-fallback">No screen and no phone? You type a one-time code. Some deletes, like helpers, always use&nbsp;one.</p>
+        <p class="confirm-fallback">No window and no phone? You type a four-digit code. Some deletes always use the&nbsp;code.</p>
         <details class="more">
           <summary>More about confirming</summary>
           <p>Everything that isn’t a simple action waits for your OK. HA&nbsp;NOVA decides what needs it, never the&nbsp;AI.</p>
           <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-          <p><strong>Phone.</strong> The one phone you linked asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts, and the phone shows the result. With no screen, like on a Linux server, or with the window turned off, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
+          <p><strong>Phone.</strong> The one phone you linked asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts, and the phone shows the result. With no screen, like on a Linux server, or with the window turned off, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds on a computer, up to 3 minutes in Claude or ChatGPT). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
           <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one. The AI can see the code, so it only counts when you type it&nbsp;yourself.</p>
           <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, always use a four-digit code in chat.</p>
           <p>If anything changed since the preview, nothing is sent. Before a restart, HA&nbsp;NOVA checks your config first. If something is wrong, it says what before you&nbsp;confirm.</p>
@@ -474,7 +474,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <details class="more">
       <summary>More about chat apps</summary>
       <p>ChatGPT: use it on a computer, with a paid plan. On a phone, ChatGPT can only answer. <a href="#chatgpt">Which plans?</a></p>
-      <p>Unlocks and deletes still wait for a tap on your phone. No phone linked? Then you type a code in the chat. The AI can see that code too, so it protects less than your phone. On the NOVA page, you can require the phone, or let chat apps only&nbsp;read.</p>
+      <p>Unlocks, the alarm, and deletes still wait for a tap on your phone. No phone? You type a four-digit code in the chat. The AI can see that code too, so it protects less than your phone. On the NOVA page, you can require the phone, or let chat apps only&nbsp;read.</p>
       <p>Everyday actions, like a light, run right away. Then HA&nbsp;NOVA checks them. But at first, Claude asks before each step. To ask less, open Customize → Connectors → HA&nbsp;NOVA in Claude. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs&nbsp;approval”.</p>
       <p>Your own address needs a valid certificate. Self-signed certificates, plain <code>http://</code>, Tailscale, and local addresses don’t&nbsp;work.</p>
       <p>Claude or ChatGPT holds a Home&nbsp;Assistant sign-in for your account. It works for all of Home&nbsp;Assistant, not only HA&nbsp;NOVA. Anyone who can use your Claude or ChatGPT account can reach your home through it. To sign them out, open your Home&nbsp;Assistant profile, then&nbsp;Security.</p>
@@ -602,7 +602,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </div>
       <div class="faq-item" id="chatgpt">
         <dt>Does it work with ChatGPT?</dt>
-        <dd>Yes, on a computer, with a paid plan. We tested it with Pro, and your plan’s rules apply. The free plan can’t add HA&nbsp;NOVA. On a phone, ChatGPT can only answer, so use the Claude app&nbsp;there.</dd>
+        <dd>Yes, on a computer. ChatGPT needs a paid plan that lets you add your own plugins. We tested Pro. The free plan can’t. On a phone, ChatGPT can only answer, so use the Claude app&nbsp;there.</dd>
       </div>
       <div class="faq-item" id="uninstall">
         <dt>How do I remove it?</dt>
