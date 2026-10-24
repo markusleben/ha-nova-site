@@ -37,6 +37,6 @@ Das Repo gewinnt jeden Konflikt. Verifizierte Fakten mit Datum in PRODUCT.md nac
 
 1. Änderungen lokal bauen, mit Desktop- **und** Mobile-Screenshots zeigen (Chrome headless oder Playwright-Skripte im Scratchpad).
 2. Feedback-Runden, bei Geschmacksfragen lieber 2 Varianten zeigen.
-3. **Kein Commit, Push oder Deploy ohne ausdrückliches Go.**
+3. **Kein Commit, Push oder Deploy ohne ausdrückliches Go.** Ausnahme (Markus, 2026-10-24): kleine Wartungs-PRs, die nur Fakten an das Produkt-README angleichen, den README-Sync (`.readme-sync`) nachziehen oder den Wortlaut-Check reparieren, darf der Agent nach grünen Checks selbst mergen. Neue Inhalte, Texte mit neuer Aussage und Design-Änderungen zeigt er vorher mit Screenshots und wartet auf das Go.
 4. Inhalts-Sync auf Zuruf („sync mit dem README") → Seite gegen aktuelles Produkt-README diffen, Änderungen vor Einbau zeigen.
 5. Seite und Produkt sind immer im Sync: `.github/workflows/readme-sync.yml` prüft täglich (`scripts/check-sync.sh`) gegen das Live-README und öffnet bei Drift ein Issue. Nach jedem Sync `.readme-sync` auf den sha256 des abgeglichenen READMEs setzen. Release-Copy liegt als Draft-PR bereit und wird erst nach dem finalen stable-Tag gemergt.
