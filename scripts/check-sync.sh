@@ -58,9 +58,10 @@ for f in index.html privacy.html demo/index.html 404.html; do
 done
 
 # the product's banned wording (scope "all") on every page; same rules as
-# the product's tests/docs/canonical-wording.test.ts. Tags become their attribute
-# values (alt, aria-label, meta content count), entities are decoded, and each line
-# is matched with its neighbours so a phrase wrapped across lines still counts.
+# the product's tests/docs/canonical-wording.test.ts. The visible text (tags
+# removed) and the attribute values (alt, aria-label, meta content) are checked
+# apart, after entities are decoded. A phrase may wrap across any number of lines;
+# a hit is reported on the line where it starts.
 # Allowed exceptions: rule, file, line snippet (tab-separated), one per line, each with its reason.
 #   link-old-name in index.html: names the old menu people may still see in Home Assistant.
 ALLOW="$(printf '%s\t%s\t%s\n' \
@@ -72,29 +73,38 @@ hits="$(ALLOW="$ALLOW" perl -CSD -Mutf8 -MJSON::PP -MDigest::SHA=sha256_hex -e '
   my %ent = (gt => ">", lt => "<", amp => "&", quot => "\"", apos => "\x27", nbsp => " ", rarr => "\x{2192}", rsquo => "\x{2019}", ldquo => "\x{201c}", rdquo => "\x{201d}", lsquo => "\x{2018}", rsaquo => "\x{203a}", raquo => "\x{bb}", ndash => "\x{2013}", mdash => "\x{2014}");
   for my $file (@pages) {
     open my $ph, "<", $file or die "$file: $!"; my $src = do { local $/; <$ph> };
-    $src =~ s{<[^>]*>}{ my $t = $&; " " . join(" ", $t =~ /="([^"]*)"/g) . " " . ("\n" x ($t =~ tr/\n//)) }ge;
-    $src =~ s/&#x([0-9a-f]+);/chr hex $1/gie; $src =~ s/&#(\d+);/chr $1/ge; $src =~ s{&(\w+);}{$ent{$1} // "&$1;"}ge;
-    $src =~ tr/\x{a0}\x{2011}/ -/;
-    my @l = split /\n/, $src, -1;
-    for my $r (grep { $_->{scope} eq "all" } @$rules) {
-      for my $i (0 .. $#l) {
-        my ($p, $n) = ($i ? $l[$i - 1] : "", $l[$i + 1] // "");
-        my ($from, $to) = (length($p) + 1, length($p) + 1 + length $l[$i]);
-        my $text = "$p $l[$i] $n";
-        my @hit;
+    # both views keep every newline, so line numbers match the source
+    my ($vis, $att) = ("", "");
+    while ($src =~ /(<[^>]*>)|([^<]+|<)/g) {
+      if (defined $1) { my $t = $1; my $nl = "\n" x ($t =~ tr/\n//); $vis .= " $nl"; $att .= " " . join(" ", $t =~ /="([^"]*)"/g) . " $nl" }
+      else { $vis .= $2; $att .= "\n" x ($2 =~ tr/\n//) }
+    }
+    for my $text ($vis, $att) {
+      $text =~ s/&#x([0-9a-f]+);/chr hex $1/gie; $text =~ s/&#(\d+);/chr $1/ge; $text =~ s{&(\w+);}{$ent{$1} // "&$1;"}ge;
+      $text =~ tr/\x{a0}\x{2011}/ -/; $text =~ s/[ \t]+/ /g;
+      my @l = split /\n/, $text, -1;
+      # all lines as one string, single-spaced; @at maps a start offset back to its line
+      my ($flat, @at) = ("");
+      for my $i (0 .. $#l) { (my $t = $l[$i]) =~ s/^ | $//g; next if $t eq ""; push @at, [length $flat, $i]; $flat .= "$t " }
+      for my $r (grep { $_->{scope} eq "all" } @$rules) {
+        my @hit;  # [line index, phrase]
         if ($r->{sha256}) {
           my %bad = map { $_ => 1 } @{ $r->{sha256} };
-          while ($l[$i] =~ /($r->{words})/gi) {
-            my @part = split /[-_]/, lc $1;
-            for my $s (0 .. $#part) { for my $e ($s .. $#part) { my $w = join "-", @part[$s .. $e]; push @hit, $w if $bad{ sha256_hex($w) } } }
+          for my $i (0 .. $#l) {
+            while ($l[$i] =~ /($r->{words})/gi) {
+              my @part = split /[-_]/, lc $1;
+              for my $s (0 .. $#part) { for my $e ($s .. $#part) { my $w = join "-", @part[$s .. $e]; push @hit, [$i, $w] if $bad{ sha256_hex($w) } } }
+            }
           }
         } else {
           my $re = $r->{flags} =~ /i/ ? qr/(?ai)$r->{pattern}/ : qr/(?a)$r->{pattern}/;
-          while ($text =~ /$re/g) { push @hit, $& if $-[0] >= $from && $-[0] < $to }
+          while ($flat =~ /$re/g) { my $o = $-[0]; push @hit, [(grep { $_->[0] <= $o } @at)[-1][1], $&] }
         }
-        next unless @hit;
-        next if grep { $_->[0] eq $r->{id} && $_->[1] eq $file && index($l[$i], $_->[2]) >= 0 } @allow;
-        print "$file:", $i + 1, ": \"$_\" — $r->{why} Use: $r->{use}\n" for @hit;
+        for (@hit) {
+          my ($i, $w) = @$_;
+          next if grep { $_->[0] eq $r->{id} && $_->[1] eq $file && index($l[$i], $_->[2]) >= 0 } @allow;
+          print "$file:", $i + 1, ": \"$w\" — $r->{why} Use: $r->{use}\n";
+        }
       }
     }
   }' "$banned" index.html demo/index.html privacy.html 404.html)" || say "the banned-wording check could not run (see the error above)"
