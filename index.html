@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HA NOVA: talk to your Home Assistant. Every change checked.</title>
-  <meta name="description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, the alarm, and deletes wait for your OK.">
+  <meta name="description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, opening a garage door or gate, turning off the alarm, and deletes wait for your OK.">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://hanova.app/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="HA NOVA — Talk to your home. Every change checked.">
-  <meta property="og:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, the alarm, and deletes wait for your OK.">
+  <meta property="og:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, opening a garage door or gate, turning off the alarm, and deletes wait for your OK.">
   <meta property="og:url" content="https://hanova.app/">
   <meta property="og:image" content="https://hanova.app/assets/social-preview.png">
   <meta property="og:image:width" content="1280">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="HA NOVA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HA NOVA — Talk to your home. Every change checked.">
-  <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, the alarm, and deletes wait for your OK.">
+  <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, opening a garage door or gate, turning off the alarm, and deletes wait for your OK.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
   <link rel="stylesheet" href="styles.css?h=c2354f2ee7">
   <script>document.documentElement.classList.add('js');</script>
@@ -67,7 +67,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
   <img class="hero-star" src="assets/icon.svg" alt="" width="132" height="132">
   <p class="hero-brand" aria-hidden="true">HA&nbsp;NOVA</p>
   <h1 class="hero-tagline"><span class="visually-hidden">HA NOVA — </span>Talk to your home.<br>Every change checked.</h1>
-  <p class="hero-sub">Connect your AI to Home&nbsp;Assistant: simple things run right away, and everything else waits for your&nbsp;OK.</p>
+  <p class="hero-sub">Connect your AI to Home&nbsp;Assistant: simple things run right away, other changes show a preview first, and risky ones wait for your&nbsp;OK.</p>
   <p class="hero-ctas">
     <a class="btn btn-primary" href="#get-started">Get started</a>
     <a class="btn btn-ghost" href="demo/">Try HA NOVA in 1 minute</a>
@@ -130,7 +130,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <div class="says" role="list">
         <div class="says-row" role="listitem">
           <p class="says-quote">“Turn off the kitchen light”</p>
-          <p class="says-result">Turns it off right away, then checks that it really is off. Whole rooms and scenes show a preview first.</p>
+          <p class="says-result">Turns it off right away, then checks that it really is off. A room’s lights work the same way, up to 30. Everything else in a room, scenes, and riskier actions show a preview first.</p>
         </div>
         <div class="says-row" role="listitem">
           <p class="says-quote">“What happened to my living room temperature overnight?”</p>
@@ -150,11 +150,19 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         </div>
         <div class="says-row" role="listitem">
           <p class="says-quote">“Turn this Node-RED flow into an automation”</p>
-          <p class="says-result">Explains the flow, finds each device, and builds a normal Home&nbsp;Assistant automation. Turns the old rule off, but keeps it.</p>
+          <p class="says-result">Explains the flow, finds each device, and builds a normal Home&nbsp;Assistant automation. Tells you how to turn the old flow off, and never deletes it.</p>
         </div>
         <div class="says-row" role="listitem">
           <p class="says-quote">“Check my ESPHome config for the garage sensor”</p>
           <p class="says-result">Explains the device file in plain words. Flags removed settings, pins that can’t do the job, and passwords written into the file.</p>
+        </div>
+        <div class="says-row" role="listitem">
+          <p class="says-quote">“Turn off the integration I don’t use anymore and fix the open repairs”</p>
+          <p class="says-result">Turns integrations on or off, renames or removes them, and fixes or ignores repairs. Shows what changes first. Deletes and sensitive changes take your own OK. It won’t turn off or remove what a lock, alarm, garage door, or gate runs on. A step that asks for a password, PIN, or key finishes in Home&nbsp;Assistant.</p>
+        </div>
+        <div class="says-row" role="listitem">
+          <p class="says-quote">“Why does my MQTT broker App keep restarting?”</p>
+          <p class="says-result">On HA&nbsp;OS, reads the logs of Home&nbsp;Assistant, its system, and its Apps. It can also install or remove an App, or change its settings, after your own OK. On a computer, it needs the direct connection, not Home&nbsp;Assistant&nbsp;Link.</p>
         </div>
       </div>
     </details>
@@ -186,11 +194,11 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <h3>Shows the exact change</h3>
-        <p>You see exactly what will change before anything is saved. Simple actions, like one light, run right away&nbsp;instead.</p>
+        <p>You see exactly what will change before anything is saved. Simple actions run right away instead, like a light, a room’s lights, pausing music, or adding to a to-do&nbsp;list.</p>
       </li>
       <li data-reveal>
         <h3>You approve</h3>
-        <p>Unlocks, gates, garage doors, the alarm, restarting Home&nbsp;Assistant, and deletes need more than an OK. You confirm&nbsp;them:</p>
+        <p>Unlocks, opening a gate or garage door, turning off the alarm, restarting Home&nbsp;Assistant, and deletes need more than an OK. You confirm&nbsp;them:</p>
         <ul class="confirm-ways" data-reveal>
           <li>
             <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
@@ -218,14 +226,15 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <span>Or tap your linked phone at the same&nbsp;time</span>
           </li>
         </ul>
-        <p class="confirm-fallback">No window and no phone? You type a four-digit code. Some deletes always use the&nbsp;code.</p>
+        <p class="confirm-fallback">No window and no phone? You type a four-digit code. In Claude and ChatGPT, only at the Manage everything level, with codes on. Some deletes on a computer always use the&nbsp;code.</p>
         <details class="more">
           <summary>More about confirming</summary>
-          <p>Everything that isn’t a simple action waits for your OK. HA&nbsp;NOVA decides what needs it, never the&nbsp;AI.</p>
+          <p>Everything that isn’t a simple action shows a preview first, and the AI waits for your yes. HA&nbsp;NOVA decides what runs right away and what needs a real confirmation, never the&nbsp;AI.</p>
           <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-          <p><strong>Phone.</strong> The one phone you linked, iPhone or Android, asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts, and the phone shows the result. With no screen, like on a Linux server, or with the window turned off, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds on a computer, up to 3 minutes in Claude or ChatGPT). To link, move, or turn off phone confirmation, you must unlock the phone. Once a phone is linked, an action it can’t reach is refused, never moved to chat.</p>
-          <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in chat or in your AI app’s own form where it shows one. The AI can see the code, so it only counts when you type it&nbsp;yourself.</p>
-          <p>Automation, script, and dashboard deletes use the window or the phone. Other deletes, like helpers, scenes, and areas, always use a four-digit code in chat.</p>
+          <p><strong>Phone.</strong> The one phone you linked, iPhone or Android, asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts. Answer on the phone, and it shows the result. Answer in the window, and the phone’s question goes away. With no screen, like on a Linux server, or with the window turned off, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds on a computer, up to 3 minutes in Claude or ChatGPT). To link, move, or turn off phone confirmation, you must unlock the phone. Chat apps keep their own phone: change or stop it on the NOVA page. If the linked phone can’t be reached, only the window asks. With no window, the action is refused. It is never moved to chat.</p>
+          <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in your AI app’s own form where it shows one, or else in chat. In chat, the AI sees the code too, and HA&nbsp;NOVA can’t tell who typed it. So it protects less than the window or your&nbsp;phone.</p>
+          <p>Deleting an automation, script, dashboard, device, integration, or blueprint uses the window or the phone. On a computer, deleting a helper, scene, area, floor, or label takes a four-digit code in chat. In Claude and ChatGPT, those ask the linked phone too.</p>
+          <p>Up to 20 automation and script changes, deletes too, can share one confirmation. The window names each one and what happens to&nbsp;it.</p>
           <p>If anything changed since the preview, nothing is sent. Before a restart, HA&nbsp;NOVA checks your config first. If something is wrong, it says what before you&nbsp;confirm.</p>
           <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
           <p>Every safety rule, and the test behind it: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/safety.md" target="_blank" rel="noopener noreferrer">the safety page on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
@@ -259,7 +268,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     </ol>
     <details class="more">
       <summary>Which changes get all eight steps</summary>
-      <p>Automations and scripts get all eight steps. Their test plan can switch nothing, or name every device that will switch before you say go. Helpers get a preview and a check. Dashboards show every changed view and card, save a copy first, and can be undone. For devices, one clear everyday action, like turning off one light, runs right away and gets checked. Everything else shows a preview&nbsp;first.</p>
+      <p>Automations and scripts get all eight steps. Their test plan can switch nothing, or name every device that will switch before you say go. Helpers get a preview and a check. Dashboards show every changed view and card, save a copy first, and can be undone. Clear everyday actions on devices, like a light or a room’s lights, run right away and get checked. Everything else shows a preview first. Unlocks, opening a gate or garage door, turning off the alarm, deletes, HACS installs and updates, and dashboard resources need your own&nbsp;confirmation.</p>
     </details>
     <h3 class="rules-title">Ground rules</h3>
     <ul class="rules">
@@ -273,11 +282,11 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M7 12.5h.01M10.5 12.5h.01M14 12.5h.01M17.5 12.5h.01"/></svg>
-        <p>On App installs, each device gets its own connection. One click in NOVA cuts a device&nbsp;off.</p>
+        <p>On App installs, each device gets its own connection. Two clicks in NOVA cut a device&nbsp;off.</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
-        <p>Every rule the AI follows is a plain text file. <a href="https://github.com/markusleben/ha-nova/tree/main/skills" target="_blank" rel="noopener noreferrer">Read them on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+        <p>Every skill the AI follows is a plain text file. <a href="https://github.com/markusleben/ha-nova/tree/main/skills" target="_blank" rel="noopener noreferrer">Read them on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>. Chat apps also get a short guide built into the&nbsp;program.</p>
       </li>
       <li data-reveal>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 17a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 18.7 9.6 3.75 3.75 0 0 1 18 17"/><path d="M4.5 20.5 19.5 4.5"/></svg>
@@ -327,7 +336,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <text x="120" y="117" text-anchor="middle" class="t-btn">Allow</text>
           </g>
         </svg>
-        <strong>Add your phone, then look around.</strong> Click “Use this phone”, then tap “Allow” on it. Then you see your home at a&nbsp;glance.
+        <strong>Add your phone, then look around.</strong> Pick whose phone should confirm on this computer, then tap “Allow” on that phone. Then you see your home at a&nbsp;glance.
       </li>
     </ol>
     <div class="console start-console" data-reveal>
@@ -385,13 +394,13 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <details class="more">
       <summary>Which Home Assistant works?</summary>
       <p>Any install type. On HA&nbsp;OS and Supervised, setup installs the NOVA Relay App for&nbsp;you.</p>
-      <p>Container and Core run the same relay as a standalone container, set up with a token. It uses one shared token, not one connection per device. Follow <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/relay-container.md" target="_blank" rel="noopener noreferrer">the standalone container guide<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+      <p>Container and Core run the same relay as a standalone container, set up with a token. It uses one shared token, not one connection per device. It has no phone confirmation, no chat apps, and no Home&nbsp;Assistant Link. Follow <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/relay-container.md" target="_blank" rel="noopener noreferrer">the standalone container guide<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
     </details>
     <p class="clients-label">Works with</p>
     <ul class="clients">
       <li>Claude Code</li>
       <li>Claude Desktop</li>
-      <li>Codex CLI</li>
+      <li>Codex</li>
       <li>OpenCode</li>
       <li>Google Antigravity</li>
       <li>Hermes Agent <span class="preview">preview</span></li>
@@ -467,19 +476,20 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <rect class="d n" x="197" y="102" width="12" height="10" rx="1"/>
           <rect class="d a lamp" x="197" y="102" width="12" height="10" rx="1"/>
         </svg>
-        <strong>Add HA&nbsp;NOVA to your chat.</strong> Click “Add to Claude”. Or, on a computer, paste the address setup shows into ChatGPT. Then sign in to Home&nbsp;Assistant as the&nbsp;owner.
+        <strong>Add HA&nbsp;NOVA to your chat.</strong> Click “Add to Claude”. Or, on a computer, paste the address setup shows into ChatGPT. Then sign in to Home&nbsp;Assistant with your own&nbsp;login.
       </li>
     </ol>
-    <p class="note">Needs Home&nbsp;Assistant 2026.10 or newer, on HA&nbsp;OS or Supervised. Only the owner can turn it on and use&nbsp;it.</p>
+    <p class="note">Needs Home&nbsp;Assistant 2026.10 or newer, on HA&nbsp;OS or Supervised. Only the owner can turn it on. Then the owner picks who else may use&nbsp;it.</p>
     <details class="more">
       <summary>More about chat apps</summary>
       <p>ChatGPT: use it on a computer, with a paid plan. On a phone, ChatGPT can only answer. <a href="#chatgpt">Which plans?</a></p>
-      <p>Unlocks, the alarm, and deletes still wait for a tap on your phone. No phone? You type a four-digit code in the chat. The AI can see that code too, so it protects less than your phone. On the NOVA page, you can require the phone, or let chat apps only&nbsp;read.</p>
-      <p>Everyday actions, like a light, run right away. Then HA&nbsp;NOVA checks them. But at first, Claude asks before each step. To ask less, open Customize → Connectors → HA&nbsp;NOVA in Claude. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs&nbsp;approval”.</p>
+      <p>On the NOVA page, the owner picks who else may use chat apps, each at a level: Ask only, Use the home, or Manage everything. Each person signs in with their own Home&nbsp;Assistant login. A level never goes above the person’s role in Home&nbsp;Assistant. Only administrators get Manage&nbsp;everything.</p>
+      <p>Unlocks, opening a garage door or gate, turning off the alarm, and deletes wait for a tap on the phone of the person who asked. Below Manage everything, deletes and other configuration changes are refused, even with a phone. No phone? At Manage everything, you type a four-digit code in the chat. Below it, those changes are refused. The AI can see that code too, so it protects less than your phone. On the NOVA page, turn off “Codes in the chat” to require the phone, or turn on “Chat apps can only&nbsp;read”.</p>
+      <p>Everyday actions, like a light, run right away. Then HA&nbsp;NOVA checks them. But at first, Claude asks before each step. That’s Claude, not HA&nbsp;NOVA. To stop it, open Customize → Connectors → HA&nbsp;NOVA in Claude. With a linked phone, set every tool to “Always allow”. HA&nbsp;NOVA still shows a preview before bigger changes, and your phone asks before unlocks, turning off the alarm, and deletes. No phone? Set every tool to “Always allow”, except “Run a confirmed change”. Leave that one on “Needs approval”, so Claude still asks before each bigger&nbsp;change.</p>
       <p>Your own address needs a valid certificate. Self-signed certificates, plain <code>http://</code>, Tailscale, and local addresses don’t&nbsp;work.</p>
       <p>Claude or ChatGPT holds a Home&nbsp;Assistant sign-in for your account. It works for all of Home&nbsp;Assistant, not only HA&nbsp;NOVA. Anyone who can use your Claude or ChatGPT account can reach your home through it. To sign them out, open your Home&nbsp;Assistant profile, then&nbsp;Security.</p>
-      <p>Helpers, dashboards, and files still need HA&nbsp;NOVA on a&nbsp;computer.</p>
-      <p>Turn chat apps off before you remove the NOVA Relay&nbsp;App.</p>
+      <p>At Manage everything, these work in the chat too, with the same preview and OK as on a computer: helpers, scenes, dashboards, rooms and names, integrations and Home&nbsp;Assistant’s settings, files (with file access on), the error log, and camera pictures. On HA&nbsp;OS, logs and Apps too. Only setting up and updating HA&nbsp;NOVA, and InfluxDB history, stay outside the&nbsp;chat.</p>
+      <p>Turn chat apps off before you remove the NOVA Relay App or go back to an older&nbsp;version.</p>
       <p>Step by step, and what to do if it doesn’t connect: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/chat-apps.md" target="_blank" rel="noopener noreferrer">the chat apps guide on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
     </details>
   </section>
@@ -526,14 +536,14 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     </figure>
     <details class="more">
       <summary>More about away access</summary>
-      <p>“Local only” stays the default. Your login stays in your computer’s own safe&nbsp;storage.</p>
+      <p>“Local only” stays the default. To use Home&nbsp;Assistant Link, turn on “Use this computer away from home” in setup. Your login stays in your computer’s own safe&nbsp;storage.</p>
       <p>You need HA&nbsp;OS or Supervised, with remote access turned on. You also need a computer with a screen to approve it once. Container, Core, WSL, and setups without a screen, like a service or a gateway, work at home&nbsp;only.</p>
     </details>
   </section>
 
   <section class="section" id="how-it-works">
     <h2>How it works</h2>
-    <p class="section-lead">The NOVA Relay App on your server talks to Home&nbsp;Assistant. Skills, plain text files on your computer, hold everything the AI&nbsp;knows.</p>
+    <p class="section-lead">The NOVA Relay App on your server talks to Home&nbsp;Assistant. Skills, plain text files on your computer, hold the AI’s&nbsp;know-how.</p>
     <figure class="figure flow" data-reveal>
       <svg class="scene scene-wide" viewBox="0 0 900 360" role="img" aria-label="Your computer, with your AI app and the skills, connects over a locked link to the NOVA Relay. Only the relay talks to Home Assistant.">
         <!-- links -->
@@ -581,7 +591,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <span>Home Assistant</span>
       </div>
     </figure>
-    <p class="note">The HA&nbsp;NOVA program on your computer, not the AI, decides what needs a preview or your&nbsp;OK.</p>
+    <p class="note">The HA&nbsp;NOVA program, not the AI, decides what needs a preview or your&nbsp;OK.</p>
   </section>
 
 
@@ -598,7 +608,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </div>
       <div class="faq-item" id="codes">
         <dt>Can the AI see my codes?</dt>
-        <dd>Not the stored ones. The Relay’s login, a lock or alarm code in its settings, the backup password, and the Thread network key stay hidden. Codes written into automations are not&nbsp;hidden.</dd>
+        <dd>Not the stored ones. The Relay’s login, a lock or alarm code in its settings, the backup password, the Thread network key, and camera and image sign-in tokens stay hidden. Codes written into automations are not&nbsp;hidden.</dd>
       </div>
       <div class="faq-item" id="chatgpt">
         <dt>Does it work with ChatGPT?</dt>
@@ -606,7 +616,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       </div>
       <div class="faq-item" id="uninstall">
         <dt>How do I remove it?</dt>
-        <dd>Run <code>ha-nova uninstall</code> on your computer. It asks: remove it, keep the pairing for a reinstall, or cancel. On the last computer, it can remove the NOVA Relay App too, after the owner signs in. Using chat apps? Turn them off before the App is&nbsp;removed.</dd>
+        <dd>Run <code>ha-nova uninstall</code> on your computer. It asks: remove it, keep the pairing for a reinstall, or cancel. On the last computer, it can remove the NOVA Relay App too, after the owner signs in. That works only when chat apps are off and no Home&nbsp;Assistant Link is saved on that&nbsp;computer.</dd>
       </div>
     </dl>
   </section>

@@ -85,7 +85,7 @@
           <button class="copy-cmd" type="button" data-where="Claude"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the demo address</span></button>
           <p>Unlocking a door asks you first. Here, Claude shows a short code, and you type it back. Claude sees the code too, so it is a light check. At home, a linked phone asks&nbsp;instead.</p>
           <p>Your connection stays. Only the house resets every hour. That takes a few&nbsp;minutes.</p>
-          <p>Claude asks before each step at first. To ask less, open Customize → Connectors → HA NOVA demo. Set the read-only tools and “Control a device” to “Always allow”. Leave “Run a confirmed change” on “Needs approval”. The demo has no phone, so that question is the check before the door&nbsp;unlocks.</p>
+          <p>Claude asks before each step at first. That’s Claude, not HA&nbsp;NOVA. To ask less, open Customize → Connectors → HA NOVA demo. Set every tool to “Always allow”, except “Run a confirmed change”: leave it on “Needs approval”. The demo has no phone, and Claude sees the code. So that question is your own check before the door&nbsp;unlocks.</p>
           <p>Done? Remove the demo in Claude: Customize → Connectors. That frees the free plan’s one spot for your own&nbsp;home.</p>
         </details>
       </div>
@@ -108,7 +108,7 @@
       </div>
       <div class="os-panel" id="computer">
         <h3 class="os-name">An app on my computer</h3>
-        <p class="os-where">For Claude Code, Claude Desktop, Codex CLI, OpenCode, Google Antigravity, or Hermes Agent&nbsp;(preview).</p>
+        <p class="os-where">For Claude Code, Claude Desktop, Codex, OpenCode, Google Antigravity, or Hermes Agent&nbsp;(preview).</p>
         <p class="app-step"><strong>1. Install HA&nbsp;NOVA.</strong> On a Mac or Linux, paste this in the&nbsp;Terminal:</p>
         <div class="cmd"><span class="cmd-prompt" aria-hidden="true">$</span><pre><code>curl -fsSL https://raw.githubusercontent.com/markusleben/ha-nova/main/install.sh | bash</code><span class="cmd-cursor" aria-hidden="true"></span></pre></div>
           <button class="copy-cmd" type="button" data-where="the Terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="i-copy" x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path class="i-copy" d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/><path class="i-check" d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"/></svg><span class="copy-label" aria-hidden="true">Copy</span><span class="visually-hidden">Copy the macOS and Linux command</span></button>
