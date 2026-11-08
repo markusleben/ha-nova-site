@@ -162,7 +162,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         </div>
         <div class="says-row" role="listitem">
           <p class="says-quote">“Why does my MQTT broker App keep restarting?”</p>
-          <p class="says-result">On HA&nbsp;OS, reads the logs of Home&nbsp;Assistant, its system, and its Apps. It can also install or remove an App, or change its settings, after your own OK. On a computer, it needs the direct connection, not Home&nbsp;Assistant&nbsp;Link.</p>
+          <p class="says-result">On HA&nbsp;OS, checks an App’s state, version, and settings, and asks you for the lines that matter from its log page in Home&nbsp;Assistant: HA&nbsp;NOVA doesn’t read logs, which can hold passwords. It can also install or remove an App, or change its settings, after your own OK. On a computer, it needs the direct connection, not Home&nbsp;Assistant&nbsp;Link.</p>
         </div>
       </div>
     </details>
@@ -488,7 +488,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
       <p>Everyday actions, like a light, run right away. Then HA&nbsp;NOVA checks them. But at first, Claude asks before each step. That’s Claude, not HA&nbsp;NOVA. To stop it, open Customize → Connectors → HA&nbsp;NOVA in Claude. With a linked phone, set every tool to “Always allow”. HA&nbsp;NOVA still shows a preview before bigger changes, and your phone asks before unlocks, turning off the alarm, and deletes. No phone? Set every tool to “Always allow”, except “Run a confirmed change”. Leave that one on “Needs approval”, so Claude still asks before each bigger&nbsp;change.</p>
       <p>Your own address needs a valid certificate. Self-signed certificates, plain <code>http://</code>, Tailscale, and local addresses don’t&nbsp;work.</p>
       <p>Claude or ChatGPT holds a Home&nbsp;Assistant sign-in for your account. It works for all of Home&nbsp;Assistant, not only HA&nbsp;NOVA. Anyone who can use your Claude or ChatGPT account can reach your home through it. To sign them out, open your Home&nbsp;Assistant profile, then&nbsp;Security.</p>
-      <p>At Manage everything, these work in the chat too, with the same preview and OK as on a computer: helpers, scenes, dashboards, rooms and names, integrations and Home&nbsp;Assistant’s settings, files (with file access on), the error log, and camera pictures. On HA&nbsp;OS, logs and Apps too. Only setting up and updating HA&nbsp;NOVA, and InfluxDB history, stay outside the&nbsp;chat.</p>
+      <p>At Manage everything, these work in the chat too, with the same preview and OK as on a computer: helpers, scenes, dashboards, rooms and names, integrations and Home&nbsp;Assistant’s settings, files (with file access on), and camera pictures. On HA&nbsp;OS, Apps too. Only setting up and updating HA&nbsp;NOVA, and InfluxDB history, stay outside the&nbsp;chat.</p>
       <p>Turn chat apps off before you remove the NOVA Relay App or go back to an older&nbsp;version.</p>
       <p>Step by step, and what to do if it doesn’t connect: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/chat-apps.md" target="_blank" rel="noopener noreferrer">the chat apps guide on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
     </details>
