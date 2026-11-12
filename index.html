@@ -211,7 +211,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
                 <path class="d c" d="M126 109 l6 6 l11 -12" pathLength="1"/>
               </g>
             </svg>
-            <span>Click Confirm in a window on your computer</span>
+            <span>Approve on the NOVA page in Home&nbsp;Assistant</span>
           </li>
           <li>
             <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
@@ -223,18 +223,19 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
                 <path class="d c" d="M91 107 l6 6 l11 -12" pathLength="1"/>
               </g>
             </svg>
-            <span>Or tap your linked phone at the same&nbsp;time</span>
+            <span>Or tap your linked&nbsp;phone</span>
           </li>
         </ul>
-        <p class="confirm-fallback">No window and no phone? You type a four-digit code. In Claude and ChatGPT, only at the Manage everything level, with codes on. Some deletes on a computer always use the&nbsp;code.</p>
+        <p class="confirm-fallback">No phone in Claude or ChatGPT? You type a four-digit code, only at the Manage everything level, with codes on. Dashboard and room changes still ask in a window on your&nbsp;computer.</p>
         <details class="more">
           <summary>More about confirming</summary>
           <p>Everything that isn’t a simple action shows a preview first, and the AI waits for your yes. HA&nbsp;NOVA decides what runs right away and what needs a real confirmation, never the&nbsp;AI.</p>
-          <p><strong>Window.</strong> On a computer with a screen, a window opens. Click Confirm (OK on Windows) or Cancel. Your AI never sees a code.</p>
-          <p><strong>Phone.</strong> The one phone you linked, iPhone or Android, asks at the same time as the window, in the Home&nbsp;Assistant Companion app. The first answer counts. Answer on the phone, and it shows the result. Answer in the window, and the phone’s question goes away. With no screen, like on a Linux server, or with the window turned off, the phone asks&nbsp;alone. (Not with a standalone relay that runs on your own token.) You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits (up to 90 seconds on a computer, up to 3 minutes in Claude or ChatGPT). To link, move, or turn off phone confirmation, you must unlock the phone. Chat apps keep their own phone: change or stop it on the NOVA page. If the linked phone can’t be reached, only the window asks. With no window, the action is refused. It is never moved to chat.</p>
-          <p><strong>Code.</strong> With neither, you get a four-digit one-time code, in your AI app’s own form where it shows one, or else in chat. In chat, the AI sees the code too, and HA&nbsp;NOVA can’t tell who typed it. So it protects less than the window or your&nbsp;phone.</p>
-          <p>Deleting an automation, script, dashboard, device, integration, or blueprint uses the window or the phone. On a computer, deleting a helper, scene, area, floor, or label takes a four-digit code in chat. In Claude and ChatGPT, those ask the linked phone too.</p>
-          <p>Up to 20 automation and script changes, deletes too, can share one confirmation. The window names each one and what happens to&nbsp;it.</p>
+          <p><strong>Phone.</strong> The one phone you linked, iPhone or Android, gets a notification in the Home&nbsp;Assistant Companion app. Press and hold it on an iPhone, or pull it down on Android, then tap the button. You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits, up to 3&nbsp;minutes. To link or move phone confirmation, you must unlock the phone. The phone you linked on a computer moves into Home&nbsp;Assistant once: the first time a change needs your OK, it asks whether it should get HA&nbsp;NOVA’s confirmations. To link or change a phone, run <code>ha-nova setup confirm-phone</code>. Chat apps keep their own phone: change or stop it on the NOVA page. It is never moved to&nbsp;chat.</p>
+          <p><strong>NOVA page.</strong> Open NOVA in the Home&nbsp;Assistant sidebar. Under “Waiting for your OK”, choose Open, then Approve or Cancel. Any Home&nbsp;Assistant administrator can approve there, except the user the NOVA App signs in as. The OK covers exactly that change, once. Nothing is sent before it. A request no one answers ends after 3&nbsp;minutes.</p>
+          <p><strong>Window.</strong> The window on your computer only waits. It says where to confirm, opens Home&nbsp;Assistant, or cancels. It can’t confirm. Dashboard and room changes still ask on the computer: click Confirm (OK on Windows) or Cancel in the window, or type a four-digit code where no window&nbsp;opens.</p>
+          <p><strong>Code.</strong> In Claude and ChatGPT, the linked phone of whoever asked confirms. With no phone, at Manage everything, you get a four-digit one-time code, in the app’s own form where it shows one, or else in chat. In chat, the AI sees the code too, and HA&nbsp;NOVA can’t tell who typed it. So it protects less than your&nbsp;phone.</p>
+          <p>Deleting an automation, script, device, integration, blueprint, helper, scene, area, floor, or label waits for the same OK. A dashboard delete asks on the&nbsp;computer.</p>
+          <p>Up to 20 automation and script changes, deletes too, can share one&nbsp;confirmation.</p>
           <p>If anything changed since the preview, nothing is sent. Before a restart, HA&nbsp;NOVA checks your config first. If something is wrong, it says what before you&nbsp;confirm.</p>
           <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
           <p>Every safety rule, and the test behind it: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/safety.md" target="_blank" rel="noopener noreferrer">the safety page on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
@@ -394,7 +395,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <details class="more">
       <summary>Which Home Assistant works?</summary>
       <p>Any install type. On HA&nbsp;OS and Supervised, setup installs the NOVA Relay App for&nbsp;you.</p>
-      <p>Container and Core run the same relay as a standalone container, set up with a token. It uses one shared token, not one connection per device. It has no phone confirmation, no chat apps, and no Home&nbsp;Assistant Link. Follow <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/relay-container.md" target="_blank" rel="noopener noreferrer">the standalone container guide<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+      <p>Container and Core run the same relay as a standalone container, set up with a token. It uses one shared token, not one connection per device. It has no NOVA page, so only a linked phone confirms. It has no chat apps and no Home&nbsp;Assistant Link. Follow <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/relay-container.md" target="_blank" rel="noopener noreferrer">the standalone container guide<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
     </details>
     <p class="clients-label">Works with</p>
     <ul class="clients">
