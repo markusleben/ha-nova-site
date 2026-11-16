@@ -133,6 +133,18 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <p class="says-result">Turns it off right away, then checks that it really is off. A room’s lights work the same way, up to 30. Everything else in a room, scenes, and riskier actions show a preview first.</p>
         </div>
         <div class="says-row" role="listitem">
+          <p class="says-quote">“Can I update Home&nbsp;Assistant now?”</p>
+          <p class="says-result">Checks free space, a recent backup, running updates, and open repairs, and suggests an order. Matches Home&nbsp;Assistant’s breaking changes to the integrations you use. After the update, says what changed and what newly&nbsp;fails.</p>
+        </div>
+        <div class="says-row" role="listitem">
+          <p class="says-quote">“Is my Home&nbsp;Assistant OK? Would my backup work?”</p>
+          <p class="says-result">A check-up of its health, free space, memory and CPU, failing integrations, open repairs, the newest backup, and waiting updates. It only reads, and says what it couldn’t&nbsp;check.</p>
+        </div>
+        <div class="says-row" role="listitem">
+          <p class="says-quote">“Which integration keeps failing?”</p>
+          <p class="says-result">Counts the log entries of each integration and level, and since when. It never reads the log’s lines, which can hold&nbsp;passwords.</p>
+        </div>
+        <div class="says-row" role="listitem">
           <p class="says-quote">“What happened to my living room temperature overnight?”</p>
           <p class="says-result">Reads the history and tells you what happened, in plain words.</p>
         </div>
@@ -231,8 +243,8 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <summary>More about confirming</summary>
           <p>Everything that isn’t a simple action shows a preview first, and the AI waits for your yes. HA&nbsp;NOVA decides what runs right away and what needs a real confirmation, never the&nbsp;AI.</p>
           <p><strong>Phone.</strong> The one phone you linked, iPhone or Android, gets a notification in the Home&nbsp;Assistant Companion app. Press and hold it on an iPhone, or pull it down on Android, then tap the button. You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits, up to 3&nbsp;minutes. To link or move phone confirmation, you must unlock the phone. The phone you linked on a computer moves into Home&nbsp;Assistant once: the first time a change needs your OK, it asks whether it should get HA&nbsp;NOVA’s confirmations. To link or change a phone, run <code>ha-nova setup confirm-phone</code>. Chat apps keep their own phone: change or stop it on the NOVA page. It is never moved to&nbsp;chat.</p>
-          <p><strong>NOVA page.</strong> Open NOVA in the Home&nbsp;Assistant sidebar. Under “Waiting for your OK”, choose Open, then Approve or Cancel. Any Home&nbsp;Assistant administrator can approve there, except the user the NOVA App signs in as. The OK covers exactly that change, once. Nothing is sent before it. A request no one answers ends after 3&nbsp;minutes.</p>
-          <p><strong>Window.</strong> The window on your computer only waits. It says where to confirm, opens Home&nbsp;Assistant, or cancels. It can’t confirm. Dashboard and room changes still ask on the computer: click Confirm (OK on Windows) or Cancel in the window, or type a four-digit code where no window&nbsp;opens.</p>
+          <p><strong>NOVA page.</strong> Open NOVA in the Home&nbsp;Assistant sidebar. Under “Waiting for your OK”, choose “Confirm or decline”, then Approve or Cancel. New requests appear there on their own. Any Home&nbsp;Assistant administrator can approve there, except the user the NOVA App signs in as. The OK covers exactly that change, once. Nothing is sent before it. A request no one answers ends after 3&nbsp;minutes.</p>
+          <p><strong>Window.</strong> The window on your computer only waits. It says where to confirm, opens this request on the NOVA page, or cancels. It can’t confirm. Dashboard and room changes still ask on the computer: click Confirm (OK on Windows) or Cancel in the window, or type a four-digit code where no window&nbsp;opens.</p>
           <p><strong>Code.</strong> In Claude and ChatGPT, the linked phone of whoever asked confirms. With no phone, at Manage everything, you get a four-digit one-time code, in the app’s own form where it shows one, or else in chat. In chat, the AI sees the code too, and HA&nbsp;NOVA can’t tell who typed it. So it protects less than your&nbsp;phone.</p>
           <p>Deleting an automation, script, device, integration, blueprint, helper, scene, area, floor, or label waits for the same OK. A dashboard delete asks on the&nbsp;computer.</p>
           <p>Up to 20 automation and script changes, deletes too, can share one&nbsp;confirmation.</p>
@@ -383,13 +395,13 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
     <p class="start-alt">Want to look first? <a href="demo/">Try the demo house</a>.</p>
     <details class="more">
       <summary>Not the owner?</summary>
-      <p>The page asks the owner to sign in on this computer. If the owner can’t come over, they make a six-digit code for you. See “Connect with a code”&nbsp;below.</p>
+      <p>The page asks the owner to sign in on this computer. If the owner can’t come over, any Home&nbsp;Assistant administrator makes a six-digit code for you. See “Connect with a code”&nbsp;below.</p>
     </details>
     <details class="more">
       <summary>Connect with a code</summary>
       <p>No browser, or using SSH on Linux? Then you connect with a six-digit code from the NOVA page&nbsp;instead.</p>
-      <p>Setup shows the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) The owner opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the six-digit code. It works once and expires in&nbsp;minutes.</p>
-      <p>Can’t sign in on this computer at all? Choose “Use a six-digit code instead”. The owner can make it on any&nbsp;device.</p>
+      <p>Setup shows the NOVA Relay App page: click “Add”, then Install and Start. (Skip this if the App already runs.) A Home&nbsp;Assistant administrator opens NOVA in the Home&nbsp;Assistant sidebar and clicks “Connect a device”. You type the six-digit code. It works once and expires in&nbsp;minutes.</p>
+      <p>Can’t sign in on this computer at all? Choose “Use a six-digit code instead”. It can be made on any&nbsp;device.</p>
       <p>Over SSH, this only works well on Linux. On Windows and macOS, run setup on the computer itself. Over SSH, HA&nbsp;NOVA usually can’t save its login&nbsp;there.</p>
     </details>
     <details class="more">
