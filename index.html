@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="HA NOVA — Talk to your home. Every change checked.">
   <meta name="twitter:description" content="Connect your AI app to Home Assistant. Simple things run right away. Other changes show a preview. Unlocks, opening a garage door or gate, turning off the alarm, and deletes wait for your OK.">
   <meta name="twitter:image" content="https://hanova.app/assets/social-preview.png">
-  <link rel="stylesheet" href="styles.css?h=c2354f2ee7">
+  <link rel="stylesheet" href="styles.css?h=df4f9b490c">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -214,6 +214,19 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
         <ul class="confirm-ways" data-reveal>
           <li>
             <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
+              <rect class="d n" x="22" y="8" width="156" height="104" rx="10"/>
+              <path class="d n" d="M88 112 V132 M112 112 V132 M70 136 H130"/>
+              <rect class="d n" x="48" y="26" width="104" height="70" rx="8"/>
+              <path class="d n" d="M60 44 H128 M60 56 H110"/>
+              <g class="press">
+                <rect class="d c" x="92" y="68" width="48" height="20" rx="10"/>
+                <path class="d c" d="M109 78 l5 5 l9 -10" pathLength="1"/>
+              </g>
+            </svg>
+            <span>Click Confirm on your own&nbsp;computer</span>
+          </li>
+          <li>
+            <svg class="scene" viewBox="0 0 200 150" aria-hidden="true">
               <rect class="d n" x="14" y="10" width="172" height="124" rx="12"/>
               <path class="d n" d="M14 34 H186"/>
               <path class="d n" d="M36 58 H150 M36 74 H118"/>
@@ -244,12 +257,12 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
           <p>Everything that isn’t a simple action shows a preview first, and the AI waits for your yes. HA&nbsp;NOVA decides what runs right away and what needs a real confirmation, never the&nbsp;AI.</p>
           <p><strong>Phone.</strong> The one phone you linked, iPhone or Android, gets a notification in the Home&nbsp;Assistant Companion app. Press and hold it on an iPhone, or pull it down on Android, then tap the button. You can answer on the locked phone or its Apple Watch. So whoever holds your phone can answer too, but only for that one action, and only while it waits, up to 3&nbsp;minutes. To link or move phone confirmation, you must unlock the phone. The phone you linked on a computer moves into Home&nbsp;Assistant once: the first time a change needs your OK, it asks whether it should get HA&nbsp;NOVA’s confirmations. To link or change a phone, run <code>ha-nova setup confirm-phone</code>. Chat apps keep their own phone: change or stop it on the NOVA page. It is never moved to&nbsp;chat.</p>
           <p><strong>NOVA page.</strong> Open NOVA in the Home&nbsp;Assistant sidebar. Under “Waiting for your OK”, choose “Confirm or decline”, then Approve or Cancel. New requests appear there on their own. Any Home&nbsp;Assistant administrator can approve there, except the user the NOVA App signs in as. The OK covers exactly that change, once. Nothing is sent before it. A request no one answers ends after 3&nbsp;minutes.</p>
-          <p><strong>Window.</strong> The window on your computer only waits. It says where to confirm, opens this request on the NOVA page, or cancels. It can’t confirm. Dashboard and room changes still ask on the computer: click Confirm (OK on Windows) or Cancel in the window, or type a four-digit code where no window&nbsp;opens.</p>
+          <p><strong>Window.</strong> On the computer you said yes for in setup, click Confirm (OK on Windows) or Cancel in the window. Your phone then asks only when nobody confirms at the computer. This needs HA&nbsp;NOVA’s key in the system’s password store. Turn it off per computer on the NOVA page. A computer paired with an older HA&nbsp;NOVA pairs again once to use it. On any other computer, the window only waits: it says where to confirm, opens this request on the NOVA page, or cancels. Dashboard and room changes still ask on every computer: in the window, or with a four-digit code where no window&nbsp;opens.</p>
           <p><strong>Code.</strong> In Claude and ChatGPT, the linked phone of whoever asked confirms. With no phone, at Manage everything, you get a four-digit one-time code, in the app’s own form where it shows one, or else in chat. In chat, the AI sees the code too, and HA&nbsp;NOVA can’t tell who typed it. So it protects less than your&nbsp;phone.</p>
-          <p>Deleting an automation, script, device, integration, blueprint, helper, scene, area, floor, or label waits for the same OK. A dashboard delete asks on the&nbsp;computer.</p>
+          <p>Deleting an automation, script, device, integration, blueprint, helper, scene, area, floor, or label waits for the same OK. A dashboard delete asks once too: in the window, on your phone, or on the NOVA&nbsp;page.</p>
           <p>Up to 20 automation and script changes, deletes too, can share one&nbsp;confirmation.</p>
           <p>If anything changed since the preview, nothing is sent. Before a restart, HA&nbsp;NOVA checks your config first. If something is wrong, it says what before you&nbsp;confirm.</p>
-          <p>Careful: anything you let control your screen can click that window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. To turn the window off, run <code>ha-nova setup confirm-window off</code>.</p>
+          <p>Careful: one-click confirming trusts that computer. Anything you let control your screen can click the window too. That means computer use, apps you gave Accessibility access, and on Windows and some Linux desktops, other programs. On Windows and Linux, any program running as you can also read HA&nbsp;NOVA’s key and confirm without a click. On a computer you share or don’t fully trust, answer “no” in setup or turn it off on the NOVA page. To turn the window off on a computer, run <code>ha-nova setup confirm-window off</code>.</p>
           <p>Every safety rule, and the test behind it: <a href="https://github.com/markusleben/ha-nova/blob/main/docs/reference/safety.md" target="_blank" rel="noopener noreferrer">the safety page on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
         </details>
       </li>
@@ -349,7 +362,7 @@ press, request pulse, window lighting up); final frame for no-JS and reduced mot
             <text x="120" y="117" text-anchor="middle" class="t-btn">Allow</text>
           </g>
         </svg>
-        <strong>Add your phone, then look around.</strong> Pick whose phone should confirm on this computer, then tap “Allow” on that phone. Then you see your home at a&nbsp;glance.
+        <strong>Choose your safety net, then look around.</strong> Setup asks once whether risky changes are confirmed on this computer with one click. Say yes only if nobody else uses it. Pick whose phone should confirm, then tap “Allow” on that phone. Then you see your home at a&nbsp;glance.
       </li>
     </ol>
     <div class="console start-console" data-reveal>
@@ -792,7 +805,7 @@ if ('IntersectionObserver' in window && 'inert' in HTMLElement.prototype &&
       f.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;border:0;opacity:.004;pointer-events:none;z-index:-1';
       // transparent like the real reveal layers; the hero (inside <main>) keeps
       // every section on the same sub-pixel offset as on the page
-      f.srcdoc = '<!doctype html><html class="js"><link rel="stylesheet" href="styles.css?h=c2354f2ee7"><style>' +
+      f.srcdoc = '<!doctype html><html class="js"><link rel="stylesheet" href="styles.css?h=df4f9b490c"><style>' +
         'html{overflow:hidden}html,body{background:none}html::before,html::after,body::before,body::after,main::before{content:none}' +
         '[data-reveal],[data-reveal] *,[data-reveal]::before{transition-delay:var(--warm-start)!important;animation-delay:var(--warm-start)!important}' +
         '.warm-snap *,.warm-snap *::before{transition:none!important;animation:none!important}' +
