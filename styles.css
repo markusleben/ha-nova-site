@@ -523,9 +523,9 @@ main .section { scroll-margin-top: 1rem; }
   margin: 1.25rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
-  max-width: 30rem;
+  max-width: 42rem;
 }
 .confirm-ways li { text-align: center; }
 .confirm-ways .scene { max-width: 13rem; margin: 0 auto 0.6rem; }
@@ -605,8 +605,10 @@ main .section { scroll-margin-top: 1rem; }
   .js .steps .inview .press,
   .js .confirm-ways.inview .press { animation: press 0.42s var(--ease-rise) 1.15s both; }
   .js .confirm-ways.inview li:nth-child(2) .press { animation-delay: 1.85s; }
+  .js .confirm-ways.inview li:nth-child(3) .press { animation-delay: 2.55s; }
   .js [data-reveal].confirm-ways .press .d[pathLength] { transition-delay: 1.45s; transition-duration: 0.4s; }
   .js [data-reveal].confirm-ways li:nth-child(2) .press .d[pathLength] { transition-delay: 2.15s; }
+  .js [data-reveal].confirm-ways li:nth-child(3) .press .d[pathLength] { transition-delay: 2.85s; }
   /* the checks wait for the pair itself, not for the workflow step around it */
   .js .confirm-ways:not(.inview) .d[pathLength] { stroke-dashoffset: 1; }
 
